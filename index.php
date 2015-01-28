@@ -10,14 +10,6 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        $array = simplexml_load_file("xml/Levels.xml");
-        foreach ($array->Level as $level) {
-            echo $level->Level_Name;
-        }
-        
-        
-        ?>
+        <a href="php/level.php">View Level</a>
     </body>
 </html>
