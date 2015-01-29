@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Cái Question đầu tiên là mẫu, anh đừng điền hay xóa nhé.
+    Anh tìm câu hỏi và câu trả lời từ Quiz ở W3School nhé.
+    Anh nhớ kiểm tra câu trả lời đúng và cho vào phần correct trong <Answer> nhé 
+
+    level_id: (ID Độ khó) type: int
+    type_id: (ID Loại câu hỏi) type: in
+    subject_ID (ID Môn) type: string
+    scrambled: (Có đảo đáp án hay ko (true/false)) type: bool
+    chapter: (Chương) type: int
+-->
+
+<Questions>
+    <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
+        <Content></Content> <!-- (Nội dung câu hỏi) type: string-->
+        <Answer correct=""></Answer> <!-- (Nội dung câu trả lời - string); (correct: đáp án đúng (true/false)) -->
+    </Question>
+    
+    <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
+        <Content></Content>
+        <Answer correct=""></Answer>
+    </Question>
+</Questions>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Anh lấy danh sách 9 môn từ link này nhé http://www.w3schools.com/quiztest/quiztest.asp 
+     Anh tự Subject_ID theo kiểu HTML101 nhé-->
+
+<Subjects>
+    <Subject id="" >
+        <Subject_Name></Subject_Name>
+    </Subject>
+</Subjects>

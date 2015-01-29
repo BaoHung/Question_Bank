@@ -26,12 +26,13 @@ and open the template in the editor.
         if (isset($_GET["Level_ID"])) {
             $Level_ID = $_GET["Level_ID"];
             foreach ($Levels->Level as $level) {
-                if($level->Level_ID == $Level_ID){
+                if($level['id'] == $Level_ID){
                     $nodeToDelete = dom_import_simplexml($level);
                     $nodeToDelete->parentNode->removeChild($nodeToDelete);
                     break;
                 }
             }
+            
             $Levels->asXML('../xml/Levels.xml');
             echo 'Deleted';
         }

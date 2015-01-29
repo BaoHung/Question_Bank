@@ -8,6 +8,7 @@
             <file>file:/C:/xampp/htdocs/Question_Bank/xml/Levels.xml</file>
             <file>file:/C:/xampp/htdocs/Question_Bank/php/level-edit.php</file>
             <file>file:/C:/xampp/htdocs/Question_Bank/php/level-add.php</file>
+            <file>file:/C:/xampp/htdocs/Question_Bank/php/level-delete.php</file>
         </group>
     </open-files>
 </project-private>

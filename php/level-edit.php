@@ -28,14 +28,22 @@ and open the template in the editor.
             ?>
             <form>
                 <input type="hidden" name="Level_ID" value="<?= $Level_ID ?>"/>
-                Level Name: <input type="text" name="Level_Name" value="<?= $Levels->Level[$Level_ID - 1]->Level_Name ?>" >
+                Level Name: 
+                <input type="text" name="Level_Name" 
+                       value="<?= $Levels->xpath('//Levels/Level[@id="' . $Level_ID . '"]')[0]->Level_Name ?>" >
                 <input type="submit" value="Save" >
             </form>
             <?php
         } else if (isset($_GET["Level_ID"]) && isset($_GET["Level_Name"])) {
             $Level_ID = $_GET["Level_ID"];
             $Level_Name = $_GET["Level_Name"];
-            $Levels->Level[$Level_ID - 1]->Level_Name = $Level_Name;
+
+            foreach ($Levels->children() as $level) {
+                if ($level['id'] == $Level_ID)
+                    $level->Level_Name = $Level_Name;
+            }
+
+//            $Levels->Level[$Level_ID - 1]->Level_Name = $Level_Name;
             $Levels->asXML('../xml/Levels.xml');
             echo 'Saved';
         }

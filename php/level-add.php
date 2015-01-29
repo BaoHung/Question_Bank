@@ -24,7 +24,7 @@ and open the template in the editor.
         if (isset($_GET["Level_Name"])) {
             $Level_ID = $_GET["Level_Name"];
             $level = $Levels->addChild('Level');
-            $level->addChild('Level_ID', $Levels->count());
+            $level->addAttribute('id', $Levels->count());
             $level->addChild('Level_Name', $Level_ID);
 
             $Levels->asXML('../xml/Levels.xml');

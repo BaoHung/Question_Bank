@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Anh xem bài thi (quiz) trên W3Schools và làm đề thi giống như vậy nhé -->
+
+<Question_Exams>
+    <Question_Exam exam_id="" question_id="">
+    </Question_Exam>
+</Question_Exams>

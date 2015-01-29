@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Anh đừng sửa file này nhé :D -->
 <Levels>
-    <Level>
-        <Level_ID>1</Level_ID>
+    <Level id="1">
         <Level_Name>Easy</Level_Name>
     </Level>
-    <Level>
-        <Level_ID>2</Level_ID>
+    <Level id="2">
         <Level_Name>Medium</Level_Name>
     </Level>
-    <Level>
-        <Level_ID>3</Level_ID>
+    <Level id="3">
         <Level_Name>Hard</Level_Name>
     </Level>
-    
 </Levels>

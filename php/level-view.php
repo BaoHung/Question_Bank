@@ -34,10 +34,10 @@ and open the template in the editor.
             foreach ($Levels->Level as $level) {
                 ?>
                 <tr>
-                    <td><?= $level->Level_ID ?></td>
+                    <td><?= $level['id'] ?></td>
                     <td><?= $level->Level_Name ?></td>
-                    <td><a href="level-edit.php?Level_ID=<?= $level->Level_ID ?>">Edit</a></td>
-                    <td><a href="level-delete.php?Level_ID=<?= $level->Level_ID ?>">Delete</a></td>
+                    <td><a href="level-edit.php?Level_ID=<?= $level['id'] ?>">Edit</a></td>
+                    <td><a href="level-delete.php?Level_ID=<?= $level['id'] ?>">Delete</a></td>
                 </tr>
                 <?php
             }
