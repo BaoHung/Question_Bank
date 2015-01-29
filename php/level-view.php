@@ -11,12 +11,14 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        02:30:30
+        <a href="level-add.php">Add Level</a>
         <h1>View Levels</h1>
         <table>
             <tr>
                 <th>Level ID</th>
                 <th>Level Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
 
             <?php
@@ -32,12 +34,10 @@ and open the template in the editor.
             foreach ($Levels->Level as $level) {
                 ?>
                 <tr>
-                    <td>
-                        <?php echo $level->Level_ID ?>
-                    </td>
-                    <td>
-                        <?php echo $level->Level_Name ?>    
-                    </td>
+                    <td><?= $level->Level_ID ?></td>
+                    <td><?= $level->Level_Name ?></td>
+                    <td><a href="level-edit.php?Level_ID=<?= $level->Level_ID ?>">Edit</a></td>
+                    <td><a href="level-delete.php?Level_ID=<?= $level->Level_ID ?>">Delete</a></td>
                 </tr>
                 <?php
             }

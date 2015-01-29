@@ -10,6 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <a href="php/level.php">View Level</a>
+        <a href="php/level-view.php">View Level</a>
+        <a href="php/level-add.php">Add Level</a>
     </body>
 </html>
