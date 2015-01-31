@@ -12,13 +12,45 @@
 -->
 
 <Questions>
-    <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
-        <Content></Content> <!-- (Nội dung câu hỏi) type: string-->
-        <Answer correct=""></Answer> <!-- (Nội dung câu trả lời - string); (correct: đáp án đúng (true/false)) -->
+    
+<!--    <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
+        <Content></Content>  (Nội dung câu hỏi) type: string
+        <Answer correct=""></Answer>  (Nội dung câu trả lời - string); (correct: đáp án đúng (true/false)) 
     </Question>
     
     <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
         <Content></Content>
         <Answer correct=""></Answer>
+    </Question>-->
+    <Question id="1" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="1">
+        <Content>What does HTML stand for?</Content>
+        <Answer correct="false">1.1</Answer>
+        <Answer correct="false">1.2</Answer>
+        <Answer correct="true">HyperText Markup Language</Answer>
+        <Answer correct="false">1.4</Answer>
+    </Question>
+    
+    <Question id="2" level_id="2" type_id="1" subject_id="2" scrambled="true" chapter="1">
+        <Content>What does CSS stand for?</Content>
+        <Answer correct="false">2.1</Answer>
+        <Answer correct="false">2.2</Answer>
+        <Answer correct="true">Cascading Style Sheet</Answer>
+        <Answer correct="false">2.4</Answer>
+    </Question>
+    
+    <Question id="3" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="1">
+        <Content>HTML Question 2</Content>
+        <Answer correct="false">3.1</Answer>
+        <Answer correct="false">3.2</Answer>
+        <Answer correct="true">HyperText Markup Language</Answer>
+        <Answer correct="false">3.4</Answer>
+    </Question>
+    
+    <Question id="4" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="1">
+        <Content>CSS Question 2</Content>
+        <Answer correct="false">4.1</Answer>
+        <Answer correct="false">4.2</Answer>
+        <Answer correct="true">HyperText Markup Language</Answer>
+        <Answer correct="false">4.4</Answer>
     </Question>
 </Questions>

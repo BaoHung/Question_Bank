@@ -7,10 +7,10 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Question Bank Management</title>
     </head>
     <body>
-        <a href="php/level-view.php">View Level</a>
-        <a href="php/level-add.php">Add Level</a>
+        <a href="level/view.php">View Level</a>
+        <a href="question/veiw.php">View Question</a>
     </body>
 </html>

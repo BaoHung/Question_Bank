@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <a href="level-add.php">Add Level</a>
+        <a href="add.php">Add Level</a>
         <h1>View Levels</h1>
         <table>
             <tr>
@@ -36,8 +36,8 @@ and open the template in the editor.
                 <tr>
                     <td><?= $level['id'] ?></td>
                     <td><?= $level->Level_Name ?></td>
-                    <td><a href="level-edit.php?Level_ID=<?= $level['id'] ?>">Edit</a></td>
-                    <td><a href="level-delete.php?Level_ID=<?= $level['id'] ?>">Delete</a></td>
+                    <td><a href="edit.php?Level_ID=<?= $level['id'] ?>">Edit</a></td>
+                    <td><a href="delete.php?Level_ID=<?= $level['id'] ?>">Delete</a></td>
                 </tr>
                 <?php
             }

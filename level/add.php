@@ -31,7 +31,7 @@ and open the template in the editor.
             echo 'Added';
         }
         ?>
-        <a href="level-view.php">View Levels</a>
+        <a href="view.php">View Levels</a>
         <h1>Add a level</h1>
         <form>
             Level Name: <input type="text" name="Level_Name" >

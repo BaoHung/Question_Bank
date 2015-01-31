@@ -12,7 +12,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <a href="level-view.php">View Levels</a>
+        <a href="view.php">View Levels</a>
         <?php
         /*
          * To change this license header, choose License Headers in Project Properties.
