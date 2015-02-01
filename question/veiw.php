@@ -15,10 +15,8 @@
                 $('#SearchButton').click(function () {
                     sendRequest();
                 });
-
+                
                 function sendRequest() {
-                    GETparams.subject_id = $('#SubjectList').val();
-                    GETparams.q = $('#Search').val();
 
                     if (window.XMLHttpRequest) {
                         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -31,7 +29,8 @@
                             $("#Questions").html(xmlhttp.responseText);
                         }
                     }
-                    xmlhttp.open("GET", "getQuestion.php?" + $.param(GETparams), true);
+                    xmlhttp.open("GET", "getQuestion.php?subject_id=" + encodeURIComponent($('#SubjectList').val())
+                            + '&q=' + encodeURIComponent($('#Search').val()), true);
                     xmlhttp.send();
                 }
             });

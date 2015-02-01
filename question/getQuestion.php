@@ -8,7 +8,7 @@ if ($subject_id != 0) {
     $path = '//Questions/Question';
 }
 foreach ($Questions->xpath($path) as $Question) {
-    if ($query == '' || strpos(strtolower($Question->Content), strtolower($query)) != FALSE) {
+    if ($query === '' || strpos(strtolower($Question->Content), strtolower($query)) !== FALSE) {
         ?>
         <li value="<?= $Question['id'] ?>"><?= $Question->Content ?></li>
         <ul>
