@@ -32,6 +32,7 @@
                     xmlhttp.open("GET", "getQuestion.php?subject_id=" + encodeURIComponent($('#SubjectList').val())
                             + '&q=' + encodeURIComponent($('#Search').val()), true);
                     xmlhttp.send();
+                    //abc
                 }
             });
         </script>

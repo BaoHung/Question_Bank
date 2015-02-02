@@ -2,6 +2,7 @@
 $Questions = simplexml_load_file("../xml/Questions.xml");
 $subject_id = $_GET['subject_id'];
 $query = $_GET['q'];
+echo $query;
 if ($subject_id != 0) {
     $path = '//Questions/Question[@subject_id="' . $subject_id . '"]';
 } else {
