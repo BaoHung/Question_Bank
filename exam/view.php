@@ -1,10 +1,13 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?>
-<a href="add.php">Add an Exam</a>
+<form action="add.php" method="get">
+    <select id="SubjectList" name="subject_id" class="option">
+        <?php
+        $Subjects = simplexml_load_file("../xml/Subjects.xml");
+        foreach ($Subjects->children() as $Subject) {
+            ?>
+            <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <input type="submit" value="Add an exam"/>
+</form>
