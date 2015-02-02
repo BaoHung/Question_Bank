@@ -10,14 +10,17 @@
                 $('.option').change(function () {
                     sendRequest();
                 });
-                
-                $('#SubjectList').change(function(){
-                    
-                });
 
-//                $('#SearchButton').click(function () {
-//                    sendRequest();
-//                });
+                $('#SubjectList').change(function () {
+                    $.get("getChapter.php", {
+                        subject_id: $('#SubjectList').val()
+                    }, function (data) {
+                        $('#ChapterList').html('<option value="0" selected>All</option>');
+                        for (i = 0; i < parseInt(data); i++) {
+                            $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                        }
+                    }, "html");
+                });
 
                 $('form').submit(function () {
                     sendRequest();
@@ -28,6 +31,7 @@
                         subject_id: $('#SubjectList').val(),
                         level_id: $('#LevelList').val(),
                         type_id: $('#TypeList').val(),
+                        chapter: $('#ChapterList').val(),
                         q: $('#Search').val()
                     }, function (data) {
                         $("#Questions").html(data);
@@ -56,15 +60,8 @@
             <span>Select a chapter</span>
             <select id="ChapterList" name="chapter" class="option">
                 <option value="0" selected="">All</option>
-                <?php
-                foreach ($Subjects->children() as $Subject) {
-                    ?>
-                    <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
-                    <?php
-                }
-                ?>
             </select>
-            
+
             <span>Select a level</span>
             <select id="LevelList" name="level" class="option">
                 <option value="0" selected="">All</option>
@@ -77,10 +74,10 @@
                 }
                 ?>
             </select>
-            
+
             <span>Select a type</span>
             <select id="TypeList" name="type" class="option">
-                <option value="0" selected="">All</option>
+                <option value="0" selected>All</option>
                 <?php
                 $Types = simplexml_load_file("../xml/Types.xml");
                 foreach ($Types->children() as $Type) {
