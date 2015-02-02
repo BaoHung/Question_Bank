@@ -4,10 +4,10 @@
      Anh tự Subject_ID theo kiểu HTML101 nhé-->
 
 <Subjects>
-    <Subject id="1" >
+    <Subject id="1" numberOfChapter="12">
         <Subject_Name>HTML</Subject_Name>
     </Subject>
-    <Subject id="2" >
+    <Subject id="2" numberOfChapter="8">
         <Subject_Name>CSS</Subject_Name>
     </Subject>
 </Subjects>

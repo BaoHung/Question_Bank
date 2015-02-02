@@ -7,9 +7,12 @@
         <script>
             $(document).ready(function () {
 
-
                 $('.option').change(function () {
                     sendRequest();
+                });
+                
+                $('#SubjectList').change(function(){
+                    
                 });
 
 //                $('#SearchButton').click(function () {
@@ -54,7 +57,6 @@
             <select id="ChapterList" name="chapter" class="option">
                 <option value="0" selected="">All</option>
                 <?php
-                $Subjects = simplexml_load_file("../xml/Subjects.xml");
                 foreach ($Subjects->children() as $Subject) {
                     ?>
                     <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
