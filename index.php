@@ -12,5 +12,6 @@ and open the template in the editor.
     <body>
         <a href="level/view.php">View Level</a>
         <a href="question/veiw.php">View Question</a>
+        <a href="exam/view.php">View Exam</a>
     </body>
 </html>

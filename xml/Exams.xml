@@ -6,7 +6,7 @@
         <Exam_Name>PRN192_FINAL_1</Exam_Name>
     </Exam>
       -->
-    <Exam id="" number_of_question="" duration="">
+    <Exam id="1" number_of_question="50" duration="60">
         <Exam_Name></Exam_Name>
     </Exam>
 </Exams>
