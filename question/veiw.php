@@ -6,33 +6,29 @@
         <script src="../js/jquery-1.11.2.js"></script>
         <script>
             $(document).ready(function () {
-                GETparams = new Object();
 
-                $('#SubjectList').change(function () {
+
+                $('.option').change(function () {
                     sendRequest();
                 });
 
-                $('#SearchButton').click(function () {
+//                $('#SearchButton').click(function () {
+//                    sendRequest();
+//                });
+
+                $('form').submit(function () {
                     sendRequest();
                 });
-                
+
                 function sendRequest() {
-
-                    if (window.XMLHttpRequest) {
-                        // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp = new XMLHttpRequest();
-                    } else {  // code for IE6, IE5
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
-                    xmlhttp.onreadystatechange = function () {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                            $("#Questions").html(xmlhttp.responseText);
-                        }
-                    }
-                    xmlhttp.open("GET", "getQuestion.php?subject_id=" + encodeURIComponent($('#SubjectList').val())
-                            + '&q=' + encodeURIComponent($('#Search').val()), true);
-                    xmlhttp.send();
-                    //abc
+                    $.get("getQuestion.php", {
+                        subject_id: $('#SubjectList').val(),
+                        level_id: $('#LevelList').val(),
+                        type_id: $('#TypeList').val(),
+                        q: $('#Search').val()
+                    }, function (data) {
+                        $("#Questions").html(data);
+                    }, "html");
                 }
             });
         </script>
@@ -40,21 +36,63 @@
     <body>
         <?php include '../layout/header.php'; ?>
         <h1>Question</h1>
-        <span>Select a subject</span>
-        <select id="SubjectList" name="subject">
-            <option value="0" selected="">All</option>
-            <?php
-            $Subjects = simplexml_load_file("../xml/Subjects.xml");
-            foreach ($Subjects->children() as $Subject) {
-                ?>
-                <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+        <form onsubmit="return false;">
+            <span>Select a subject</span>
+            <select id="SubjectList" name="subject" class="option">
+                <option value="0" selected="">All</option>
                 <?php
-            }
-            ?>
-        </select>
-        <br/>
-        <input id="Search" type="text" name="search" placeholder="Search a question"/>
-        <button id="SearchButton">Search</button>
+                $Subjects = simplexml_load_file("../xml/Subjects.xml");
+                foreach ($Subjects->children() as $Subject) {
+                    ?>
+                    <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+
+            <span>Select a chapter</span>
+            <select id="ChapterList" name="chapter" class="option">
+                <option value="0" selected="">All</option>
+                <?php
+                $Subjects = simplexml_load_file("../xml/Subjects.xml");
+                foreach ($Subjects->children() as $Subject) {
+                    ?>
+                    <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+            
+            <span>Select a level</span>
+            <select id="LevelList" name="level" class="option">
+                <option value="0" selected="">All</option>
+                <?php
+                $Levels = simplexml_load_file("../xml/Levels.xml");
+                foreach ($Levels->children() as $Level) {
+                    ?>
+                    <option value="<?= $Level['id'] ?>"><?= $Level->Level_Name ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+            
+            <span>Select a type</span>
+            <select id="TypeList" name="type" class="option">
+                <option value="0" selected="">All</option>
+                <?php
+                $Types = simplexml_load_file("../xml/Types.xml");
+                foreach ($Types->children() as $Type) {
+                    ?>
+                    <option value="<?= $Type['id'] ?>"><?= $Type->Type_Name ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+
+            <br/>
+            <input id="Search" type="text" name="search" placeholder="Search a question"/>
+            <input id="SearchButton" type="submit" value="Search"></button>
+        </form>
 
         <ul id="Questions">
             <?php

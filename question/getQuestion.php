@@ -1,15 +1,17 @@
 <?php
 $Questions = simplexml_load_file("../xml/Questions.xml");
-$subject_id = $_GET['subject_id'];
-$query = $_GET['q'];
-echo $query;
-if ($subject_id != 0) {
-    $path = '//Questions/Question[@subject_id="' . $subject_id . '"]';
-} else {
-    $path = '//Questions/Question';
-}
-foreach ($Questions->xpath($path) as $Question) {
-    if ($query === '' || strpos(strtolower($Question->Content), strtolower($query)) !== FALSE) {
+$subject_id = filter_input(INPUT_GET, 'subject_id');
+$query = filter_input(INPUT_GET, 'q');
+$level_id = filter_input(INPUT_GET, 'level_id');
+$type_id = filter_input(INPUT_GET, 'type_id');
+
+foreach ($Questions->children() as $Question) {
+    if (
+            ($query === '' || strpos(strtolower($Question->Content), strtolower($query)) !== FALSE) &&
+            ($subject_id == 0 || $Question['subject_id'] == $subject_id) &&
+            ($level_id == 0 || $Question['level_id'] == $level_id) &&
+            ($type_id == 0 || $Question['type_id'] == $type_id)
+    ) {
         ?>
         <li value="<?= $Question['id'] ?>"><?= $Question->Content ?></li>
         <ul>
