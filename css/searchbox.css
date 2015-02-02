@@ -1,0 +1,44 @@
+.field {
+  display:flex;
+  position:realtive;
+  margin: 2em 9em 1em;
+  width:80%;
+}
+
+.field input[type=text],
+.field>button {
+  display:block;
+  font:1.2em Myriad Pro;
+}
+
+.field input[type=text] {
+  flex: 1;
+  padding:0.6em;
+  border:0.2em ;
+  border-radius: 3px;
+}
+
+.field input:focus {
+    outline: 0;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.field>button {
+  padding:0.6em 0.8em;
+  background-color: #2E7ECC;
+  color:white;
+  border:none;
+  border-radius: 3px;
+}
+.field>button:hover {
+	cursor:pointer;
+        background: #67A1DA;
+}
+h1{
+	background:#2980b9;
+	color:#FFF;
+	padding:10px;
+	text-align:center;
+	font-size:24px;
+}
