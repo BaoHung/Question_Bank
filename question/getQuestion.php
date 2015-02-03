@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 
 $Questions = simplexml_load_file("../xml/Questions.xml");
 $subject_id = filter_input(INPUT_POST, 'subject_id');

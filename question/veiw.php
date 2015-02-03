@@ -59,6 +59,7 @@
                     $.ajax({
                         url: 'getQuestion.php',
                         type: 'POST',
+                        dataType: 'json',
                         data: {
                             subject_id: $('#SubjectList').val(),
                             level_id: $('#LevelList').val(),
