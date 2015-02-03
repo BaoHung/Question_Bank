@@ -20,6 +20,7 @@
     </ul>
 
     <!--Script Tooltip-->
+    <script src="/Question_Bank/js/cbpTooltipMenu.min.js"></script>
     <script>
         var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
     </script>

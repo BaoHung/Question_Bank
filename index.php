@@ -4,16 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Home</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/home_component.css" />
-        <link rel="stylesheet" type="text/css" href="css/home.css" />
-        <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
-        <script src="js/modernizr.custom.js"></script>    
-        <script src="js/cbpTooltipMenu.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/Question_Bank/css/home_component.css" />
+        <link rel="stylesheet" type="text/css" href="/Question_Bank/css/home.css" />
+        <?php include 'layout/referances.php' ?>
     </head>
     <body>
         <?php
-        include './layout/header.php';
+        include 'layout/header.php';
         ?>
 
         <!--Hover items-->
@@ -32,7 +29,7 @@
                     <img src="images/1.png" alt="img01">
                     <figcaption>
                         <h3>Exam</h3>
-                        <a href="">Take a look</a>
+                        <a href="exam/view.php">Take a look</a>
                     </figcaption>
                 </figure>
             </li>			

@@ -3,16 +3,23 @@
         <title>Question</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../js/jquery-1.11.2.js"></script>
+        <?php include '../layout/referances.php'; ?>
         <script>
             $(document).ready(function () {
                 $('#Questions button').click(function () {
                     $id = $(this).siblings('li').val();
-                    $.get("../question/getQuestion.php", {
-                        id: $id
-                    }, function (data) {
-                        $("#AddedQuestons").append(data);
-                    }, "html");
+                    $.ajax({
+                        url: '../question/getQuestion.php',
+                        type: 'POST',
+                        data: {id: $id},
+                        success: function (data) {
+                            $.each(data, function (index, question) {
+                                $("#AddedQuestons").append('<li value="">' + question.Content + '</li>');
+                                $("#AddedQuestons").append('<input type="hidden" name="question_id" value="' + question['@attributes'].id + '"/>');
+                            });
+                        },
+                        dataType: 'json'
+                    });
                 });
             });
         </script>
@@ -53,7 +60,11 @@
 
         <div>
             ADDED QUESTIONS
-            <ul id="AddedQuestons"></ul>
+            <form onsubmit="return false;">
+                <ul id="AddedQuestons"></ul>
+                <input type="hidden" name="subject_id" value="<?= $subject_id ?>"/>
+                <input type="submit" value="Add Exam"/>
+            </form>
         </div>
         <?php include '../layout/footer.php'; ?>
     </body>

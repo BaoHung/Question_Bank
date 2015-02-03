@@ -15,8 +15,11 @@
         <script>
             $(document).ready(function () {
 
-                $('body').on('click', '.content', function () {
-                    $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
+//                $('body').on('click', '.content', function () {
+//                    $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
+//                });
+                $('body').on('click', '.question', function () {
+                    $(this).find('.a_panel').toggleClass("a_toggle");
                 });
 
                 $('body').on('click', '#show_all', function () {
