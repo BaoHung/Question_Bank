@@ -5,7 +5,7 @@
             <a href="/Question_Bank">Question Bank</a>
         </li>
         <li style="visibility: visible">
-            <a href="/Question_Bank/question/veiw.php">Question</a>               
+            <a href="/Question_Bank/question/view.php">Question</a>               
         </li>
         <li style="visibility: visible">
             <a href="/Question_Bank/exam/view.php">Exam</a>
