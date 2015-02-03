@@ -7,6 +7,6 @@
     </Exam>
       -->
     <Exam id="1" number_of_question="50" duration="60">
-        <Exam_Name></Exam_Name>
+        <Exam_Name>Demo 1</Exam_Name>
     </Exam>
 </Exams>

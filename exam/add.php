@@ -6,6 +6,7 @@
         <?php include '../layout/referances.php'; ?>
         <script>
             $(document).ready(function () {
+                questionIndex = 0;
                 $('#Questions button').click(function () {
                     $id = $(this).siblings('li').val();
                     $.ajax({
@@ -15,7 +16,9 @@
                         success: function (data) {
                             $.each(data, function (index, question) {
                                 $("#AddedQuestons").append('<li value="">' + question.Content + '</li>');
-                                $("#AddedQuestons").append('<input type="hidden" name="question_id" value="' + question['@attributes'].id + '"/>');
+                                $("#AddedQuestons").append(
+                                        '<input type="hidden" name="question_id[]"' +
+                                        '       value="' + question['@attributes'].id + '"/>');
                             });
                         },
                         dataType: 'json'
@@ -28,10 +31,10 @@
         <?php include '../layout/header.php'; ?>
         <ul id="Questions">
             <?php
-            $subject_id = filter_input(INPUT_GET, 'subject_id');
+            $question_id = filter_input(INPUT_GET, 'subject_id');
             $Questions = simplexml_load_file("../xml/Questions.xml");
             foreach ($Questions->children() as $Question) {
-                if ($Question['subject_id'] == $subject_id) {
+                if ($Question['subject_id'] == $question_id) {
                     ?>
                     <div>
                         <li value="<?= $Question['id'] ?>"><?= $Question->Content ?></li>
@@ -60,9 +63,9 @@
 
         <div>
             ADDED QUESTIONS
-            <form onsubmit="return false;">
+            <form action="addExam.php" method="POST">
                 <ul id="AddedQuestons"></ul>
-                <input type="hidden" name="subject_id" value="<?= $subject_id ?>"/>
+                <input type="hidden" name="subject_id" value="<?= $question_id ?>"/>
                 <input type="submit" value="Add Exam"/>
             </form>
         </div>
