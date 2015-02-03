@@ -104,7 +104,7 @@
             <!--Search Box-->
             <div class="field" id="searchform">
                 <input type="text" id="Search" name="search" placeholder="Search question here . . ." />
-                <input type="submit" id="SearchButton" value="Search"></button>
+                <input type="submit" id="SearchButton" value="Search" />
             </div>
 
             <!--Filter-->
