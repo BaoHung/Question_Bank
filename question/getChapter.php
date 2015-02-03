@@ -11,5 +11,6 @@ $subject_id = filter_input(INPUT_GET, 'subject_id');
 foreach ($Subjects->children() as $Subject) {
     if ($Subject['id'] == $subject_id){
         echo $Subject['number_of_chapter'];
+        break;
     }
 }

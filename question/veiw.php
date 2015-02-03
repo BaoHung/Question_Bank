@@ -34,8 +34,16 @@
                         chapter: $('#ChapterList').val(),
                         q: $('#Search').val()
                     }, function (data) {
-                        $("#Questions").html(data);
-                    }, "html");
+                        htmlStr = '';
+                        $.each(data, function (index, item) {
+                            attr = item['@attributes'];
+                            htmlStr += '<li value="' + attr.id + '">' + item.Content + '</li>'
+                                    + '<ul>'
+                                    + ''
+                                    + '</ul>';
+                        });
+                        $("#Questions").html(htmlStr);
+                    }, "json");
                 }
             });
         </script>
