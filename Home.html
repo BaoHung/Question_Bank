@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Home</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/home_component.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+        <script src="js/modernizr.custom.js"></script>
+    </head>
+    <body>
+        <div>            
+            <!--Header-->
+            <ul id="cbp-tm-menu" class="cbp-tm-menu">
+                <li>
+                    <a href="#">Question Bank</a>
+                </li>
+                <li style="visibility: hidden">
+                    <a href="#">Question</a>               
+                </li>
+                <li style="visibility: hidden">
+                    <a href="#">Exam</a>
+                </li>
+                <li style="margin-right: 10px ; margin-left: 400px;">
+                    <a href="#">Roux Sparrow</a>
+                    <ul class="cbp-tm-submenu">
+                        <li><a href="#" class="cbp-tm-icon-cog">Change password</a></li>
+                        <li><a href="#" class="cbp-tm-icon-contract">Log out</a></li>                    
+                    </ul>
+                </li>
+            </ul>
+
+            <!--Script Tooltip-->
+            <script src="js/cbpTooltipMenu.min.js"></script>
+            <script>
+                var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+            </script>
+        </div>
+
+        <!--Hover items-->
+        <ul class="grid cs-style-3" style="padding-left: 100px;padding-top: 150px;padding-bottom: 50px;">
+            <li>
+                <figure>
+                    <img src="images/4.png" alt="img04">
+                    <figcaption>
+                        <h3>Question</h3>
+                        <a href="">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="images/1.png" alt="img01">
+                    <figcaption>
+                        <h3>Exam</h3>
+                        <a href="">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>			
+        </ul>
+    </body>
+</html>
