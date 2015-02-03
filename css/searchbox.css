@@ -6,7 +6,7 @@
 }
 
 .field input[type=text],
-.field>button {
+.field>input[type=submit] {
   display:block;
   font:1.2em Myriad Pro;
 }
@@ -24,14 +24,14 @@
     box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 }
 
-.field>button {
+.field>input[type=submit] {
   padding:0.6em 0.8em;
   background-color: #2E7ECC;
   color:white;
   border:none;
   border-radius: 3px;
 }
-.field>button:hover {
+.field>input[type=submit]:hover {
 	cursor:pointer;
         background: #67A1DA;
 }
