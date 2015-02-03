@@ -2,13 +2,13 @@
     <!--Header-->
     <ul id="cbp-tm-menu" class="cbp-tm-menu">
         <li>
-            <a href="#">Question Bank</a>
+            <a href="/Question_Bank">Question Bank</a>
         </li>
         <li style="visibility: visible">
-            <a href="#">Question</a>               
+            <a href="/Question_Bank/question/veiw.php">Question</a>               
         </li>
         <li style="visibility: visible">
-            <a href="#">Exam</a>
+            <a href="/Question_Bank/exam/view.php">Exam</a>
         </li>
         <li style="margin-right: 10px ; margin-left: 400px;">
             <a href="#">Roux Sparrow</a>
