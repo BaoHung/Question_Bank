@@ -20,7 +20,6 @@ and open the template in the editor.
          */
         $Levels = simplexml_load_file("../xml/Levels.xml");
 
-
         if (isset($_GET["Level_Name"])) {
             $Level_ID = $_GET["Level_Name"];
             $level = $Levels->addChild('Level');

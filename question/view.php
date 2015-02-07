@@ -15,11 +15,8 @@
         <script>
             $(document).ready(function () {
 
-//                $('body').on('click', '.content', function () {
-//                    $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
-//                });
-                $('body').on('click', '.question', function () {
-                    $(this).find('.a_panel').toggleClass("a_toggle");
+                $('body').on('click', '.content', function () {
+                    $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
                 });
 
                 $('body').on('click', '#show_all', function () {
@@ -37,17 +34,21 @@
                 });
 
                 $('body').on('change', '#SubjectList', function () {
-                    $.ajax({
-                        url: 'getChapter.php',
-                        type: 'GET',
-                        data: {subject_id: $('#SubjectList').val()},
-                        success: function (data) {
-                            $('#ChapterList').html('<option value="0" selected>All</option>');
-                            for (i = 0; i < parseInt(data); i++) {
-                                $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                    if ($('#SubjectList').val() != 0) {
+                        $.ajax({
+                            url: 'getChapter.php',
+                            type: 'GET',
+                            data: {subject_id: $('#SubjectList').val()},
+                            success: function (data) {
+                                $('#ChapterList').html('<option value="0" selected>All</option>');
+                                for (i = 0; i < parseInt(data); i++) {
+                                    $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                                }
                             }
-                        }
-                    });
+                        });
+                    } else {
+                        $('#ChapterList').html('<option value="0" selected>All</option>');
+                    }
                 });
 
                 $('body').on('change', '.option', function () {

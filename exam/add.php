@@ -66,6 +66,8 @@
             <form action="addExam.php" method="POST">
                 <ul id="AddedQuestons"></ul>
                 <input type="hidden" name="subject_id" value="<?= $question_id ?>"/>
+                Duration <input type="number" name="duration" />
+                Name <input type="text" name="name" />
                 <input type="submit" value="Add Exam"/>
             </form>
         </div>

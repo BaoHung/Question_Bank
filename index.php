@@ -20,7 +20,7 @@
                     <img src="images/4.png" alt="img04">
                     <figcaption>
                         <h3>Question</h3>
-                        <a href="">Take a look</a>
+                        <a href="question/view.php">Take a look</a>
                     </figcaption>
                 </figure>
             </li>
