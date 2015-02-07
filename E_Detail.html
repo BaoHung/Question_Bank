@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exam Detail</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+        <link rel="stylesheet" type="text/css" href="css/filter.css" />
+        <link rel="stylesheet" type="text/css" href="css/menu_icon.css" />
+        <link rel="stylesheet" type="text/css" href="css/q_view.css" />
+        <script src="js/modernizr.custom.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".content").click(function () {
+                    $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
+                });
+
+                $("#show_all").click(function () {
+                    if ($(this).hasClass("clicked")) {
+                        $(".a_panel").removeClass("a_toggle");
+                        $(this).removeClass("clicked");
+                        $(this).css("background-color", "#67A1DA");
+                        $(this).val("Show all answers");
+                    } else {
+                        $(".a_panel").addClass("a_toggle");
+                        $(this).addClass("clicked");
+                        $(this).css("background-color", "#5788B8");
+                        $(this).val("Hide all answers");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!--Header-->
+        <div>            
+            <ul id="cbp-tm-menu" class="cbp-tm-menu">
+                <li>
+                    <a href="#">Question Bank</a>
+                </li>
+                <li style="visibility: visible">
+                    <a href="#">Question</a>               
+                </li>
+                <li style="visibility: visible">
+                    <a href="#">Exam</a>
+                </li>
+                <li style="margin-right: 10px ; margin-left: 400px;">
+                    <a href="#">Roux Sparrow</a>
+                    <ul class="cbp-tm-submenu">
+                        <li><a href="#" class="cbp-tm-icon-cog">Change password</a></li>
+                        <li><a href="#" class="cbp-tm-icon-contract">Log out</a></li>                    
+                    </ul>
+                </li>
+            </ul>
+
+            <!--Script Tooltip-->
+            <script src="js/cbpTooltipMenu.min.js"></script>
+            <script>
+            var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+            </script>
+        </div>
+
+        <!--Exam Name-->
+        <h1>HTML101_FUHL_SP2015_FE_143765</h1>
+
+        <!--Filter-->
+        <div class="filter_style">
+            <input type="button" value=" + Edit this exam" id="e_edit" style="background-color: #3552c7"/>
+            <div>
+                <label style="color: #ffffff" >Subject:</label>
+                <label>HTML 101</label>                
+            </div>
+            <div>
+                <label style="color: #ffffff" >Examination:</label>
+                <label>Final</label>
+            </div>
+            <div>
+                <label style="color: #ffffff" >Time:</label>
+                <label>60 mins</label>
+            </div>
+            <div>
+                <label style="color: #ffffff" >Number of questions:</label>
+                <label>2</label>
+            </div>
+
+            <input type="button" value="Show all answers" id="show_all"/>
+        </div>
+
+
+        <!--Question-->
+        <div class="question">
+            <div class="q_content">            
+                <div class="content">1. Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress.
+                    Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape radish bush tomato ricebean black-eyed pea maize eggplant.
+                    There worse by an of miles civil. Manner before lively wholly am mr indeed expect. Among every merry his yet has her.
+                    You mistress get dashwood children off. Met whose marry under the merit. In it do continual consulted no listening.
+                    Devonshire sir sex motionless travelling six themselves. So colonel as greatly shewing herself observe ashamed. 
+                    Demands minutes regular ye to detract is.</div>
+            </div>
+
+            <div class="a_panel">
+                <div>A. Name were we at hope. Remainder household direction zealously the unwilling bed sex.</div>
+                <div><u>B. Stood her place one ten spoke yet. Head case knew ever set why over. </u></div>
+                <div>C. Marianne returned of peculiar replying in moderate. Roused get enable garret estate old county.</div>
+                <div>D. Entreaties you devonshire law dissimilar terminated. </div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="q_content">            
+                <div class="content">2. Manner before lively wholly am mr indeed expect. Among every merry his yet has her.
+                    You mistress get dashwood children off. Met whose marry under the merit. In it do continual consulted no listening.
+                    Devonshire sir sex motionless travelling six themselves. So colonel as greatly shewing herself observe ashamed. 
+                    Demands minutes regular ye to detract is.</div>                
+
+            </div>
+
+            <div class="a_panel">
+                <div>A. Name were we at hope. Remainder household direction zealously the unwilling bed sex.</div>
+                <div>B. Stood her place one ten spoke yet. Head case knew ever set why over. </div>
+                <div><u>C. Marianne returned of peculiar replying in moderate. Roused get enable garret estate old county.</u></div>
+                <div>D. Entreaties you devonshire law dissimilar terminated. </div>
+            </div>
+        </div>
+    </body>
+</html>

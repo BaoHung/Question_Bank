@@ -48,7 +48,7 @@
 
 .no-touch .cbp-tm-menu > li > a:hover,
 .no-touch .cbp-tm-menu > li > a:active {
-	color: #02639d;
+	color: #EC6767;
 }
 
 /* sumbenu with transitions */
@@ -146,7 +146,7 @@ the right position for the arrow
 .no-touch .cbp-tm-submenu > li > a:hover,
 .no-touch .cbp-tm-submenu > li > a:active {
 	color: #fff;
-	background: #47a3da;
+	background: #EC6767;
 }
 
 /* the icons (main level menu icon and sublevel icons) */

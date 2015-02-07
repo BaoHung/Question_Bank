@@ -1,12 +1,12 @@
 .field {
   display:flex;
-  position:realtive;
-  margin: 2em 9em 1em;
+  position: relative;
+  margin: 2em 9em 1em 10%;
   width:80%;
 }
 
 .field input[type=text],
-.field>input[type=submit] {
+.field>button {
   display:block;
   font:1.2em Myriad Pro;
 }
@@ -24,14 +24,14 @@
     box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 }
 
-.field>input[type=submit] {
+.field>button {
   padding:0.6em 0.8em;
   background-color: #2E7ECC;
   color:white;
   border:none;
   border-radius: 3px;
 }
-.field>input[type=submit]:hover {
+.field>button:hover {
 	cursor:pointer;
         background: #67A1DA;
 }

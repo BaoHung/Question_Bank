@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add question</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/home_component.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+        <link rel="stylesheet" type="text/css" href="css/q_add.css" />
+        <link rel="stylesheet" type="text/css" href="css/filter.css" />
+        <script src="js/modernizr.custom.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#a_add').click(function () {
+                    $('.answers').append('<div><textarea class="a-textarea" placeholder="Enter answer here..."></textarea><div class="answer-tool"><input type="checkbox" />Correct<input class="a-remove" type="button" value="Remove this answer"/></div></div>');
+                });
+                $('.a-remove').click(function () {
+                    $('.answers').append('<div><textarea class="a-textarea" placeholder="Enter answer here..."></textarea><div class="answer-tool"><input type="checkbox" />Correct<input class="a-remove" type="button" value="Remove this answer"/></div></div>');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>            
+            <!--Header-->
+            <ul id="cbp-tm-menu" class="cbp-tm-menu">
+                <li>
+                    <a href="#">Question Bank</a>
+                </li>
+                <li style="visibility: visible">
+                    <a href="#">Question</a>               
+                </li>
+                <li style="visibility: visible">
+                    <a href="#">Exam</a>
+                </li>
+                <li style="margin-right: 10px ; margin-left: 400px;">
+                    <a href="#">Roux Sparrow</a>
+                    <ul class="cbp-tm-submenu">
+                        <li><a href="#" class="cbp-tm-icon-cog">Change password</a></li>
+                        <li><a href="#" class="cbp-tm-icon-contract">Log out</a></li>                    
+                    </ul>
+                </li>
+            </ul>
+            <!--Script Tooltip-->
+            <script src="js/cbpTooltipMenu.min.js"></script>
+            <script>
+            var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+            </script>
+        </div>
+
+        <!--Add Question-->
+        <h1 style="text-align: center;font-weight: 300;">Add new question</h1>
+        <form class="add-form">
+            <span>Question</span>
+            <textarea class="q-textarea" placeholder="Enter question here..."></textarea>
+            <div class="filter_style">            
+                Subject
+                <span class="custom-dropdown">
+                    <select>
+                        <option selected="">Select Subject</option>
+                        <option>HTML101</option>
+                        <option>CSS101</option>  
+                        <option>JS101</option>
+                        <option>PHP101</option>
+                    </select>
+                </span>
+                Chapter
+                <span class="custom-dropdown">
+                    <select disabled>
+                        <option>Chap 1</option>
+                        <option selected>All</option>
+                        <option>Chap 2</option>  
+                        <option>Chap 3</option>
+                        <option>Chap 4</option>
+                    </select>
+                </span>
+                Level
+                <span class="custom-dropdown">
+                    <select>
+                        <option selected>All</option>
+                        <option>Easy</option>
+                        <option>Medium</option>  
+                        <option>Hard</option>
+                    </select>
+                </span>
+                Scrambled
+                <span class="custom-dropdown">
+                    <select>
+                        <option selected>All</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </span>
+                Type
+                <span class="custom-dropdown">
+                    <select>
+                        <option selected>All</option>
+                        <option>Single choice</option>
+                        <option>Multiple choice</option>
+                    </select>
+                </span>
+            </div>
+            <input id="a_add" type="button" value="Add answer" />
+            
+            <!--Answers-->
+            <div class="answers">
+                <span>Answers</span>
+                <div>
+                    <textarea class="a-textarea" placeholder="Enter answer here..."></textarea>
+                    <div class="answer-tool" >
+                        <input type="checkbox" />Correct
+                        <input class="a-remove" type="button" value="Remove this answer"/>
+                    </div>                                
+                </div>
+
+            </div>
+
+        </form>
+    </body>
+</html>

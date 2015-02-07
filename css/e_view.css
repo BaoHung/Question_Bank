@@ -1,0 +1,38 @@
+.exam{
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.e_content{
+    background: #3594cb;
+    color: #fff;
+    padding: 0.5em;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    border-radius: 5px; 
+    height: 100%;
+    display: block;
+}
+.e_content .content:hover{
+    background: #3594de;
+    cursor: pointer;
+}
+.e_tool{
+    background: #47a3da;
+    color: #fff;
+    padding: 0em;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    border-radius: 5px;
+    height: 100%;
+    width: 5%;
+    text-align: center;
+    display: inline-block;
+}
+.e_tool_group{
+    text-align: right;
+}

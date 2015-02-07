@@ -16,7 +16,12 @@
     background: #3594de;
     cursor: pointer;
 }
-
+.filter_style>div{
+    display: inline;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 4%;
+}
 .square {
     width: .7em;
     height: .7em;
