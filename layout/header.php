@@ -16,7 +16,7 @@
         <li style="width: 28%;text-align: right">
             <a href="#">Roux Sparrow</a>
             <ul class="cbp-tm-submenu">
-                <li><a href="#" class="cbp-tm-icon-cog">Change password</a></li>
+                <li><a href="/Question_Bank/Change_Pass.php" class="cbp-tm-icon-cog">Change password</a></li>
                 <li><a href="/Question_Bank/Login.html" class="cbp-tm-icon-contract">Log out</a></li>                    
             </ul>
         </li>
