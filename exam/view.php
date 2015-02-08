@@ -9,8 +9,17 @@
         <link rel="stylesheet" type="text/css" href="../css/filter.css" />
         <link rel="stylesheet" type="text/css" href="../css/menu_icon.css" />
         <link rel="stylesheet" type="text/css" href="../css/e_view.css" />
+        <script src="../js/jquery-1.11.2.min.js"></script>
         <script src="../js/modernizr.custom.js"></script>
-
+        <script language="JavaScript">
+            $(document).ready(function () {
+                $('.icon-trash').click(function () {
+                    if (confirm("Do you want to delete this question?")) {
+                        // TODO
+                    }
+                });
+            });
+        </script>
     </head>
     <body>
         <?php include '../layout/header.php'; ?>
@@ -19,7 +28,9 @@
         <h1>Exams</h1>
         <!--Filter-->
         <div class="filter_style">
-            <input type="button" value=" + Add new exam" id="e_add" style="background-color: #3552c7"/>
+            <a href="add.php">
+                <input type="button" value=" + Add new exam" id="e_add" style="background-color: #3552c7"/>
+            </a>
             Subject
             <span class="custom-dropdown">
                 <select id="SubjectList" name="subject" class="option">
@@ -55,8 +66,8 @@
                 <div class="e_content">            
                     <div class="content"><?= $Exam->Exam_Name ?></div>
                     <div class="e_tool_group">
-                        <div class="e_tool"><a href="javascript: void(0)"><span class="icon-pen"></span></a></div>
-                        <div class="e_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
+                        <a href="add.php?id=<?= $Exam['id'] ?>"><div class="e_tool"><span class="icon-pen"></span></div></a>
+                        <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>
                     </div>
                 </div>
             </div>

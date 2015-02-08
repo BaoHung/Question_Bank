@@ -8,36 +8,29 @@ Anh tự Subject_ID theo kiểu HTML101 nhé-->
         <Subject_Name>HTML</Subject_Name>
         <Subject_Code>HTML101</Subject_Code>
     </Subject>
+    
     <Subject id="2" number_of_chapter="8">
-        <Subject_Name>CSS</Subject_Name>        
+        <Subject_Name>CSS</Subject_Name>
         <Subject_Code>CSS101</Subject_Code>
     </Subject>
+    
     <Subject id="3" number_of_chapter="14">
         <Subject_Name>HTML5</Subject_Name>
         <Subject_Code>HTML501</Subject_Code>
     </Subject>
+    
     <Subject id="4" number_of_chapter="4">
-        <Subject_Name>JavaScrIpt</Subject_Name>
+        <Subject_Name>JavaScript</Subject_Name>
         <Subject_Code>JVS101</Subject_Code>
     </Subject>
-    <Subject id="5" number_of_chapter="6">
-        <Subject_Name>JQuery</Subject_Name>
-        <Subject_Code>JQ101</Subject_Code>
-    </Subject>
-    <Subject id="6" number_of_chapter="8">
+        
+    <Subject id="5" number_of_chapter="8">
         <Subject_Name>XML</Subject_Name>
         <Subject_Code>XML101</Subject_Code>
     </Subject>
-    <Subject id="7" number_of_chapter="6">
-        <Subject_Name>ASP</Subject_Name>
-        <Subject_Code>ASP101</Subject_Code>
-    </Subject>
-    <Subject id="8" number_of_chapter="8">
+        
+    <Subject id="6" number_of_chapter="8">
         <Subject_Name>PHP</Subject_Name>
         <Subject_Code>PHP101</Subject_Code>
-    </Subject>
-    <Subject id="9" number_of_chapter="11">
-        <Subject_Name>SQL</Subject_Name>
-        <Subject_Code>SQL101</Subject_Code>
     </Subject>
 </Subjects>

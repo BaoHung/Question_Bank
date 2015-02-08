@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--Anh đừng sửa file này nhé :D -->
+
 <Levels xmlns:xsi="Levels.xsd">
     <Level id="1">
         <Level_Name>Easy</Level_Name>
     </Level>
+    
     <Level id="2">
         <Level_Name>Medium</Level_Name>
     </Level>
+    
     <Level id="3">
         <Level_Name>Hard</Level_Name>
     </Level>

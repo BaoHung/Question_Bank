@@ -1,3 +1,16 @@
+<?php
+$questionID = filter_input(INPUT_GET, 'id');
+$Questions = simplexml_load_file("../xml/Questions.xml");
+$Question = NULL;
+if ($questionID != "") {
+    foreach ($Questions->children() as $Q) {
+        if ($Q['id'] == $questionID) {
+            $Question = $Q;
+            break;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -55,18 +68,28 @@
         <h1 style="text-align: center;font-weight: 300;">Add new question</h1>
         <form class="add-form">
             <span>Question</span>
-            <textarea class="q-textarea" placeholder="Enter question here..."></textarea>
+            <textarea class="q-textarea" placeholder="Enter question here..."><?php
+                if (!is_null($Question)) {
+                    echo $Question->Content;
+                }
+                ?></textarea>
             <div class="filter_style">            
                 Subject
                 <span class="custom-dropdown">
                     <select id="SubjectList" name="subject" class="option">
-                        <option value="0" selected>All</option>
+                        <option value="0">All</option>
                         <?php
                         $Subjects = simplexml_load_file("../xml/Subjects.xml");
                         foreach ($Subjects->children() as $Subject) {
-                            ?>
-                            <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
-                            <?php
+                            if (!is_null($Question) && $Question['subject_id'] + '' == $Subject['id']) {
+                                ?>
+                                <option selected value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+                                <?php
+                            } else {
+                                ?>
+                                <option  value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+                                <?php
+                            }
                         }
                         ?>
                     </select>
@@ -74,19 +97,32 @@
                 Chapter
                 <span class="custom-dropdown">
                     <select id="ChapterList" name="chapter" class="option">
-                        <option value="0" selected>All</option>
+                        <option value="0">All</option>
+                        <?php
+                        for ($i = 1; $i < $Question['chapter']; $i++) {
+                            ?>
+                            <option value="0" selected><?= $i ?></option>
+                            <?php
+                        }
+                        ?>
                     </select>
                 </span>
                 Level
                 <span class="custom-dropdown">
                     <select id="LevelList" name="level" class="option">
-                        <option value="0" selected>All</option>
+                        <option value="0">All</option>
                         <?php
                         $Levels = simplexml_load_file("../xml/Levels.xml");
                         foreach ($Levels->children() as $Level) {
-                            ?>
-                            <option value="<?= $Level['id'] ?>"><?= $Level->Level_Name ?></option>
-                            <?php
+                            if (!is_null($Question)) {
+                                ?>                        
+                                <option selected value="<?= $Level['id'] ?>"><?= $Level->Level_Name ?></option>
+                                <?php
+                            } else {
+                                ?>
+                                <option value="<?= $Level['id'] ?>"><?= $Level->Level_Name ?></option>
+                                <?php
+                            }
                         }
                         ?>
                     </select>
@@ -94,9 +130,21 @@
                 Scrambled
                 <span class="custom-dropdown">
                     <select>
-                        <option selected>All</option>
-                        <option>Yes</option>
-                        <option>No</option>
+                        <option>All</option>
+                        <?php
+                        if (!is_null($Question)) {
+                            ?>
+                            <option selected="">Yes</option>
+                            <option>No</option>
+                            <?php
+                        } else {
+                            ?>
+                            <option>Yes</option>
+                            <option>No</option>
+                            <?php
+                        }
+                        ?>
+
                     </select>
                 </span>
                 Type
@@ -119,20 +167,38 @@
             <!--Answers-->
             <div class="answers">
                 <span>Answers</span>
-                <div class="answer">
-                    <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>
-                    <div class="answer-tool" >
-                        <label><input type="checkbox" >Correct</label>
-                        <input class="a-remove" type="button" value="Remove this answer"/>
-                    </div>                                
-                </div>
-                <div class="answer">
-                    <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>
-                    <div class="answer-tool" >
-                        <label><input type="checkbox" >Correct</label>
-                        <input class="a-remove" type="button" value="Remove this answer"/>
-                    </div>                                
-                </div>
+                <?php
+                if (!is_null($Question)) {
+                    foreach ($Question->Answer as $Answer) {
+                        ?>
+                        <div class="answer">
+                            <textarea class="a-textarea" placeholder="Enter answer here..." ><?=$Answer?></textarea>
+                            <div class="answer-tool" >
+                                <label><input type="checkbox" >Correct</label>
+                                <input class="a-remove" type="button" value="Remove this answer"/>
+                            </div>                                
+                        </div>
+                        <?php
+                    }
+                } else {
+                    ?>
+                    <div class="answer">
+                        <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>
+                        <div class="answer-tool" >
+                            <label><input type="checkbox" >Correct</label>
+                            <input class="a-remove" type="button" value="Remove this answer"/>
+                        </div>                                
+                    </div>
+                    <div class="answer">
+                        <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>
+                        <div class="answer-tool" >
+                            <label><input type="checkbox" >Correct</label>
+                            <input class="a-remove" type="button" value="Remove this answer"/>
+                        </div>                                
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
             <input style="margin-left: 47%" id="a_save" type="button" value="Save" />
         </form>

@@ -2,13 +2,16 @@
     <!--Header-->
     <ul id="cbp-tm-menu" class="cbp-tm-menu">
         <li style="width: 24%;">
-            <a href="#">Question Bank</a>
+            <a href="/Question_Bank">Question Bank</a>
         </li>
-        <li style="visibility: visible;width: 23%;">
-            <a href="#">Question</a>               
+        <li style="visibility: visible;width: 15%;">
+            <a href="/Question_Bank/question/view.php">Question</a>               
         </li>
-        <li style="visibility: visible;width: 23%;">
-            <a href="#">Exam</a>
+        <li style="visibility: visible;width: 15%;">
+            <a href="/Question_Bank/exam/view.php">Exam</a>
+        </li>
+        <li style="visibility: visible;width: 15%;">
+            <a href="/Question_Bank/subject/view.php">Subject</a>
         </li>
         <li style="width: 28%;text-align: right">
             <a href="#">Roux Sparrow</a>

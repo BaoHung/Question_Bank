@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--Anh đừng sửa file này nhé :D -->
+
 <Types>
     <Type id="1">
         <Type_Name>Single Choice</Type_Name>
     </Type>
+    
     <Type id="2">
         <Type_Name>Multiple Choice</Type_Name>
     </Type>   
