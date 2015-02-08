@@ -1,8 +1,9 @@
 .filter_style{
     display: block;
     position: relative;
-    margin-left: 40px;
+/*    margin-left: 40px;*/
     margin-bottom: 20px;
+    text-align: center;
 }
 .filter_style input{
     padding: 0.8em 0.8em;

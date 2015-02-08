@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Question_Exams xmlns:xsi="Question_Exams.xsd">
-    <Question_Exam exam_id="1" question_id="1"/>
-    <Question_Exam exam_id="3" question_id="2"/>
-    <Question_Exam exam_id="3" question_id="4"/>
-    <Question_Exam exam_id="4" question_id="1"/>
-    <Question_Exam exam_id="4" question_id="3"/>
+    <Question_Exam exam_id="1">
+        <Question_ID>1</Question_ID>
+    </Question_Exam>
+    <Question_Exam exam_id="3">
+        <Question_ID>2</Question_ID>
+        <Question_ID>4</Question_ID>
+    </Question_Exam>
+    <Question_Exam exam_id="4">
+        <Question_ID>3</Question_ID>
+        <Question_ID>4</Question_ID>
+    </Question_Exam>
 </Question_Exams>
