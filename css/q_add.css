@@ -5,7 +5,7 @@
     border: #000;
     border-radius: 5px;
     position: relative;
-    padding-bottom: 1%;
+    padding-bottom: 1% 
 }
 .add-form>span{
     display: block;
@@ -77,8 +77,4 @@
     margin-left: 1.2em;
     padding-top: 1%;
     font-size: 1.2em;
-}
-
-textarea {
-    resize: none;
 }
