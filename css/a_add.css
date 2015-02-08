@@ -1,0 +1,41 @@
+.acc-form{
+    background-color: #2274A5;
+    width: 100%;
+    margin: 2% 0% 2% 0%;
+    border: #000;
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: 1% 
+}
+.acc-form>span{
+    display: block;
+    position: relative;
+    color: #ffffff;
+    margin-left: 1.2em;
+    padding-top: 1%;
+    font-size: 1.2em;
+}
+.acc-form>div>div>input[type="text"]{
+    font-size: 0.8em;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    margin: 0 0.5em 0.5em 0.5em;
+    width: 40%;
+}
+.acc-form>div{
+    text-align: center;
+    padding: 2% 0 2% 0;
+}
+.acc-form>input[type="submit"]{
+    padding: 0.6em 0.8em;
+    background-color: #ED4E6E;
+    color:white;
+    border:none;
+    border-radius: 3px;
+    margin: 0 0% 2% 48%;
+}
+.acc-form>input[type="submit"]:hover{
+    cursor: pointer;
+    
+}
