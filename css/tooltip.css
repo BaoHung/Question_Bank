@@ -33,8 +33,9 @@
 /* first level menu items */
 .cbp-tm-menu > li {
 	display: inline-block;
-	margin: 0 4.6em;
+	/* margin: 0 4.6em; */
 	position: relative;
+	/* right:  0; */
 }
 
 .cbp-tm-menu > li > a {
@@ -101,11 +102,6 @@ the right position for the arrow
 	pointer-events: none;
 }
 
-.cbp-tm-show-above .cbp-tm-submenu:after {
-	top: 100%;
-	margin-top: -10px;
-}
-
 .cbp-tm-show-below .cbp-tm-submenu:after {
 	bottom: 100%;
 	margin-bottom: -10px;
@@ -115,7 +111,7 @@ the right position for the arrow
 	border-color: transparent;
 	border-width: 16px;
 	margin-left: -16px;
-	left: 50%;
+	left: 80%;
 }
 
 .cbp-tm-show-above .cbp-tm-submenu:after {

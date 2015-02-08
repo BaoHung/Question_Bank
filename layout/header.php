@@ -1,16 +1,16 @@
 <div>            
     <!--Header-->
     <ul id="cbp-tm-menu" class="cbp-tm-menu">
-        <li>
-            <a href="/Question_Bank">Question Bank</a>
+        <li style="width: 24%;">
+            <a href="#">Question Bank</a>
         </li>
-        <li style="visibility: visible">
-            <a href="/Question_Bank/question/view.php">Question</a>               
+        <li style="visibility: visible;width: 23%;">
+            <a href="#">Question</a>               
         </li>
-        <li style="visibility: visible">
-            <a href="/Question_Bank/exam/view.php">Exam</a>
+        <li style="visibility: visible;width: 23%;">
+            <a href="#">Exam</a>
         </li>
-        <li style="margin-right: 10px ; margin-left: 400px;">
+        <li style="width: 28%;text-align: right">
             <a href="#">Roux Sparrow</a>
             <ul class="cbp-tm-submenu">
                 <li><a href="#" class="cbp-tm-icon-cog">Change password</a></li>
