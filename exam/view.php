@@ -34,50 +34,35 @@
                     ?>
                 </select>
             </span>
-<!--            Examination
-            <span class="custom-dropdown">
-                <select>
-                    <option selected>All</option>
-                    <option>Progress</option>
-                    <option>MidTerm</option>  
-                    <option>Final</option>                    
-                </select>
-            </span>            -->
+            <!--            Examination
+                        <span class="custom-dropdown">
+                            <select>
+                                <option selected>All</option>
+                                <option>Progress</option>
+                                <option>MidTerm</option>  
+                                <option>Final</option>                    
+                            </select>
+                        </span>            -->
         </div>
 
 
         <!--Question-->       
-        <div class="exam">
-            <div class="e_content">            
-                <div class="content">1. HTML101_FUHL_SP2015_FE_143765</div>
-                <div class="e_tool_group">
-                    <div class="e_tool"><a href=""><span class="icon-pen"></span></a></div>
-                    <div class="e_tool"><a href=""><span class="icon-trash"></span></a></div>
+        <?php
+        $Exams = simplexml_load_file("../xml/Exams.xml");
+        foreach ($Exams->children() as $Exam) {
+            ?>
+            <div class="exam">
+                <div class="e_content">            
+                    <div class="content"><?= $Exam->Exam_Name ?></div>
+                    <div class="e_tool_group">
+                        <div class="e_tool"><a href=""><span class="icon-pen"></span></a></div>
+                        <div class="e_tool"><a href=""><span class="icon-trash"></span></a></div>
+                    </div>
                 </div>
-
             </div>
-        </div>
-        <div class="exam">
-            <div class="e_content">            
-                <div class="content">2. CSS_PT1_Renew15_7345623251</div>
-                <div class="e_tool_group">
-                    <div class="e_tool"><a href=""><span class="icon-pen"></span></a></div>
-                    <div class="e_tool"><a href=""><span class="icon-trash"></span></a></div>
-                </div>
-
-            </div>
-        </div>
-        <div class="exam">
-            <div class="e_content">            
-                <div class="content">3. HTML101_FUHL_QUIZ1_2_152436</div>
-                <div class="e_tool_group">
-                    <div class="e_tool"><a href=""><span class="icon-pen"></span></a></div>
-                    <div class="e_tool"><a href=""><span class="icon-trash"></span></a></div>
-                </div>
-
-            </div>
-        </div>
-
+            <?php
+        }
+        ?>
     </body>
 
 </html>
