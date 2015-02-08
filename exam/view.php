@@ -55,8 +55,8 @@
                 <div class="e_content">            
                     <div class="content"><?= $Exam->Exam_Name ?></div>
                     <div class="e_tool_group">
-                        <div class="e_tool"><a href=""><span class="icon-pen"></span></a></div>
-                        <div class="e_tool"><a href=""><span class="icon-trash"></span></a></div>
+                        <div class="e_tool"><a href="javascript: void(0)"><span class="icon-pen"></span></a></div>
+                        <div class="e_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
                     </div>
                 </div>
             </div>

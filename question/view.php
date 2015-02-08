@@ -59,6 +59,12 @@
                     sendRequest();
                 });
 
+                $('.icon-trash').click(function () {
+                    if(confirm("Do you want to delete this question?")){
+                        // TODO
+                    }
+                });
+
                 function sendRequest() {
                     $.ajax({
                         url: 'getQuestion.php',
@@ -184,8 +190,8 @@
                     <div class="q_content">            
                         <div class="content"><?= $Question->Content ?></div>
                         <div class="q_tool_group">
-                            <div class="q_tool"><a href=""><span class="icon-pen"></span></a></div>
-                            <div class="q_tool"><a href=""><span class="icon-trash"></span></a></div>
+                            <div class="q_tool"><a href="../question/add.php?id=<?=$Question['id']?>"><span class="icon-pen"></span></a></div>
+                            <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
                         </div>
                     </div>
 
