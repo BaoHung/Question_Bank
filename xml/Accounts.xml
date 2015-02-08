@@ -4,32 +4,28 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
-
-<root>
-    <Accounts>
-        <Account id="1" role="0">
-            <Email>phuonglv@fpt.edu.vn</Email>
-            <Password>25d55ad283aa400af464c76d713c07ad</Password>
-            <FullName>Le Viet Phuong</FullName>
-        </Account>
+<Accounts xmlns:xsi="Accounts.xsd">
+    <Account id="1" role="0">
+        <Email>phuonglv@fpt.edu.vn</Email>
+        <Password>25d55ad283aa400af464c76d713c07ad</Password>
+        <FullName>Le Viet Phuong</FullName>
+    </Account>
         
-        <Account id="2" role="0">
-            <Email>tranghm@fpt.edu.vn</Email>
-            <Password>25d55ad283aa400af464c76d713c07ad</Password>
-            <FullName>Ha Minh Trang</FullName>
-        </Account>
+    <Account id="2" role="0">
+        <Email>tranghm@fpt.edu.vn</Email>
+        <Password>25d55ad283aa400af464c76d713c07ad</Password>
+        <FullName>Ha Minh Trang</FullName>
+    </Account>
         
-        <Account id="3" role="1">
-            <Email>hungnvb@fpt.edu.vn</Email>
-            <Password>25d55ad283aa400af464c76d713c07ad</Password>
-            <FullName>Nguyen Vu Bao Hung</FullName>
-        </Account>
+    <Account id="3" role="1">
+        <Email>hungnvb@fpt.edu.vn</Email>
+        <Password>25d55ad283aa400af464c76d713c07ad</Password>
+        <FullName>Nguyen Vu Bao Hung</FullName>
+    </Account>
         
-        <Account id="4" role="1">
-            <Email>ducha@fpt.edu.vn</Email>
-            <Password>25d55ad283aa400af464c76d713c07ad</Password>
-            <FullName>Hoang Anh Duc</FullName>
-        </Account>
-    </Accounts>
-</root>
+    <Account id="4" role="1">
+        <Email>ducha@fpt.edu.vn</Email>
+        <Password>25d55ad283aa400af464c76d713c07ad</Password>
+        <FullName>Hoang Anh Duc</FullName>
+    </Account>
+</Accounts>

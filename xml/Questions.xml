@@ -12,17 +12,6 @@
 -->
 
 <Questions>
-    
-<!--    <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
-        <Content></Content>  (Nội dung câu hỏi) type: string
-        <Answer correct=""></Answer>  (Nội dung câu trả lời - string); (correct: đáp án đúng (true/false)) 
-    </Question>
-    
-    <Question id="" level_id="" type_id="" subject_id="" scrambled="" chapter="">
-        <Content></Content>
-        <Answer correct=""></Answer>
-    </Question>-->
-    
     <Question id="1" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
         <Content>What does XML stand for?</Content>
         <Answer correct="true">eXtensible Markup Language</Answer>
@@ -44,14 +33,14 @@
         <Answer correct="false">true</Answer>
     </Question>
     
-    <Question id="4" level_id="1" type_id="1" subject_id="XML101" scrambled="true" chapter="1">
+    <Question id="4" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
         <Content>What is the correct syntax of the declaration which defines the XML version?</Content>
         <Answer correct="false">&lt; ? xml version=&quot;1.0&quot; /&gt;</Answer>
         <Answer correct="false">&lt; xml version=&quot;1.0&quot; /&gt;</Answer>
         <Answer correct="true">&lt; ?xml version=&quot;1.0&quot; ?&gt;</Answer>
     </Question>
     
-    <Question id="5" level_id="2" type_id="1" subject_id="XML101" scrambled="true" chapter="5">
+    <Question id="5" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
         <Content> What does DTD stand for?</Content>
         <Answer correct="false">Dynamic Type Definition</Answer>
         <Answer correct="false">Direct Type Definition</Answer>
@@ -59,7 +48,7 @@
         <Answer correct="false">Do The Dance</Answer>
     </Question>
     
-    <Question id="8" level_id="2" type_id="1" subject_id="XML101" scrambled="true" chapter="5">
+    <Question id="6" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
         <Content>Which statement is true?</Content>
         <Answer correct="false">All XML elements must be lower case</Answer>
         <Answer correct="false">All the statements are true</Answer>
@@ -67,7 +56,7 @@
         <Answer correct="false">All XML documents must have a DTD</Answer>
     </Question>
     
-    <Question id="9" level_id="3" type_id="1" subject_id="XML101" scrambled="true" chapter="6">
+    <Question id="7" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="6">
         <Content> Which statement is true?</Content>
         <Answer correct="false">XML tags are case sensitive</Answer>
         <Answer correct="false">XML elements must be properly nested</Answer>
@@ -75,50 +64,29 @@
         <Answer correct="true">All the statements are true</Answer>
     </Question>
     
-    <Question id="10" level_id="3" type_id="1" subject_id="XML101" scrambled="true" chapter="3">
+    <Question id="8" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="3">
         <Content>XML preserves white spaces</Content>
         <Answer correct="true">true</Answer>
         <Answer correct="false">false</Answer>
     </Question>
 
-    <Question id="13" level_id="3" type_id="1" subject_id="XML101" scrambled="true" chapter="1">
+    <Question id="9" level_id="3" type_id="1" subject_id="6" scrambled="false" chapter="1">
         <Content>XML elements cannot be empty</Content>
         <Answer correct="true">false</Answer>
         <Answer correct="false">true</Answer>
     </Question>
 
-            
-                    
-    
-    <Question id="1" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="1">
-        <Content>What does HTML stand for?</Content>
-        <Answer correct="false">1.1</Answer>
-        <Answer correct="false">1.2</Answer>
-        <Answer correct="true">HyperText Markup Language</Answer>
-        <Answer correct="false">1.4</Answer>
+    <Question id="10" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="5">
+        <Content> XML attribute values must always be enclosed in quotes</Content>
+        <Answer correct="true">true</Answer>
+        <Answer correct="false">false</Answer>
     </Question>
     
-    <Question id="2" level_id="2" type_id="1" subject_id="2" scrambled="true" chapter="2">
-        <Content>What does CSS stand for?</Content>
-        <Answer correct="false">2.1</Answer>
-        <Answer correct="false">2.2</Answer>
-        <Answer correct="true">Cascading Style Sheet</Answer>
-        <Answer correct="false">2.4</Answer>
-    </Question>
-    
-    <Question id="3" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="1">
-        <Content>HTML Question 2</Content>
-        <Answer correct="false">3.1</Answer>
-        <Answer correct="false">3.2</Answer>
-        <Answer correct="true">HyperText Markup Language</Answer>
-        <Answer correct="false">3.4</Answer>
-    </Question>
-    
-    <Question id="4" level_id="1" type_id="1" subject_id="2" scrambled="false" chapter="1">
-        <Content>CSS Question 2</Content>
-        <Answer correct="false">4.1</Answer>
-        <Answer correct="false">4.2</Answer>
-        <Answer correct="true">HyperText Markup Language</Answer>
-        <Answer correct="false">4.4</Answer>
+    <Question id="11" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="6">
+        <Content>What does XSL stand for?</Content>
+        <Answer correct="false">eXpandable Style Language</Answer>
+        <Answer correct="false">eXtra Style Language</Answer>
+        <Answer correct="false">eXtensible Style Listing</Answer>
+        <Answer correct="true">eXtensible Stylesheet Language</Answer>
     </Question>
 </Questions>

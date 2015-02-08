@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Accounts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Account" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="Email"/>
+                            <xs:element type="xs:string" name="Password"/>
+                            <xs:element type="xs:string" name="FullName"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:int" name="id" use="required"/>
+                        <xs:attribute type="xs:int" name="role" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

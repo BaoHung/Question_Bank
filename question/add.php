@@ -134,7 +134,7 @@
                     </div>                                
                 </div>
             </div>
-
+            <input style="margin-left: 47%" id="a_save" type="button" value="Save" />
         </form>
     </body>
 </html>

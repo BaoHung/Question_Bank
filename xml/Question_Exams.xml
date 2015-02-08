@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Anh xem bài thi (quiz) trên W3Schools và làm đề thi giống như vậy nhé -->
-<Question_Exams>
+<Question_Exams xmlns:xsi="Question_Exams.xsd">
     <Question_Exam exam_id="1" question_id="1"/>
     <Question_Exam exam_id="3" question_id="2"/>
     <Question_Exam exam_id="3" question_id="4"/>

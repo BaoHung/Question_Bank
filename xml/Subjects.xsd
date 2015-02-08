@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Subjects">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Subject" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="Subject_Name"/>
+                            <xs:element type="xs:string" name="Subject_Code"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:int" name="id" use="required"/>
+                        <xs:attribute type="xs:int" name="number_of_chapter" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

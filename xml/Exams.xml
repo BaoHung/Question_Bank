@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Exams>
-    <!-- Bản mẫu: 
-  <Exam id="1" number_of_question="50" duration="60">
-      <Exam_Name>PRN192_FINAL_1</Exam_Name>
-  </Exam>
-    -->
+<Exams xmlns:xsi="Exams.xsd">
     <Exam id="1" number_of_question="50" duration="60">
         <Exam_Name>Demo 1</Exam_Name>
     </Exam>
