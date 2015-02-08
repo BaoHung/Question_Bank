@@ -17,7 +17,7 @@
             <a href="#">Roux Sparrow</a>
             <ul class="cbp-tm-submenu">
                 <li><a href="#" class="cbp-tm-icon-cog">Change password</a></li>
-                <li><a href="#" class="cbp-tm-icon-contract">Log out</a></li>                    
+                <li><a href="/Question_Bank/Login.html" class="cbp-tm-icon-contract">Log out</a></li>                    
             </ul>
         </li>
     </ul>
