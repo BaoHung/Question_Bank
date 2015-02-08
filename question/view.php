@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="../css/q_view.css" />
         <link rel="stylesheet" type="text/css" href="../css/menu_icon.css" />
         <script src="../js/modernizr.custom.js"></script>
-        <script src="../js/jquery-1.11.2.js"></script>
+        <script src="../js/jquery-1.11.2.min.js"></script>
         <script>
             $(document).ready(function () {
 
@@ -110,7 +110,9 @@
 
             <!--Filter-->
             <div class="filter_style">
-                <input type="button" value=" + Add new question" id="q_add" style="background-color: #3552c7"/>
+                <a href="../question/add.php">
+                    <input type="button" value=" + Add new question" id="q_add" style="background-color: #3552c7"/>
+                </a>
                 Subject
                 <span class="custom-dropdown">
                     <select id="SubjectList" name="subject" class="option">

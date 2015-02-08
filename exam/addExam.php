@@ -10,19 +10,19 @@ $subject_id = filter_input(INPUT_POST, 'subject_id');
 $duration = filter_input(INPUT_POST, 'duration');
 $name = filter_input(INPUT_POST, 'name');
 if (isset($_POST['question_id'])) {
-    $question_id = $_POST['question_id'];
+    $subject_id = $_POST['question_id'];
     $Exams = simplexml_load_file("../xml/Exams.xml");
     $examId = $Exams->count() + 1;
     $newExam = $Exams->addChild('Exam');
     $newExam->addAttribute('id', $Exams->count());
     $newExam->addAttribute('duration', $duration);
-    $newExam->addAttribute('number_of_question', sizeof($question_id));
+    $newExam->addAttribute('number_of_question', sizeof($subject_id));
     $newExam->addChild('Exam_Name', $name);
 
     $Exams->asXML("../xml/Exams.xml");
 
     $Question_Exams = simplexml_load_file("../xml/Question_Exams.xml");
-    foreach ($question_id as $qid) {
+    foreach ($subject_id as $qid) {
         $Question_Exam = $Question_Exams->addChild('Question_Exam');
         $Question_Exam->addAttribute('exam_id', $examId);
         $Question_Exam->addAttribute('question_id', $qid);

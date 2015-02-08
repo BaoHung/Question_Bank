@@ -6,10 +6,10 @@
  */
 
 $Subjects = simplexml_load_file("../xml/Subjects.xml");
-$question_id = filter_input(INPUT_GET, 'subject_id');
+$subject_id = filter_input(INPUT_GET, 'subject_id');
 
 foreach ($Subjects->children() as $Subject) {
-    if ($Subject['id'] == $question_id){
+    if ($Subject['id'] == $subject_id){
         echo $Subject['number_of_chapter'];
         break;
     }

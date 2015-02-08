@@ -22,6 +22,74 @@
         <Content></Content>
         <Answer correct=""></Answer>
     </Question>-->
+    
+    <Question id="1" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
+        <Content>What does XML stand for?</Content>
+        <Answer correct="true">eXtensible Markup Language</Answer>
+        <Answer correct="false">X-Markup Language</Answer>
+        <Answer correct="false">Example Markup Language</Answer>
+        <Answer correct="false">eXtra Modern Link</Answer>
+    </Question>
+    
+    <Question id="2" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="2">
+        <Content>There is a way of describing XML data, how?</Content>
+        <Answer correct="false">XML uses a description node to describe data</Answer>
+        <Answer correct="true">XML uses a DTD to describe the data</Answer>
+        <Answer correct="false">XML uses XSL to describe data</Answer>
+    </Question>
+    
+    <Question id="3" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="3">
+        <Content>XML's goal is to replace HTML</Content>
+        <Answer correct="true">false</Answer>
+        <Answer correct="false">true</Answer>
+    </Question>
+    
+    <Question id="4" level_id="1" type_id="1" subject_id="XML101" scrambled="true" chapter="1">
+        <Content>What is the correct syntax of the declaration which defines the XML version?</Content>
+        <Answer correct="false">&lt; ? xml version=&quot;1.0&quot; /&gt;</Answer>
+        <Answer correct="false">&lt; xml version=&quot;1.0&quot; /&gt;</Answer>
+        <Answer correct="true">&lt; ?xml version=&quot;1.0&quot; ?&gt;</Answer>
+    </Question>
+    
+    <Question id="5" level_id="2" type_id="1" subject_id="XML101" scrambled="true" chapter="5">
+        <Content> What does DTD stand for?</Content>
+        <Answer correct="false">Dynamic Type Definition</Answer>
+        <Answer correct="false">Direct Type Definition</Answer>
+        <Answer correct="true">Document Type Definition</Answer>
+        <Answer correct="false">Do The Dance</Answer>
+    </Question>
+    
+    <Question id="8" level_id="2" type_id="1" subject_id="XML101" scrambled="true" chapter="5">
+        <Content>Which statement is true?</Content>
+        <Answer correct="false">All XML elements must be lower case</Answer>
+        <Answer correct="false">All the statements are true</Answer>
+        <Answer correct="true">All XML elements must be properly closed</Answer>
+        <Answer correct="false">All XML documents must have a DTD</Answer>
+    </Question>
+    
+    <Question id="9" level_id="3" type_id="1" subject_id="XML101" scrambled="true" chapter="6">
+        <Content> Which statement is true?</Content>
+        <Answer correct="false">XML tags are case sensitive</Answer>
+        <Answer correct="false">XML elements must be properly nested</Answer>
+        <Answer correct="false">XML documents must have a root tag</Answer>
+        <Answer correct="true">All the statements are true</Answer>
+    </Question>
+    
+    <Question id="10" level_id="3" type_id="1" subject_id="XML101" scrambled="true" chapter="3">
+        <Content>XML preserves white spaces</Content>
+        <Answer correct="true">true</Answer>
+        <Answer correct="false">false</Answer>
+    </Question>
+
+    <Question id="13" level_id="3" type_id="1" subject_id="XML101" scrambled="true" chapter="1">
+        <Content>XML elements cannot be empty</Content>
+        <Answer correct="true">false</Answer>
+        <Answer correct="false">true</Answer>
+    </Question>
+
+            
+                    
+    
     <Question id="1" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="1">
         <Content>What does HTML stand for?</Content>
         <Answer correct="false">1.1</Answer>
