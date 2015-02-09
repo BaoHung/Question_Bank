@@ -46,13 +46,22 @@ $examID = filter_input(INPUT_GET, 'id');
         include '../layout/header.php';
         ?>
 
+
         <!--Exam Name-->
-        <h1>HTML101_FUHL_SP2015_FE_143765</h1>
+        <?php
+        $Exmas = simplexml_load_file("../xml/Exams.xml");
+        foreach ($Exmas->children() as $Exma) {
+            if ($Exma['id'] == $examID) {
+                echo '<h1>' . $Exma->Exam_Name . '</h1>';
+                break;
+            }
+        }
+        ?>
 
         <!--Filter-->
         <div class="filter_style">
-            <a href="add.php?id=<?=$examID ?>">
-               <input type="button" value=" + Edit this exam" id="e_edit" style="background-color: #3552c7"/>
+            <a href="add.php?id=<?= $examID ?>">
+                <input type="button" value=" + Edit this exam" id="e_edit" style="background-color: #3552c7"/>
             </a>
             <div>
                 <label style="color: #ffffff" >Subject:</label>
