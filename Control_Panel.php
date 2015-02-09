@@ -10,7 +10,7 @@
         <script src="js/modernizr.custom.js"></script>
     </head>
     <body>
-        <?php include '../layout/header.php'; ?>
+        <?php include 'layout/header.php'; ?>
 
         <!--Hover items-->
         <ul class="grid cs-style-3" style="padding-left: 100px;padding-top: 150px;padding-bottom: 50px;">

@@ -1,3 +1,6 @@
+<?php
+$examID = filter_input(INPUT_GET, 'id');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,7 +51,9 @@
 
         <!--Filter-->
         <div class="filter_style">
-            <input type="button" value=" + Edit this exam" id="e_edit" style="background-color: #3552c7"/>
+            <a href="add.php?id=<?=$examID ?>">
+               <input type="button" value=" + Edit this exam" id="e_edit" style="background-color: #3552c7"/>
+            </a>
             <div>
                 <label style="color: #ffffff" >Subject:</label>
                 <label>HTML 101</label>                

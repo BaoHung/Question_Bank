@@ -31,6 +31,11 @@
                         $(this).val("Hide all subject detail");
                     }
                 });
+                $('.icon-trash').click(function () {
+                    if (confirm("Do you want to delete this subject?")) {
+                        // TODO
+                    }
+                });
             });
         </script>
     </head>
@@ -51,33 +56,28 @@
         </div>
 
         <!--Question-->
-        <div class="question">
-            <div class="q_content">            
-                <div class="content">1. HTML</div>
-                <div class="q_tool_group">
-                    <div class="q_tool"><a href=""><span class="icon-pen"></span></a></div>
-                    <div class="q_tool"><a href=""><span class="icon-trash"></span></a></div>
+        <div id="Questions">
+            <?php
+            $Subjects = simplexml_load_file("../xml/Subjects.xml");
+            foreach ($Subjects->children() as $Subject) {
+                ?>
+                <div class="question">
+                    <div class="q_content">            
+                        <div class="content"><?= $Subject->Subject_Name ?></div>
+                        <div class="q_tool_group">
+                            <div class="q_tool"><a href="add.php?id=<?= $Subject['id'] ?>"><span class="icon-pen"></span></a></div>
+                            <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="a_panel">
+                        <div>Subject code: <?=$Subject->Subject_Code?></div>
+                        <div>Number of chapters: <?=$Subject['number_of_chapter']?></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="a_panel">
-                <div>Subject code: HTML101</div>
-                <div>Number of chapters: 8</div>
-            </div>
-        </div>
-        <div class="question">
-            <div class="q_content">            
-                <div class="content">2. CSS</div>                
-                <div class="q_tool_group">
-                    <div class="q_tool"><a href=""><span class="icon-pen"></span></a></div>
-                    <div class="q_tool"><a href=""><span class="icon-trash"></span></a></div>
-                </div>
-            </div>
-
-            <div class="a_panel">
-                <div>Subject code: CSS101</div>
-                <div>Number of chapters: 10</div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </body>
 </html>
