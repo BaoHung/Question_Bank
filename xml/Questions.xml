@@ -33,140 +33,132 @@
         <Answer correct="false">False</Answer>
     </Question>
     
-    <Question id="4" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="4" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="3">
+        <Content>Tables can be nested (table inside of another table)</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
     </Question>
     
-    <Question id="5" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="5" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="5">
+        <Content>Which of the following is a two sided tag?</Content>
+        <Answer correct="true">DL</Answer>
+        <Answer correct="false">DT</Answer>
+        <Answer correct="false">LI</Answer>
+        <Answer correct="false">DD</Answer>
     </Question>
     
-    <Question id="6" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="6" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="4">
+        <Content>The Browser applies the feature of a tag until it encounters_____tag</Content>
+        <Answer correct="true">Closing</Answer>
+        <Answer correct="false">Quit</Answer>
+        <Answer correct="false">Exit</Answer>
+        <Answer correct="false">Anti</Answer>
+        <Answer correct="false">Deactivate</Answer>
     </Question>
     
-    <Question id="7" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="7" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="10">
+        <Content>_____are the HTML codes that control the apearance of the document contents</Content>
+        <Answer correct="true">Tags</Answer>
+        <Answer correct="false">Codas</Answer>
+        <Answer correct="false">Slashes</Answer>
+        <Answer correct="false">Properties</Answer>
+        <Answer correct="false">Code</Answer>
     </Question>
     
-    <Question id="8" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="8" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="6">
+        <Content>What are the general syntax for inline image?</Content>
+        <Answer correct="true">img src=file</Answer>
+        <Answer correct="false">src=img</Answer>
+        <Answer correct="false">src=image</Answer>
+        <Answer correct="false">img=file</Answer>
+        <Answer correct="false">image src=file</Answer>
     </Question>
     
-    <Question id="9" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="9" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="8">
+        <Content>An HTML_____takes text in one format and changes it to HTML code</Content>
+        <Answer correct="true">Converter</Answer>
+        <Answer correct="false">Browser</Answer>
+        <Answer correct="false">Editor</Answer>
+        <Answer correct="false">Processor</Answer>
+        <Answer correct="false">Parser</Answer>
     </Question>
     
-    <Question id="10" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="10" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="9">
+        <Content>To create a link to an anchor, you use the_____property in A tag</Content>
+        <Answer correct="true">Href</Answer>
+        <Answer correct="false">Name</Answer>
+        <Answer correct="false">Tag</Answer>
+        <Answer correct="false">Link</Answer>
     </Question>
     
-    <Question id="11" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="11" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="2">
+        <Content>HTML Tags are case sensitive</Content>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
     </Question>
     
-    <Question id="12" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="12" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="3">
+        <Content>Relative path make your hypertext links_____</Content>
+        <Answer correct="true">Portable</Answer>
+        <Answer correct="false">Discrete</Answer>
+        <Answer correct="false">Uniform</Answer>
     </Question>
     
-    <Question id="13" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="13" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="7">
+        <Content>A_____structure starts with a general topic that includes link to more specific topics</Content>
+        <Answer correct="true">Hierarchical</Answer>
+        <Answer correct="false">Linear</Answer>
+        <Answer correct="false">Mixed</Answer>
     </Question>
     
-    <Question id="14" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="14" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="6">
+        <Content>Which of the following path is supported by HTML?</Content>
+        <Answer correct="true">Absolute and Relative</Answer>
+        <Answer correct="false">Ralative</Answer>
+        <Answer correct="false">Defererenced</Answer>
     </Question>
     
-    <Question id="15" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="15" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="3">
+        <Content>You cannot designate an inline image as a hypertext link</Content>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
     </Question>
     
-    <Question id="16" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="16" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="8">
+        <Content>What is the tag for an inline frame?</Content>
+        <Answer correct="true">Iframe</Answer>
+        <Answer correct="false">Inframe</Answer>
+        <Answer correct="false">frame</Answer>
+        <Answer correct="false">inlineframe</Answer>
     </Question>
     
-    <Question id="17" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="17" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="9">
+        <Content>Within the MAP tag, you use the AREA tag to specify the areas of the image that will act as a hotspot</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
     </Question>
     
-    <Question id="18" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="18" level_id="2" type_id="1" subject_id="1" scrambled="true" chapter="5">
+        <Content>What is the most widely use e-mail form script?</Content>
+        <Answer correct="true">PHP</Answer>
+        <Answer correct="false">ASP</Answer>
+        <Answer correct="false">Perl CGI</Answer>
+        <Answer correct="false">JSP</Answer>
     </Question>
     
-    <Question id="19" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="19" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="6">
+        <Content>There are_____color names recognized by all version of HTML</Content>
+        <Answer correct="true">16</Answer>
+        <Answer correct="false">6</Answer>
+        <Answer correct="false">8</Answer>
+        <Answer correct="false">256</Answer>
     </Question>
     
-    <Question id="20" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="20" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="9">
+        <Content>_____refers to the way the GIF file is saved by the graphics software</Content>
+        <Answer correct="true">Interlacing</Answer>
+        <Answer correct="false">Dithering</Answer>
+        <Answer correct="false">Balancing</Answer>
     </Question>
     
     <Question id="21" level_id="2" type_id="1" subject_id="2" scrambled="true" chapter="1">
@@ -233,9 +225,9 @@
     
     <Question id="29" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="3">
         <Content>How do you make each word in a text start with a capital letter?</Content>
-        <Answer correct="true">text-transform:capitalize</Answer>
+        <Answer correct="true">text-transform:uppercase</Answer>
         <Answer correct="false">You can't do that with CSS</Answer>
-        <Answer correct="false">text-transform:uppercase</Answer>
+        <Answer correct="false">text-transform:capitalize</Answer>
     </Question>
     
     <Question id="30" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="7">
@@ -285,44 +277,41 @@
         <Answer correct="false">list: square;</Answer>
     </Question>
     
-    <Question id="36" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="36" level_id="2" type_id="1" subject_id="2" scrambled="true" chapter="8">
+        <Content>Which HTML tag is used to define an internal style sheet?</Content>
+        <Answer correct="true">style</Answer>
+        <Answer correct="false">css</Answer>
+        <Answer correct="false">text/style</Answer>
+        <Answer correct="false">script</Answer>
     </Question>
     
-    <Question id="37" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="37" level_id="2" type_id="1" subject_id="2" scrambled="true" chapter="4">
+        <Content>To define the space between the element's border and content, you use the padding property, but are you allowed to use negative values?</Content>
+        <Answer correct="true">No</Answer>
+        <Answer correct="false">Yes</Answer>
     </Question>
     
-    <Question id="38" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="38" level_id="3" type_id="1" subject_id="2" scrambled="true" chapter="7">
+        <Content>What are the three methods for using style sheets with a web page</Content>
+        <Answer correct="true">Inline, embedded or document level and external</Answer>
+        <Answer correct="false">Dreamweaver, GoLive or FrontPage</Answer>
+        <Answer correct="false">Handcoded, Generated or WYSIWYG</Answer>
     </Question>
     
-    <Question id="39" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="39" level_id="2" type_id="1" subject_id="2" scrambled="true" chapter="4">
+        <Content>CSS is also created and maintained by group of people within</Content>
+        <Answer correct="true">W3C</Answer>
+        <Answer correct="false">W3A</Answer>
+        <Answer correct="false">W3B</Answer>
+        <Answer correct="false">W3D</Answer>
     </Question>
     
-    <Question id="40" level_id="1" type_id="1" subject_id="2" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="40" level_id="1" type_id="1" subject_id="2" scrambled="false" chapter="5">
+        <Content>From which version of CSS under development since the late 1990s, added a lot of extra features?</Content>
+        <Answer correct="true">CSS3</Answer>
+        <Answer correct="false">CSS2</Answer>
+        <Answer correct="false">CSS1</Answer>
+        <Answer correct="false">None of the above</Answer>
     </Question>
     
     <Question id="41" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="1">
@@ -333,159 +322,162 @@
         <Answer correct="false">HTML 4.9</Answer>
     </Question>
     
-    <Question id="42" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="3">
+    <Question id="42" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="3">
         <Content>In HTML5, onblur and onfocus are:</Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+        <Answer correct="true">Style attributes</Answer>
+        <Answer correct="false">HTML elements</Answer>
+        <Answer correct="false">Event attributes</Answer>
     </Question>
     
-    <Question id="43" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="43" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="5">
+        <Content>In HTML5, which method is used to get the current location of a user?</Content>
+        <Answer correct="true">getCurrentPosition()</Answer>
+        <Answer correct="false">getPosition()</Answer>
+        <Answer correct="false">getUserPosition()</Answer>
     </Question>
     
-    <Question id="44" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="44" level_id="2" type_id="1" subject_id="3" scrambled="true" chapter="8">
+        <Content>The new HTML5 global attribute, "contenteditable" is used to</Content>
+        <Answer correct="true">Return the position of the first found occurrence of content inside a string</Answer>
+        <Answer correct="false">Specifies a context menu for an element. The menu appears when a user right-clicks on the element</Answer>
+        <Answer correct="false">Update content from the server</Answer>
+        <Answer correct="false">Specify whether the content of an element should be editable or not</Answer>
     </Question>
     
-    <Question id="45" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="45" level_id="2" type_id="1" subject_id="3" scrambled="true" chapter="6">
+        <Content>In HTML5, contextmenu and spellcheck are</Content>
+        <Answer correct="true">HTML attributes</Answer>
+        <Answer correct="false">Style attributes</Answer>
+        <Answer correct="false">HTML elements</Answer>
+        <Answer correct="false">Event attributes</Answer>
     </Question>
     
-    <Question id="46" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="46" level_id="2" type_id="1" subject_id="3" scrambled="true" chapter="11">
+        <Content>In HTML5, you can embed SVG elements directly into an HTML page</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
     </Question>
     
-    <Question id="47" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="47" level_id="2" type_id="1" subject_id="3" scrambled="true" chapter="6">
+        <Content>Graphics defined by SVG is in which format?</Content>
+        <Answer correct="true">CSS</Answer>
+        <Answer correct="false">XML</Answer>
+        <Answer correct="false">HTML</Answer>
     </Question>
     
-    <Question id="48" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="48" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="8">
+        <Content>Which built-in HTML5 object is used to draw on the canvas?</Content>
+        <Answer correct="true">getCanvas</Answer>
+        <Answer correct="false">getContent</Answer>
+        <Answer correct="false">getContext</Answer>
+        <Answer correct="false">getGraphics</Answer>
     </Question>
     
-    <Question id="49" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="49" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="3">
+        <Content>In HTML5, which attribute is used to specify that an input field must be filled out?</Content>
+        <Answer correct="true">required</Answer>
+        <Answer correct="false">formvalidate</Answer>
+        <Answer correct="false">validate</Answer>
+        <Answer correct="false">placeholder</Answer>
     </Question>
     
-    <Question id="50" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="50" level_id="2" type_id="1" subject_id="3" scrambled="true" chapter="10">
+        <Content>Which input type defines a slider control?</Content>
+        <Answer correct="true">range</Answer>
+        <Answer correct="false">search</Answer>
+        <Answer correct="false">slider</Answer>
+        <Answer correct="false">controls</Answer>
     </Question>
     
-    <Question id="51" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="51" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="8">
+        <Content>Which input type defines a week and year control (no time zone)?</Content>
+        <Answer correct="true">week</Answer>
+        <Answer correct="false">date</Answer>
+        <Answer correct="false">year</Answer>
     </Question>
     
-    <Question id="52" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="52" level_id="3" type_id="1" subject_id="3" scrambled="false" chapter="12">
+        <Content>Which of the following is not true about HTML5?</Content>
+        <Answer correct="true">Uses more markups to replace scripting language</Answer>
+        <Answer correct="false">Better error handling</Answer>
+        <Answer correct="false">Reduce the need for external plug-in (like Flash)</Answer>
+        <Answer correct="false">All of the above are correct</Answer>
+        <Answer correct="false">Only options (A) and (C) are correct</Answer>
     </Question>
     
-    <Question id="53" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="53" level_id="2" type_id="1" subject_id="3" scrambled="true" chapter="5">
+        <Content>Which of the following is not form controls elements in HTML5?</Content>
+        <Answer correct="true">money</Answer>
+        <Answer correct="false">url</Answer>
+        <Answer correct="false">search</Answer>
+        <Answer correct="false">email</Answer>
+        <Answer correct="false">time</Answer>
     </Question>
     
-    <Question id="54" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="54" level_id="3" type_id="1" subject_id="3" scrambled="false" chapter="7">
+        <Content>Which of the following is true about video in HTML5?</Content>
+        <Answer correct="true">It defines a new element which specifies a standard way to embed a video</Answer>
+        <Answer correct="false">HTML5 doesn't support video</Answer>
+        <Answer correct="false">To play video we must have to use some plug-in</Answer>
+        <Answer correct="false">Both the options (a) and (b)</Answer>
+        <Answer correct="false">None of the above</Answer>
     </Question>
     
-    <Question id="55" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="55" level_id="3" type_id="1" subject_id="3" scrambled="false" chapter="9">
+        <Content>What is correct behavior of preventDefault() function</Content>
+        <Answer correct="true">Prevent the browser default handling of the data</Answer>
+        <Answer correct="false">Prevent the drag event</Answer>
+        <Answer correct="false">Prevent the drop event</Answer>
+        <Answer correct="false">Prevent the load data in browser</Answer>
+        <Answer correct="false">All of the above</Answer>
     </Question>
     
-    <Question id="56" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="56" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="10">
+        <Content>Which of the following is correct way to set the dragged data?</Content>
+        <Answer correct="true">e.dataTransfer.setData("Data",e.target.id);</Answer>
+        <Answer correct="false">e.dataTransfer.setData(e.target.id,"Data");</Answer>
+        <Answer correct="false">e.dataTransfer.setData(e.target.id,e.source.id,"Data");</Answer>
+        <Answer correct="false">e.dataTransfer.setData("Data",e.target.id,e.source.id);</Answer>
+        <Answer correct="false">e.dataTransfer.setData(e.target.id,e.source.id);</Answer>
     </Question>
     
-    <Question id="57" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="57" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="4">
+        <Content>Which method will use to get the dragged data?</Content>
+        <Answer correct="true">dataTransfer.gedata</Answer>
+        <Answer correct="false">dataTransfer.getdragdata</Answer>
+        <Answer correct="false">dataTransfer.getdragelement</Answer>
+        <Answer correct="false">dataTransfer.sedata</Answer>
+        <Answer correct="false">dataTransfer.getdrop</Answer>
     </Question>
     
-    <Question id="58" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="58" level_id="3" type_id="1" subject_id="3" scrambled="true" chapter="6">
+        <Content>Which event will fire when an element is dragged?</Content>
+        <Answer correct="true">ondragstart</Answer>
+        <Answer correct="false">ondragoccure</Answer>
+        <Answer correct="false">ondragbegin</Answer>
+        <Answer correct="false">ondrag</Answer>
+        <Answer correct="false">ondragging</Answer>
     </Question>
     
-    <Question id="59" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="59" level_id="3" type_id="1" subject_id="3" scrambled="false" chapter="7">
+        <Content>Which of the following is not a valid event of drag and drop?</Content>
+        <Answer correct="true">ondragend</Answer>
+        <Answer correct="false">ondragstart</Answer>
+        <Answer correct="false">ondragover</Answer>
+        <Answer correct="false">ondrop</Answer>
+        <Answer correct="false">All of the above are correct</Answer>
     </Question>
     
-    <Question id="60" level_id="1" type_id="1" subject_id="3" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="60" level_id="3" type_id="1" subject_id="3" scrambled="false" chapter="4">
+        <Content>What is default behavior of browser when any element is dropped?</Content>
+        <Answer correct="true">Open as link on drop</Answer>
+        <Answer correct="false">Drop on the element</Answer>
+        <Answer correct="false">Display a warning message</Answer>
+        <Answer correct="false">Hide the dropping element</Answer>
+        <Answer correct="false">None of the above is correct</Answer>
     </Question>
     
-    <Question id="61" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="61" level_id="3" type_id="1" subject_id="4" scrambled="true" chapter="2">
         <Content>How do you write "Hello World" in an alert box?</Content>
         <Answer correct="true">alert("Hello World");</Answer>
         <Answer correct="false">msg("Hello World");</Answer>
@@ -493,21 +485,21 @@
         <Answer correct="false">alertBox("Hello World");</Answer>
     </Question>
     
-    <Question id="62" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="62" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="3">
         <Content>How do you create a function in JavaScript?</Content>
-        <Answer correct="true">function = myFunction()</Answer>
+        <Answer correct="true">function myFunction()</Answer>
         <Answer correct="false">function:myFunction()</Answer>
-        <Answer correct="false">function myFunction()</Answer>
+        <Answer correct="false">function = myFunction()</Answer>
     </Question>
     
-    <Question id="63" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="63" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="3">
         <Content>How do you call a function named "myFunction"?</Content>
         <Answer correct="true">myFunction()</Answer>
         <Answer correct="false">call myFunction()</Answer>
         <Answer correct="false">call function myFunction()</Answer>
     </Question>
     
-    <Question id="64" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="64" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="4">
         <Content>How to write an IF statement in JavaScript?</Content>
         <Answer correct="true">if (i == 5)</Answer>
         <Answer correct="false">if i = 5 then</Answer>
@@ -515,23 +507,23 @@
         <Answer correct="false">if i == 5 then</Answer>
     </Question>
     
-    <Question id="65" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="65" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="3">
         <Content>What is the correct way to write a JavaScript array?</Content>
-        <Answer correct="true">var colors = (1:"red", 2:"green", 3:"blue")</Answer>
-        <Answer correct="false">var colors = ["red", "green", "blue"]</Answer>
+        <Answer correct="true">var colors = ["red", "green", "blue"]</Answer>
+        <Answer correct="false">var colors = (1:"red", 2:"green", 3:"blue")</Answer>
         <Answer correct="false">var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")</Answer>
         <Answer correct="false">var colors = "red", "green", "blue"</Answer>
     </Question>
     
-    <Question id="66" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="66" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="2">
         <Content>How do you round the number 7.25, to the nearest integer?</Content>
-        <Answer correct="true">round(7.25)</Answer>
-        <Answer correct="false">Math.round(7.25)</Answer>
+        <Answer correct="true">Math.round(7.25)</Answer>
+        <Answer correct="false">round(7.25)</Answer>
         <Answer correct="false">Math.rnd(7.25)</Answer>
         <Answer correct="false">rnd(7.25)</Answer>
     </Question>
     
-    <Question id="67" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="67" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="2">
         <Content>How do you find the number with the highest value of x and y?</Content>
         <Answer correct="true">Math.max(x, y)</Answer>
         <Answer correct="false">top(x, y)</Answer>
@@ -539,106 +531,103 @@
         <Answer correct="false">ceil(x, y)</Answer>
     </Question>
     
-    <Question id="68" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="68" level_id="3" type_id="1" subject_id="4" scrambled="true" chapter="4">
         <Content>What is the correct JavaScript syntax for opening a new window called "w2" ?</Content>
         <Answer correct="true">w2 = window.open("http://www.w3schools.com");</Answer>
         <Answer correct="false">w2 = window.new("http://www.w3schools.com");</Answer>
     </Question>
     
-    <Question id="69" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="69" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="2">
         <Content>JavaScript is the same as Java</Content>
         <Answer correct="true">False</Answer>
         <Answer correct="false">True</Answer>
     </Question>
     
-    <Question id="70" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
+    <Question id="70" level_id="3" type_id="1" subject_id="4" scrambled="true" chapter="3">
         <Content>How can you detect the client's browser name?</Content>
         <Answer correct="true">navigator.appName</Answer>
         <Answer correct="false">browser.name</Answer>
         <Answer correct="false">client.navName</Answer>
     </Question>
     
-    <Question id="71" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="71" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="1">
+        <Content>What is the correct JavaScript syntax to write "Hello World"?</Content>
+        <Answer correct="true">document.write("Hello World")</Answer>
+        <Answer correct="false">response.write("Hello World")</Answer>
+        <Answer correct="false">("Hello World")</Answer>
+        <Answer correct="false">echo("Hello World")</Answer>
     </Question>
     
-    <Question id="72" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="72" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="2">
+        <Content>How many different kind of loops are there in JavaScript?</Content>
+        <Answer correct="true">Two. The "for" loop and the "while" loop</Answer>
+        <Answer correct="false">Four. The "for" loop, the "while" loop, the "do...while" loop, and the "loop...until" loop</Answer>
+        <Answer correct="false">One. The "for" loop</Answer>
     </Question>
     
-    <Question id="73" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="73" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="3">
+        <Content>What is the correct way to write a JavaScript array?</Content>
+        <Answer correct="true">var txt = new Array("tim","shaq","kobe")</Answer>
+        <Answer correct="false">var txt = new Array(1:"tim",2:"shaq",3:"kobe")</Answer>
+        <Answer correct="false">var txt = new Array="tim","shaq","kobe"</Answer>
     </Question>
     
-    <Question id="74" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="74" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="3">
+        <Content>What is the correct JavaScript syntax for opening a new window called "window5"?</Content>
+        <Answer correct="true">window.open("http://www.ex-designz.net","window5")</Answer>
+        <Answer correct="false">new("http://www.ex-designz.net","window5")</Answer>
+        <Answer correct="false">open.newwindow("http://www.ex-designz.net","window5")</Answer>
+        <Answer correct="false">new.window("http://www.ex-designz.net","window5")</Answer>
     </Question>
     
-    <Question id="75" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="75" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="4">
+        <Content>How do you put a message in the browser's status bar?</Content>
+        <Answer correct="true">window.status = "put your message here"</Answer>
+        <Answer correct="false">statusbar = "put your message here"</Answer>
+        <Answer correct="false">status("put your message here")</Answer>
+        <Answer correct="false">window.status("put your message here")</Answer>
     </Question>
     
-    <Question id="76" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="76" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="2">
+        <Content>You define an array using</Content>
+        <Answer correct="true">var myarray = new Array();</Answer>
+        <Answer correct="false">var myarray = array new;</Answer>
+        <Answer correct="false">var new Array() = myarray;</Answer>
+        <Answer correct="false">var new array = myarray;</Answer>
     </Question>
     
-    <Question id="77" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="77" level_id="3" type_id="1" subject_id="4" scrambled="true" chapter="3">
+        <Content>Onclick is equivalent to which two events in sequence</Content>
+        <Answer correct="true">onmousedown and onmouseup</Answer>
+        <Answer correct="false">onmouseover and onmousedown</Answer>
+        <Answer correct="false">onmousedown and onmouseout</Answer>
+        <Answer correct="false">onmouseup and onmouseout</Answer>
     </Question>
     
-    <Question id="78" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="78" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="1">
+        <Content>Which best describe void?</Content>
+        <Answer correct="true">An operator</Answer>
+        <Answer correct="false">A method</Answer>
+        <Answer correct="false">A function</Answer>
+        <Answer correct="false">A statement</Answer>
     </Question>
     
-    <Question id="79" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="79" level_id="3" type_id="1" subject_id="4" scrambled="true" chapter="2">
+        <Content>Which property would you use to redirect visitor to another page?</Content>
+        <Answer correct="true">window.location.href</Answer>
+        <Answer correct="false">document.href</Answer>
+        <Answer correct="false">java.redirect.url</Answer>
+        <Answer correct="false">link.redirect.href</Answer>
     </Question>
     
-    <Question id="80" level_id="1" type_id="1" subject_id="4" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
+    <Question id="80" level_id="3" type_id="1" subject_id="4" scrambled="true" chapter="4">
+        <Content>Which of the following JavaScript statements use arrays?</Content>
+        <Answer correct="true">setTimeout("a["+i+"]",1000)</Answer>
+        <Answer correct="false">k = a &amp; i</Answer>
+        <Answer correct="false">k = a(i)</Answer>
     </Question>
     
-    <Question id="81" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
+    <Question id="81" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="1">
         <Content>What does XML stand for?</Content>
         <Answer correct="true">eXtensible Markup Language</Answer>
         <Answer correct="false">Example Markup Language</Answer>
@@ -646,305 +635,279 @@
         <Answer correct="false">X-Markup Language</Answer>
     </Question>
     
-    <Question id="82" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="83" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="84" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="85" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="86" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="87" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="88" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="89" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="90" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="91" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="92" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="93" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="94" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="95" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="96" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="97" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="98" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="99" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="100" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="101" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="102" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="103" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="104" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="105" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="106" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="107" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="108" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="109" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="">
-        <Content></Content>
-        <Answer correct="true"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-        <Answer correct="false"></Answer>
-    </Question>
-    
-    <Question id="110" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
-        <Content>What does XML stand for?</Content>
-        <Answer correct="true">eXtensible Markup Language</Answer>
-        <Answer correct="false">X-Markup Language</Answer>
-        <Answer correct="false">Example Markup Language</Answer>
-        <Answer correct="false">eXtra Modern Link</Answer>
-    </Question>
-    
-    <Question id="111" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="2">
+    <Question id="82" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="3">
         <Content>There is a way of describing XML data, how?</Content>
-        <Answer correct="false">XML uses a description node to describe data</Answer>
         <Answer correct="true">XML uses a DTD to describe the data</Answer>
+        <Answer correct="false">XML uses a description node to describe data</Answer>
         <Answer correct="false">XML uses XSL to describe data</Answer>
     </Question>
     
-    <Question id="112" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="3">
+    <Question id="83" level_id="3" type_id="1" subject_id="5" scrambled="true" chapter="5">
         <Content>XML's goal is to replace HTML</Content>
-        <Answer correct="true">false</Answer>
-        <Answer correct="false">true</Answer>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
     </Question>
     
-    <Question id="113" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
-        <Content>What is the correct syntax of the declaration which defines the XML version?</Content>
-        <Answer correct="false">&lt; ? xml version=&quot;1.0&quot; /&gt;</Answer>
-        <Answer correct="false">&lt; xml version=&quot;1.0&quot; /&gt;</Answer>
-        <Answer correct="true">&lt; ?xml version=&quot;1.0&quot; ?&gt;</Answer>
-    </Question>
-    
-    <Question id="114" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
-        <Content> What does DTD stand for?</Content>
-        <Answer correct="false">Dynamic Type Definition</Answer>
-        <Answer correct="false">Direct Type Definition</Answer>
+    <Question id="84" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="4">
+        <Content>What does DTD stand for?</Content>
         <Answer correct="true">Document Type Definition</Answer>
+        <Answer correct="false">Dynamic Type Definition</Answer>
         <Answer correct="false">Do The Dance</Answer>
+        <Answer correct="false">Direct Type Definition</Answer>
     </Question>
     
-    <Question id="115" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
+    <Question id="85" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="2">
         <Content>Which statement is true?</Content>
-        <Answer correct="false">All XML elements must be lower case</Answer>
-        <Answer correct="false">All the statements are true</Answer>
         <Answer correct="true">All XML elements must be properly closed</Answer>
+        <Answer correct="false">All XML elements must be lower case</Answer>
         <Answer correct="false">All XML documents must have a DTD</Answer>
+        <Answer correct="false">All the statements are true</Answer>
     </Question>
     
-    <Question id="116" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="6">
-        <Content> Which statement is true?</Content>
+    <Question id="86" level_id="3" type_id="1" subject_id="5" scrambled="true" chapter="5">
+        <Content>Which statement is true?</Content>
+        <Answer correct="true">All the statements are true</Answer>
         <Answer correct="false">XML tags are case sensitive</Answer>
         <Answer correct="false">XML elements must be properly nested</Answer>
         <Answer correct="false">XML documents must have a root tag</Answer>
-        <Answer correct="true">All the statements are true</Answer>
+    </Question>
+    
+    <Question id="87" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="4">
+        <Content>XML preserves white spaces</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="88" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="6">
+        <Content>XML elements cannot be empty</Content>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
+    </Question>
+    
+    <Question id="89" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="4">
+        <Content>XML attribute values must always be enclosed in quotes</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="90" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="5">
+        <Content>What does XSL stand for?</Content>
+        <Answer correct="true">eXtensible Stylesheet Language</Answer>
+        <Answer correct="false">eXpandable Style Language</Answer>
+        <Answer correct="false">eXtensible Style Listing</Answer>
+        <Answer correct="false">eXtra Style Language</Answer>
+    </Question>
+    
+    <Question id="91" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="2">
+        <Content>What makes XML more powerful than HTML?</Content>
+        <Answer correct="true">It's ability to adapt to new uses</Answer>
+        <Answer correct="false">Not as much coding is needed</Answer>
+        <Answer correct="false">The fact that its supported by all of the major software vendors</Answer>
+    </Question>
+    
+    <Question id="92" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="1">
+        <Content>In what year did the World Wide Web Consortium release its draft of XML?</Content>
+        <Answer correct="true">1996</Answer>
+        <Answer correct="false">1994</Answer>
+        <Answer correct="false">1995</Answer>
+        <Answer correct="false">1997</Answer>
+    </Question>
+    
+    <Question id="93" level_id="3" type_id="1" subject_id="5" scrambled="true" chapter="2">
+        <Content>What organization presented the first version of Starndardized Generalized Markup Language (SGML) in 1980?</Content>
+        <Answer correct="true">American National Standards Institute (ANSI)</Answer>
+        <Answer correct="false">Internet Engineering Task Force (IETF)</Answer>
+        <Answer correct="false">IEEE</Answer>
+        <Answer correct="false">OASIS</Answer>
+    </Question>
+    
+    <Question id="94" level_id="3" type_id="1" subject_id="5" scrambled="true" chapter="1">
+        <Content>You can use XSL Transformation (XSLT) to convert database files described by XML to Structured Query Language (SQL) statements, which creates the tables, indexes and views that the XML data describes</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="95" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="3">
+        <Content>Unlike most other markup languages, including HTML, XML allows you to do what?</Content>
+        <Answer correct="true">Create new tags</Answer>
+        <Answer correct="false">Exchange information over the Web</Answer>
+        <Answer correct="false">Put your tags in any order, with closing tags optional</Answer>
+    </Question>
+    
+    <Question id="96" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="3">
+        <Content>Every XML document must have an associated DTD or schema</Content>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
+    </Question>
+    
+    <Question id="97" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="1">
+        <Content>Every XML document must be well formed</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="98" level_id="1" type_id="1" subject_id="5" scrambled="true" chapter="1">
+        <Content>XML document must be valid?</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="99" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="2">
+        <Content>Which of the following is an XML-based service IDL that defines the service interface and its implementation characteristics</Content>
+        <Answer correct="true">WSDL</Answer>
+        <Answer correct="false">UDDI</Answer>
+        <Answer correct="false">SOAP</Answer>
+        <Answer correct="false">Path</Answer>
+    </Question>
+    
+    <Question id="100" level_id="2" type_id="1" subject_id="5" scrambled="true" chapter="5">
+        <Content>Which statement about XML is true?</Content>
+        <Answer correct="true">Elements may nest but not overlap</Answer>
+        <Answer correct="false">Quoting attributes is optional</Answer>
+        <Answer correct="false">Elements may have multiple attributes with the same name</Answer>
+    </Question>
+    
+    <Question id="101" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
+        <Content>What does PHP stand for?</Content>
+        <Answer correct="true">PHP: Hypertext Preprocessor</Answer>
+        <Answer correct="false">Private Home Page</Answer>
+        <Answer correct="false">Personal Hypertext Processor</Answer>
+    </Question>
+    
+    <Question id="102" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="2">
+        <Content>How do you write "Hello World" in PHP</Content>
+        <Answer correct="true">echo "Hello World";</Answer>
+        <Answer correct="false">"Hello World";</Answer>
+        <Answer correct="false">Document.Write("Hello World");</Answer>
+    </Question>
+    
+    <Question id="103" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="4">
+        <Content>What will be the value of $var?
+            $var = 1 / 2;</Content>
+        <Answer correct="true">0.5</Answer>
+        <Answer correct="false">0</Answer>
+        <Answer correct="false">1</Answer>
+    </Question>
+    
+    <Question id="104" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="2">
+        <Content>The PHP syntax is most similar to</Content>
+        <Answer correct="true">Perl and C</Answer>
+        <Answer correct="false">VBScript</Answer>
+        <Answer correct="false">JavaScript</Answer>
+        <Answer correct="false"></Answer>
+    </Question>
+    
+    <Question id="105" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="5">
+        <Content>How do you get information from a form that is submitted using the "get" method?</Content>
+        <Answer correct="true">$_GET[];</Answer>
+        <Answer correct="false">Request.Form;</Answer>
+        <Answer correct="false">Request.QueryString;</Answer>
+    </Question>
+    
+    <Question id="106" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="2">
+        <Content>When using the POST method, variables are displayed in the URL</Content>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
+    </Question>
+    
+    <Question id="107" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="3">
+        <Content>In PHP you can use both single quotes ( ' ' ) and double quotes ( " " ) for strings</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="108" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="6">
+        <Content>Include files must have the file extension ".inc"</Content>
+        <Answer correct="true">False</Answer>
+        <Answer correct="false">True</Answer>
+    </Question>
+    
+    <Question id="109" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="8">
+        <Content>What is the correct way to create a function in PHP?</Content>
+        <Answer correct="true">function myFunction()</Answer>
+        <Answer correct="false">new_function myFunction()</Answer>
+        <Answer correct="false">create myFunction()</Answer>
+    </Question>
+    
+    <Question id="110" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
+        <Content>What is the correct way to open the file "time.txt" as readable?</Content>
+        <Answer correct="true">fopen("time.txt","r");</Answer>
+        <Answer correct="false">open("time.txt","read");</Answer>
+        <Answer correct="false">fopen("time.txt","r+");</Answer>
+        <Answer correct="false">open("time.txt");</Answer>
+    </Question>
+    
+    <Question id="111" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="2">
+        <Content>PHP allows you to send emails directly from a script</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="112" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="3">
+        <Content>What is the correct way to connect to a MySQL database?</Content>
+        <Answer correct="true">mysqli_connect(host,username,password,dbname);</Answer>
+        <Answer correct="false">mysqli_db(host,username,password,dbname);</Answer>
+        <Answer correct="false">mysqli_open(host,username,password,dbname);</Answer>
+    </Question>
+    
+    <Question id="113" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="1">
+        <Content>What is the correct way to add 1 to the $count variable?</Content>
+        <Answer correct="true">$count++;</Answer>
+        <Answer correct="false">$count =+1</Answer>
+        <Answer correct="false">++count</Answer>
+        <Answer correct="false">count++;</Answer>
+    </Question>
+    
+    <Question id="114" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
+        <Content>PHP can be run on Microsoft Windows IIS(Internet Information Server)</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="115" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
+        <Content>In PHP, the die() and exit() functions do the exact same thing</Content>
+        <Answer correct="true">True</Answer>
+        <Answer correct="false">False</Answer>
+    </Question>
+    
+    <Question id="116" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="6">
+        <Content>Which one of these variables has an illegal name?</Content>
+        <Answer correct="true">$my-Var</Answer>
+        <Answer correct="false">$myVar</Answer>
+        <Answer correct="false">$my_Var</Answer>
     </Question>
     
     <Question id="117" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="3">
-        <Content>XML preserves white spaces</Content>
-        <Answer correct="true">true</Answer>
-        <Answer correct="false">false</Answer>
+        <Content> Which of the following is NOT a magic predefined constant?</Content>
+        <Answer correct="true">__DATE__</Answer>
+        <Answer correct="false">__FILE__</Answer>
+        <Answer correct="false">__LINE__</Answer>
+        <Answer correct="false">__CLASS__</Answer>
+        <Answer correct="false">__METHOD__</Answer>
     </Question>
 
-    <Question id="118" level_id="3" type_id="1" subject_id="6" scrambled="false" chapter="1">
-        <Content>XML elements cannot be empty</Content>
-        <Answer correct="true">false</Answer>
-        <Answer correct="false">true</Answer>
+    <Question id="118" level_id="2" type_id="1" subject_id="6" scrambled="false" chapter="1">
+        <Content>Which of the following is the way to create comments in PHP?</Content>
+        <Answer correct="true">all of the above</Answer>
+        <Answer correct="false">// commented code to end of line</Answer>
+        <Answer correct="false">/* commented code here */</Answer>
+        <Answer correct="false"># commented code to end of line</Answer>
     </Question>
 
-    <Question id="119" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="5">
-        <Content> XML attribute values must always be enclosed in quotes</Content>
-        <Answer correct="true">true</Answer>
-        <Answer correct="false">false</Answer>
+    <Question id="119" level_id="2" type_id="1" subject_id="6" scrambled="true" chapter="5">
+        <Content>A value that has no defined value is expressed in PHP with the following keyword</Content>
+        <Answer correct="true">null</Answer>
+        <Answer correct="false">undef</Answer>
+        <Answer correct="false">There is no such concept in PHP</Answer>
+        <Answer correct="false">None</Answer>
     </Question>
     
-    <Question id="120" level_id="1" type_id="1" subject_id="6" scrambled="true" chapter="6">
-        <Content>What does XSL stand for?</Content>
-        <Answer correct="false">eXpandable Style Language</Answer>
-        <Answer correct="false">eXtra Style Language</Answer>
-        <Answer correct="false">eXtensible Style Listing</Answer>
-        <Answer correct="true">eXtensible Stylesheet Language</Answer>
+    <Question id="120" level_id="3" type_id="1" subject_id="6" scrambled="true" chapter="6">
+        <Content>Which of the following is used to declare a constant</Content>
+        <Answer correct="true">define</Answer>
+        <Answer correct="false">constant</Answer>
+        <Answer correct="false">const</Answer>
+        <Answer correct="false">#pragma</Answer>
+        <Answer correct="false">def</Answer>
     </Question>
 </Questions>

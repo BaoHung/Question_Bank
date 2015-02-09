@@ -64,7 +64,11 @@
             ?>
             <div class="exam">
                 <div class="e_content">            
-                    <div class="content"><?= $Exam->Exam_Name ?></div>
+                    <a href="view-detail.php?id=<?= $Exam['id'] ?>">
+                        <div class="content">
+                            <?= $Exam->Exam_Name ?>
+                        </div>
+                    </a>
                     <div class="e_tool_group">
                         <a href="add.php?id=<?= $Exam['id'] ?>"><div class="e_tool"><span class="icon-pen"></span></div></a>
                         <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>

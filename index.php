@@ -17,16 +17,17 @@
         <ul class="grid cs-style-3" style="padding-left: 100px;padding-top: 150px;padding-bottom: 50px;">
             <li>
                 <figure>
-                    <img src="images/4.png" alt="img04">
+                    <img src="images/subject2.png" alt="img04">
                     <figcaption>
                         <h3>Question</h3>
                         <a href="question/view.php">Take a look</a>
+
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="images/1.png" alt="img01">
+                    <img src="images/exam.png" alt="img01">
                     <figcaption>
                         <h3>Exam</h3>
                         <a href="exam/view.php">Take a look</a>

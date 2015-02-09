@@ -42,7 +42,7 @@
             <!--Search Box-->
             <div class="field" id="searchform">
                 <input type="text" id="search_content" placeholder="Search question here . . ." />
-                <button type="submit" id="search_btn">Search</button>
+                <input type="submit" id="search_btn" value="Search" />
             </div>
             <!--Filter-->
             <div class="filter_style">
