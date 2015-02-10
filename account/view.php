@@ -31,8 +31,9 @@
                         $(this).val("Hide all account detail");
                     }
                 });
-                $('.icon-trash').click(function () {
-                    if (confirm("Do you want to delete this account?")) {
+
+                $('body').on('click', '.icon-trash', function () {
+                    if (confirm("Do you want to delete this question?")) {
                         // TODO
                     }
                 });

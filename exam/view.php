@@ -13,7 +13,7 @@
         <script src="../js/modernizr.custom.js"></script>
         <script language="JavaScript">
             $(document).ready(function () {
-                $('.icon-trash').click(function () {
+                $('body').on('click', '.icon-trash', function () {
                     if (confirm("Do you want to delete this question?")) {
                         // TODO
                     }

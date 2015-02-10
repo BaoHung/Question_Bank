@@ -67,7 +67,7 @@
                     sendRequest($('#ChapterList').val());
                 });
 
-                $('.icon-trash').click(function () {
+                $('body').on('click', '.icon-trash', function () {
                     if (confirm("Do you want to delete this question?")) {
                         // TODO
                     }
