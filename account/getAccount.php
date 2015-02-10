@@ -9,8 +9,8 @@ $role = filter_input(INPUT_POST, 'role');
 $accountsToReturn = array();
 
 foreach ($Accounts->children() as $Account) {
-    $query = RemoveSign(strtolower($query));
-    $name = RemoveSign(strtolower($Account->FullName));
+    $query = strtolower(RemoveSign($query));
+    $name = strtolower(RemoveSign($Account->FullName));
     if (
             (is_null($query) || strlen($query) == 0 || $query === '' || strpos($name, $query) !== FALSE) &&
             (is_null($role) || $role == -1 || $Account['role'] == $role)
