@@ -21,15 +21,15 @@
             <div>
                 <div>
                     <label>Old Password:</label>
-                    <input style="margin-left: 4.9em" type="text" required />
+                    <input style="margin-left: 4.9em" type="password" required />
                 </div>
                 <div>
                     <label>New Password:</label>
-                    <input style="margin-left: 4.6em" type="text" required/>
+                    <input style="margin-left: 4.6em" type="password" required/>
                 </div>
                 <div>
                     <label>Retype New Password:</label>
-                    <input type="text" required />
+                    <input type="password" required />
                 </div>
             </div>
             <input id="cp_save" type="submit" value="Save" />      

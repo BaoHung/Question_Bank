@@ -9,7 +9,7 @@ $exmasToReturn = array();
 
 foreach ($Exams->children() as $Exam) {
     if (
-            (is_null($id) || strlen($id) == 0 || $Exam['id'] == $id)
+            (is_null($id) || strlen($id) == 0 || $id == 0 || $Exam['id'] == $id)
     ) {
         array_push($exmasToReturn, $Exam);
     }
