@@ -31,10 +31,41 @@
                         $(this).val("Hide all subject detail");
                     }
                 });
-                $('.icon-trash').click(function () {
+                $('body').on('click', '.icon-trash', function () {
                     if (confirm("Do you want to delete this subject?")) {
                         // TODO
                     }
+                });
+
+                $('#search_content').keyup(function () {
+                    $.ajax({
+                        url: 'getSubject.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            q: $('#search_content').val(),
+                        },
+                        success: function (data) {
+                            htmlStr = '';
+                            $.each(data, function (index, subject) {
+                                attr = subject['@attributes'];
+                                htmlStr += '<div class="question">' +
+                                        '<div class="q_content">' +
+                                        '<div class="content">' + subject.Subject_Name + '</div>' +
+                                        '<div class="q_tool_group">' +
+                                        '<div class="q_tool"><a href="add.php?id=' + attr.id + '"><span class="icon-pen"></span></a></div>' +
+                                        '<div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '<div class="a_panel">' +
+                                        '<div>Subject code: ' + subject.Subject_Code + '</div>' +
+                                        '<div>Number of chapters: ' + attr.number_of_chapter + '</div>' +
+                                        '</div>' +
+                                        '</div>';
+                            });
+                            $("#Subjects").html(htmlStr);
+                        }}
+                    );
                 });
             });
         </script>
@@ -44,7 +75,7 @@
 
         <!--Search Box-->
         <div class="field" id="searchform">
-            <input type="text" id="search_content" placeholder="Search subject here . . ." />
+            <input type="text" id="search_content" autocomplete="off" placeholder="Search subject here . . ." />
             <input type="submit" id="search_btn" value="Search">
         </div>
         <!--Filter-->
@@ -56,7 +87,7 @@
         </div>
 
         <!--Question-->
-        <div id="Questions">
+        <div id="Subjects">
             <?php
             $Subjects = simplexml_load_file("../xml/Subjects.xml");
             foreach ($Subjects->children() as $Subject) {
@@ -69,10 +100,10 @@
                             <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
                         </div>
                     </div>
-                    
+
                     <div class="a_panel">
-                        <div>Subject code: <?=$Subject->Subject_Code?></div>
-                        <div>Number of chapters: <?=$Subject['number_of_chapter']?></div>
+                        <div>Subject code: <?= $Subject->Subject_Code ?></div>
+                        <div>Number of chapters: <?= $Subject['number_of_chapter'] ?></div>
                     </div>
                 </div>
                 <?php

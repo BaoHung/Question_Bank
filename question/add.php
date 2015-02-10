@@ -26,9 +26,21 @@ if ($questionID != "") {
         <script src="../js/jquery-1.11.2.min.js"></script>
         <script>
             $(document).ready(function () {
+                $.ajax({
+                    url: 'getChapter.php',
+                    type: 'GET',
+                    data: {subject_id: $('#SubjectList').val()},
+                    success: function (data) {
+                        $('#ChapterList').html('<option value="0" selected>All</option>');
+                        for (i = 0; i < parseInt(data); i++) {
+                            $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                        }
+                    }
+                });
+
                 $('#a_add').click(function () {
                     $('.answers').append('<div class="answer">' +
-                            '               <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>' +
+                            '               <textarea class="a-textarea" placeholder="Enter answer here..." required></textarea>' +
                             '               <div class="answer-tool" >' +
                             '                   <label><input type="checkbox" >Correct</label>' +
                             '                   <input class="a-remove" type="button" value="Remove this answer"/>' +
@@ -68,7 +80,7 @@ if ($questionID != "") {
         <h1 style="text-align: center;font-weight: 300;">Add new question</h1>
         <form class="add-form">
             <span>Question</span>
-            <textarea class="q-textarea" placeholder="Enter question here..."><?php
+            <textarea class="q-textarea" placeholder="Enter question here..." required><?php
                 if (!is_null($Question)) {
                     echo $Question->Content;
                 }
@@ -81,7 +93,7 @@ if ($questionID != "") {
                         <?php
                         $Subjects = simplexml_load_file("../xml/Subjects.xml");
                         foreach ($Subjects->children() as $Subject) {
-                            if (!is_null($Question) && $Question['subject_id'] + '' == $Subject['id']) {
+                            if (!is_null($Question) && strcoll($Question['subject_id'], $Subject['id']) == 0) {
                                 ?>
                                 <option selected value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
                                 <?php
@@ -97,7 +109,6 @@ if ($questionID != "") {
                 Chapter
                 <span class="custom-dropdown">
                     <select id="ChapterList" name="chapter" class="option">
-                        <option value="0">All</option>
                         <?php
                         for ($i = 1; $i < $Question['chapter']; $i++) {
                             ?>
@@ -130,13 +141,19 @@ if ($questionID != "") {
                 Scrambled
                 <span class="custom-dropdown">
                     <select>
-                        <option>All</option>
                         <?php
                         if (!is_null($Question)) {
-                            ?>
-                            <option selected="">Yes</option>
-                            <option>No</option>
-                            <?php
+                            if ($Q['scrambled'] == 'true') {
+                                ?>
+                                <option selected>Yes</option>
+                                <option>No</option>
+                                <?php
+                            } else {
+                                ?>
+                                <option>Yes</option>
+                                <option selected>No</option>
+                                <?php
+                            }
                         } else {
                             ?>
                             <option>Yes</option>
@@ -172,7 +189,7 @@ if ($questionID != "") {
                     foreach ($Question->Answer as $Answer) {
                         ?>
                         <div class="answer">
-                            <textarea class="a-textarea" placeholder="Enter answer here..." ><?=$Answer?></textarea>
+                            <textarea class="a-textarea" placeholder="Enter answer here..." ><?= $Answer ?></textarea>
                             <div class="answer-tool" >
                                 <label><input type="checkbox" >Correct</label>
                                 <input class="a-remove" type="button" value="Remove this answer"/>
@@ -183,14 +200,14 @@ if ($questionID != "") {
                 } else {
                     ?>
                     <div class="answer">
-                        <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>
+                        <textarea class="a-textarea" placeholder="Enter answer here..."  required></textarea>
                         <div class="answer-tool" >
                             <label><input type="checkbox" >Correct</label>
                             <input class="a-remove" type="button" value="Remove this answer"/>
                         </div>                                
                     </div>
                     <div class="answer">
-                        <textarea class="a-textarea" placeholder="Enter answer here..." ></textarea>
+                        <textarea class="a-textarea" placeholder="Enter answer here..." required></textarea>
                         <div class="answer-tool" >
                             <label><input type="checkbox" >Correct</label>
                             <input class="a-remove" type="button" value="Remove this answer"/>
@@ -200,7 +217,7 @@ if ($questionID != "") {
                 }
                 ?>
             </div>
-            <input style="margin-left: 47%" id="a_save" type="button" value="Save" />
+            <input style="margin-left: 47%" id="a_save" type="submit" value="Save" />
         </form>
     </body>
 </html>

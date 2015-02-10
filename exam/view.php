@@ -18,6 +18,35 @@
                         // TODO
                     }
                 });
+
+                $('#SubjectList').change(function () {
+                    $.ajax({
+                        url: 'getExam.php',
+                        type: 'GET',
+                        dataType: 'json',
+                        data: {
+                            id: $('#SubjectList').val()
+                        },
+                        success: function (data) {
+                            htmlStr = '';
+                            $.each(data, function (index, exam) {
+                                attr = exam['@attributes'];
+                                htmlStr += '<div class="exam">' +
+                                        '       <div class="e_content">' +
+                                        '           <a href="view-detail.php?id=' + attr.id + '">' +
+                                        '               <div class="content">' + exam.Exam_Name + '</div>' +
+                                        '           </a>' +
+                                        '           <div class="e_tool_group">' +
+                                        '               <a href="add.php?id=' + attr.id + '"><div class="e_tool"><span class="icon-pen"></span></div></a>' +
+                                        '               <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>' +
+                                        '           </div>' +
+                                        '       </div>' +
+                                        '   </div>';
+                            });
+                            $("#Exmas").html(htmlStr);
+                        }}
+                    );
+                });
             });
         </script>
     </head>
@@ -58,26 +87,28 @@
 
 
         <!--Question-->       
-        <?php
-        $Exams = simplexml_load_file("../xml/Exams.xml");
-        foreach ($Exams->children() as $Exam) {
-            ?>
-            <div class="exam">
-                <div class="e_content">            
-                    <a href="view-detail.php?id=<?= $Exam['id'] ?>">
-                        <div class="content">
-                            <?= $Exam->Exam_Name ?>
+        <div id="Exmas">
+            <?php
+            $Exams = simplexml_load_file("../xml/Exams.xml");
+            foreach ($Exams->children() as $Exam) {
+                ?>
+                <div class="exam">
+                    <div class="e_content">            
+                        <a href="view-detail.php?id=<?= $Exam['id'] ?>">
+                            <div class="content">
+                                <?= $Exam->Exam_Name ?>
+                            </div>
+                        </a>
+                        <div class="e_tool_group">
+                            <a href="add.php?id=<?= $Exam['id'] ?>"><div class="e_tool"><span class="icon-pen"></span></div></a>
+                            <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>
                         </div>
-                    </a>
-                    <div class="e_tool_group">
-                        <a href="add.php?id=<?= $Exam['id'] ?>"><div class="e_tool"><span class="icon-pen"></span></div></a>
-                        <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>
                     </div>
                 </div>
-            </div>
-            <?php
-        }
-        ?>
+                <?php
+            }
+            ?>
+        </div>
     </body>
 
 </html>

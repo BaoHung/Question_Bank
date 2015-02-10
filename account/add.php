@@ -1,7 +1,20 @@
+<?php
+$id = filter_input(INPUT_GET, 'id');
+$Accounts = simplexml_load_file("../xml/Accounts.xml");
+$Account = NULL;
+if ($id != "") {
+    foreach ($Accounts->children() as $A) {
+        if ($A['id'] == $id) {
+            $Account = $A;
+            break;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Add question</title>
+        <title>Add account</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/home_component.css" />
@@ -16,26 +29,52 @@
         <?php include'../layout/header.php'; ?>
 
         <!--Add Question-->
-        <h1 style="text-align: center;font-weight: 300;">Create new account</h1>
+        <h1 style="text-align: center;font-weight: 300;">
+            <?= !is_null($Account) ? 'Edit account' : 'Create new account' ?>
+        </h1>
         <form class="acc-form" action="view.php">
             <div>
                 <div>
                     <label>Email:</label>
-                    <input style="margin-left: 2.8em" type="text" />
+                    <input style="margin-left: 2.8em" type="text" required
+                           value="<?= !is_null($Account) ? $Account->Email : '' ?>"/>
                 </div>
                 <div>
-                    <label>Fullname:</label>
-                    <input style="margin-left: 0.8em" type="text" />
+                    <label>Full name:</label>
+                    <input style="margin-left: 0.8em" type="text" required
+                           value="<?= !is_null($Account) ? $Account->FullName : '' ?>"/>
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input type="text" />
+                    <input type="password" required />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" required />
                 </div>
                 <label>Role:</label>
                 <span style="margin-left: 3em" class="custom-dropdown">
                     <select style="padding: 0.3em 2em 0.1em 0.1em">
-                        <option>Administrator</option>
-                        <option>Lecturer</option>  
+                        <?php
+                        if (!is_null($Account)) {
+                            if ($Account['role'] == 0) {
+                                ?>  
+                                <option selected>Administrator</option>
+                                <option>Lecturer</option>  
+                                <?php
+                            } else {
+                                ?>  
+                                <option>Administrator</option>
+                                <option selected>Lecturer</option>  
+                                <?php
+                            }
+                        } else {
+                            ?>  
+                            <option>Administrator</option>
+                            <option>Lecturer</option>  
+                            <?php
+                        }
+                        ?>
                     </select>
                 </span>
             </div>

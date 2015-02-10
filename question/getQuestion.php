@@ -23,6 +23,14 @@ foreach ($Questions->children() as $Question) {
             (is_null($scrambled) || $scrambled == '0' || $Question['scrambled'] == $scrambled) &&
             (is_null($id) || strlen($id) == 0 || $Question['id'] == $id)
     ) {
+        $correctIndex = 0;
+        foreach ($Question->Answer as $answer) {
+            if ($answer['correct'] == 'true') {
+                break;
+            }
+            $correctIndex++;
+        }
+        $Question->CorrectIndex = $correctIndex;
         array_push($questionsToReturn, $Question);
     }
 }

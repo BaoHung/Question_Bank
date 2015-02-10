@@ -52,20 +52,28 @@
                 });
 
                 $('body').on('change', '.option', function () {
-                    sendRequest();
+                    if ($(this).attr('id') == 'SubjectList') {
+                        sendRequest(0);
+                    } else {
+                        sendRequest($('#ChapterList').val());
+                    }
                 });
 
                 $('body').on('submit', 'form', function () {
-                    sendRequest();
+                    sendRequest($('#ChapterList').val());
+                });
+
+                $('#Search').keyup(function () {
+                    sendRequest($('#ChapterList').val());
                 });
 
                 $('.icon-trash').click(function () {
-                    if(confirm("Do you want to delete this question?")){
+                    if (confirm("Do you want to delete this question?")) {
                         // TODO
                     }
                 });
 
-                function sendRequest() {
+                function sendRequest($chapter) {
                     $.ajax({
                         url: 'getQuestion.php',
                         type: 'POST',
@@ -74,7 +82,7 @@
                             subject_id: $('#SubjectList').val(),
                             level_id: $('#LevelList').val(),
                             type_id: $('#TypeList').val(),
-                            chapter: $('#ChapterList').val(),
+                            chapter: $chapter,
                             scrambled: $('#Scrambled').val(),
                             q: $('#Search').val()
                         },
@@ -84,14 +92,18 @@
                                 attr = question['@attributes'];
                                 answerStr = '';
                                 $.each(question.Answer, function (index, answer) {
-                                    answerStr += '<div>' + answer + '</div>';
+                                    if (index == question.CorrectIndex) {
+                                        answerStr += '<div><u>' + answer + '</u></div>';
+                                    } else {
+                                        answerStr += '<div>' + answer + '</div>';
+                                    }
                                 });
                                 htmlStr += '<div class="question">' +
                                         '       <div class="q_content">' +
                                         '           <div class="content">' + question.Content + '</div>' +
                                         '           <div class="q_tool_group">' +
-                                        '               <div class="q_tool"><a href=""><span class="icon-pen"></span></a></div>' +
-                                        '               <div class="q_tool"><a href=""><span class="icon-trash"></span></a></div>' +
+                                        '               <div class="q_tool"><a href="../question/add.php?id=' + attr.id + '"><span class="icon-pen"></span></a></div>' +
+                                        '               <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>' +
                                         '           </div>' +
                                         '       </div>' +
                                         '       <div class="a_panel">' + answerStr +
@@ -110,7 +122,7 @@
         <form onsubmit="return false;">
             <!--Search Box-->
             <div class="field" id="searchform">
-                <input type="text" id="Search" name="search" placeholder="Search question here . . ." />
+                <input type="text" id="Search" name="search" autocomplete="off" placeholder="Search question here . . ." />
                 <input type="submit" id="SearchButton" value="Search" />
             </div>
 
@@ -190,7 +202,7 @@
                     <div class="q_content">            
                         <div class="content"><?= $Question->Content ?></div>
                         <div class="q_tool_group">
-                            <div class="q_tool"><a href="../question/add.php?id=<?=$Question['id']?>"><span class="icon-pen"></span></a></div>
+                            <div class="q_tool"><a href="../question/add.php?id=<?= $Question['id'] ?>"><span class="icon-pen"></span></a></div>
                             <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
                         </div>
                     </div>

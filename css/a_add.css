@@ -15,7 +15,8 @@
     padding-top: 1%;
     font-size: 1.2em;
 }
-.acc-form>div>div>input[type="text"]{
+.acc-form>div>div>input[type="text"],
+.acc-form>div>div>input[type="password"]{
     font-size: 0.8em;
     border: none;
     border-radius: 3px;

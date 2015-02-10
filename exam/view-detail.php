@@ -73,11 +73,11 @@ $examID = filter_input(INPUT_GET, 'id');
                         </div>-->
             <div>
                 <label style="color: #ffffff" >Duration:</label>
-                <label>60 mins</label>
+                <label><?= $Exma['duration'] ?> mins</label>
             </div>
             <div>
                 <label style="color: #ffffff" >Number of questions:</label>
-                <label>20</label>
+                <label><?= $Exma['number_of_question'] ?></label>
             </div>
 
             <input type="button" value="Show all answers" id="show_all"/>
@@ -88,7 +88,7 @@ $examID = filter_input(INPUT_GET, 'id');
         <?php
         $Questions = simplexml_load_file("../xml/Questions.xml");
         foreach ($Questions->children() as $Question) {
-            if ($Question['subject_id'] == 1) {
+            if (strcoll($Question['subject_id'], $Exma['id']) == 0) {
                 ?>
                 <div class="question">
                     <div class="q_content">            

@@ -24,7 +24,7 @@
     border:none;
     border-radius: 3px;
     font-size: 1.5em;
-    
+
 }
 .answers>div>textarea.a-textarea{
     display: inline;
@@ -40,7 +40,8 @@
     width: 95%;
     margin: 2% 2% 2% 2%;
 }
-.add-form>input[type="button"]{
+.add-form>input[type="button"],
+.add-form>input[type="submit"]{
     display: block;
     padding: 0.7em 0.7em;
     background-color: #EC6767;
@@ -49,7 +50,8 @@
     border-radius: 3px;
     margin: 1% 2% 0% 45%;
 }
-.add-form>input[type="button"]:hover{
+.add-form>input[type="button"]:hover,
+.add-form>input[type="submit"]:hover{
     cursor: pointer;
 }
 .a-remove{
