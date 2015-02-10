@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--Anh đừng sửa file này nhé :D -->
-
 <Levels xmlns:xsi="Levels.xsd">
     <Level id="1">
         <Level_Name>Easy</Level_Name>

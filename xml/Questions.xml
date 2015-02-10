@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--Cái Question đầu tiên là mẫu, anh đừng điền hay xóa nhé.
-    Anh tìm câu hỏi và câu trả lời từ Quiz ở W3School nhé.
-    Anh nhớ kiểm tra câu trả lời đúng và cho vào phần correct trong <Answer> nhé 
-
-    level_id: (ID Độ khó) type: int
-    type_id: (ID Loại câu hỏi) type: int
-    subject_ID (ID Môn) type: string
-    scrambled: (Có đảo đáp án hay ko (true/false)) type: boolean
-    chapter: (Chương) type: int
--->
-
 <Questions>
     <Question id="1" level_id="1" type_id="1" subject_id="1" scrambled="true" chapter="1">
         <Content>What does HTML stand for?</Content>
