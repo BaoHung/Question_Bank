@@ -22,7 +22,7 @@
             </ul>
         </li>
         <li style="width: 28%;text-align: right">
-            <a href="#">Roux Sparrow</a>
+            <a href="#">Lê Việt Phương</a>
             <ul class="cbp-tm-submenu">
                 <li><a href="/Question_Bank/Change_Pass.php" class="cbp-tm-icon-cog">Change password</a></li>
                 <li><a href="/Question_Bank/Login.html" class="cbp-tm-icon-contract">Log out</a></li>                    
