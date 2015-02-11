@@ -77,7 +77,9 @@ if ($questionID != "") {
     <body>
         <?php include '../layout/header.php'; ?>
         <!--Add Question-->
-        <h1 style="text-align: center;font-weight: 300;">Add new question</h1>
+        <h1 style="text-align: center;font-weight: 300;">
+            <?= !is_null($Question) ? 'Edit question' : 'Add new question' ?>
+        </h1>
         <form class="add-form">
             <span>Question</span>
             <textarea class="q-textarea" placeholder="Enter question here..." required><?php
