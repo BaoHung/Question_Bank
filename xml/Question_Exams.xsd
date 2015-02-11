@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Question_Exams">
-        <xs:complexType>
+  <xs:element name="Question_Exams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Question_Exam" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
             <xs:sequence>
-                <xs:element name="Question_Exam" maxOccurs="unbounded" minOccurs="0">
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attribute type="xs:int" name="exam_id" use="required"/>
-                                <xs:attribute type="xs:int" name="question_id" use="required"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
+              <xs:element type="xs:byte" name="Question_ID" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+            <xs:attribute type="xs:byte" name="exam_id" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

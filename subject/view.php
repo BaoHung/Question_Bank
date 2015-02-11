@@ -14,7 +14,7 @@
         <script src="../js/modernizr.custom.js"></script>
         <script>
             $(document).ready(function () {
-                $(".content").click(function () {
+                $('body').on('click', '.content', function () {
                     $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
                 });
 
