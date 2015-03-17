@@ -6,7 +6,11 @@
         <title>Home</title>
         <link rel="stylesheet" type="text/css" href="css/home_component.css" />
         <link rel="stylesheet" type="text/css" href="css/home.css" />
-        <?php include 'layout/referances.php' ?>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/modernizr.custom.js"></script>
+        <?php // include 'layout/referances.php' ?>
     </head>
     <body>
         <?php
