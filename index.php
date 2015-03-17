@@ -19,7 +19,7 @@
                 <figure>
                     <img src="images/subject2.png" alt="img04">
                     <figcaption>
-                        <h3>Question 17/3</h3>
+                        <h3>Question</h3>
                         <a href="question/view.php">Take a look</a>
 
                     </figcaption>
