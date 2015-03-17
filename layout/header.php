@@ -1,37 +1,38 @@
+<?php echo $_SERVER['SERVER_NAME']; ?>
 <div>            
     <!--Header-->
     <ul id="cbp-tm-menu" class="cbp-tm-menu">
         <li style="width: 20%;">
-            <a href="/Question_Bank/">Question Bank</a>
+            <a href="/">Question Bank</a>
 
         </li>
         <li style="visibility: visible;width: 11%;text-align: center">
-            <a href="/Question_Bank/question/view.php">Question</a>               
+            <a href="/question/view.php">Question</a>               
         </li>
         <li style="visibility: visible;width: 11%;text-align: center">
-            <a href="/Question_Bank/exam/view.php">Exam</a>                      
+            <a href="/exam/view.php">Exam</a>                      
         </li>
         <li style="visibility: visible;width: 11%;text-align: center">
-            <a href="/Question_Bank/Analysis.php">Analysis</a>
+            <a href="/Analysis.php">Analysis</a>
         </li>
         <li style="visibility: visible;width: 16%;text-align: center">
-            <a href="/Question_Bank/Control_Panel.php">Control Panel</a>
+            <a href="/Control_Panel.php">Control Panel</a>
             <ul class="cbp-tm-submenu">
-                <li><a href="/Question_Bank/subject/view.php" class="cbp-tm-icon-archive">Subject</a></li>
-                <li><a href="/Question_Bank/account/view.php" class="cbp-tm-icon-users">Account</a></li>                    
+                <li><a href="/subject/view.php" class="cbp-tm-icon-archive">Subject</a></li>
+                <li><a href="/account/view.php" class="cbp-tm-icon-users">Account</a></li>                    
             </ul>
         </li>
         <li style="width: 28%;text-align: right">
             <a href="#">Lê Việt Phương</a>
             <ul class="cbp-tm-submenu">
-                <li><a href="/Question_Bank/Change_Pass.php" class="cbp-tm-icon-cog">Change password</a></li>
-                <li><a href="/Question_Bank/Login.html" class="cbp-tm-icon-contract">Log out</a></li>                    
+                <li><a href="/Change_Pass.php" class="cbp-tm-icon-cog">Change password</a></li>
+                <li><a href="/Login.html" class="cbp-tm-icon-contract">Log out</a></li>                    
             </ul>
         </li>
     </ul>
 
     <!--Script Tooltip-->
-    <script src="/Question_Bank/js/cbpTooltipMenu.min.js"></script>
+    <script src="/js/cbpTooltipMenu.min.js"></script>
     <script>
         var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
     </script>
