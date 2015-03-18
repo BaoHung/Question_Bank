@@ -1,3 +1,4 @@
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 
 header('Content-Type: application/json; charset=utf-8');

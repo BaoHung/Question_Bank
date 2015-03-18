@@ -21,13 +21,24 @@
                 <li><a href="/account/view.php" class="cbp-tm-icon-users">Account</a></li>                    
             </ul>
         </li>
-        <li style="width: 28%;text-align: right">
-            <a href="#">Lê Việt Phương</a>
-            <ul class="cbp-tm-submenu">
-                <li><a href="/Change_Pass.php" class="cbp-tm-icon-cog">Change password</a></li>
-                <li><a href="/Login.html" class="cbp-tm-icon-contract">Log out</a></li>                    
-            </ul>
-        </li>
+
+        <?php
+        // $Account from /session.php
+        if (isset($Account) && !empty($Account)) {
+            ?>
+
+            <li style="width: 28%;text-align: right">
+                <a href="#"><?= $Account->FullName ?></a>
+                <ul class="cbp-tm-submenu">
+                    <li><a href="/Change_Pass.php" class="cbp-tm-icon-cog">Change password</a></li>
+                    <li><a href="/authentication/logout.php" class="cbp-tm-icon-contract">Log out</a></li>                    
+                </ul>
+            </li>
+
+            <?php
+        }
+        ?>
+
     </ul>
 
     <!--Script Tooltip-->

@@ -11,7 +11,7 @@
             $(document).ready(function () {
                 $('#login form').submit(function () {
                     $.ajax({
-                        url: 'account/authenticate.php',
+                        url: 'authentication/login.php',
                         type: 'POST',
                         dataType: 'json',
                         data: {

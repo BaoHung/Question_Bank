@@ -1,3 +1,4 @@
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.

@@ -1,11 +1,10 @@
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 
 session_start();
 
 if (isset($_SESSION["accountID"]) && (!empty($_SESSION["accountID"]) || $_SESSION["accountID"] == 0 )) {
     $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-    var_dump($root);
-
     $Accounts = simplexml_load_file("$root/xml/Accounts.xml");
     $Account = NULL;
     $id = $_SESSION["accountID"];
@@ -15,7 +14,6 @@ if (isset($_SESSION["accountID"]) && (!empty($_SESSION["accountID"]) || $_SESSIO
             break;
         }
     }
-    var_dump($Account);
 } else {
     header('Location: /Login.html');
 }

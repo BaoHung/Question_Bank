@@ -1,3 +1,4 @@
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 $id = filter_input(INPUT_GET, 'id');
 $Subjects = simplexml_load_file("../xml/Subjects.xml");
