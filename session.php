@@ -15,6 +15,7 @@ if (isset($_SESSION["accountID"]) && (!empty($_SESSION["accountID"]) || $_SESSIO
             break;
         }
     }
+    var_dump($Account);
 } else {
     header('Location: /Login.html');
 }
