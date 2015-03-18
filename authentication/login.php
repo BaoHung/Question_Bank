@@ -9,7 +9,7 @@ $password = filter_input(INPUT_POST, 'password');
 $isCorrectInfo = FALSE;
 
 foreach ($Accounts->children() as $Account) {
-    if ($username == $Account->Email && $password == $Account->Password) {
+    if ($username == $Account->Email && $password == $Account->Password && !isset($Account['removed'])) {
         $isCorrectInfo = TRUE;
         session_start();
         $_SESSION["accountID"] = $Account['id']->__toString();

@@ -34,8 +34,22 @@
                 });
 
                 $('body').on('click', '.icon-trash', function () {
-                    if (confirm("Do you want to delete this question?")) {
-                        // TODO
+                    if (confirm("Do you want to delete this account?")) {
+                        id = $(this).attr('id');
+                        $.ajax({
+                            url: 'deleteToXML.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                id: id
+                            },
+                            success: function (data) {
+                                alert(data.message);
+                                if (data.completed) {
+                                    window.location.href = "view.php";
+                                }
+                            }}
+                        );
                     }
                 });
 
@@ -114,31 +128,41 @@
             <?php
             $Accounts = simplexml_load_file("../xml/Accounts.xml");
             foreach ($Accounts->children() as $Account) {
-                ?>
-                <div class="question">
-                    <div class="q_content">            
-                        <div class="content"><?= $Account->FullName ?></div>
-                        <div class="q_tool_group">
-                            <div class="q_tool"><a href="../account/add.php?id=<?= $Account['id'] ?>"><span class="icon-pen"></span></a></div>
-                            <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
+                if (!isset($Account['removed'])) {
+                    ?>
+                    <div class="question">
+                        <div class="q_content">            
+                            <div class="content"><?= $Account->FullName ?></div>
+                            <div class="q_tool_group">
+                                <div class="q_tool">
+                                    <a href="../account/add.php?id=<?= $Account['id'] ?>">
+                                        <span class="icon-pen"></span>
+                                    </a>
+                                </div>
+                                <div class="q_tool">
+                                    <a href="javascript: void(0)">
+                                        <span class="icon-trash" id="<?= $Account['id'] ?>"></span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="a_panel">
-                        <div>Email: <?= $Account->Email ?></div>
-                        <div>Password: <?= $Account->Password ?></div>
-                        <div>Role: 
-                            <?php
-                            if ($Account['role'] == 0) {
-                                echo 'Administrator';
-                            } else {
-                                echo 'Lecturer';
-                            }
-                            ?>
+                        <div class="a_panel">
+                            <div>Email: <?= $Account->Email ?></div>
+                            <div>Password: <?= $Account->Password ?></div>
+                            <div>Role: 
+                                <?php
+                                if ($Account['role'] == 0) {
+                                    echo 'Administrator';
+                                } else {
+                                    echo 'Lecturer';
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
+                }
             }
             ?>
         </div>

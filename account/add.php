@@ -32,32 +32,51 @@ if ($id != "") {
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                 return emailReg.test($email);
             }
+
+            $.urlParam = function (name) {
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                if (results == null) {
+                    return null;
+                }
+                else {
+                    return results[1] || 0;
+                }
+            }
+
             $(document).ready(function () {
                 $('form').submit(function () {
                     if (!validateEmail($('form input[name="email"]').val())) {
                         alert("Please enter your email.");
                     } else if ($('form input[name="email"]').val().split('@').slice(1) != 'fpt.edu.vn') {
-                        alert("ok");
+                        alert("Please enter your FPT Education email.");
                     } else if ($('form input[name="password"]').val().length < 8) {
                         alert("Password must contain at least 8 characters.");
                     } else if ($('form input[name="password"]').val() != $('form input[name="confirm_password"]').val()) {
                         alert("Password confirmation does not match.");
                     } else {
+
+                        url = "";
+                        if ($.urlParam('id') == null) {
+                            url = 'addToXML.php';
+                        } else {
+                            url = 'editToXML.php';
+                        }
+
                         $.ajax({
-                            url: 'addToXML.php',
+                            url: url,
                             type: 'POST',
                             dataType: 'json',
                             data: {
+                                id: $.urlParam('id'),
                                 email: $('form input[name="email"]').val(),
                                 password: $.md5($('form input[name="password"]').val()),
                                 fullname: $('form input[name="fullname"]').val(),
                                 role: $('form select[name="role"]').val()
                             },
                             success: function (data) {
-                                if (data.added) {
-                                    alert('Account created successfully');
-                                } else {
-                                    alert('Account not created.\r\n' + data.message);
+                                alert(data.message)
+                                if (data.completed) {
+                                    window.location.href = "view.php";
                                 }
                             }}
                         );

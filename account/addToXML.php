@@ -7,7 +7,8 @@ $role = filter_input(INPUT_POST, 'role');
 $id = 0;
 
 $result = array(
-    'added' => FALSE,
+    'mode' => 'create',
+    'completed' => FALSE,
     'message' => ''
 );
 
@@ -18,8 +19,8 @@ $Accounts = simplexml_load_file("../xml/Accounts.xml");
 foreach ($Accounts->children() as $A) {
     $id = $A['id'];
     if ($A->Email == $email) {
-        $result['added'] = FALSE;
-        $result['message'] = 'Email already exists.';
+        $result['completed'] = FALSE;
+        $result['message'] = 'Account not created.\r\n Email already exists.';
         echo json_encode($result);
         return;
     }
@@ -34,5 +35,7 @@ $Account->addChild('FullName', $fullname);
 
 $Accounts->asXML("../xml/Accounts.xml");
 
-$result['added'] = TRUE;
+$result['completed'] = TRUE;
+$result['message'] = 'Account created successfully.';
+
 echo json_encode($result);
