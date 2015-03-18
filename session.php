@@ -1,4 +1,3 @@
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 
 session_start();
