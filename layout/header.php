@@ -1,4 +1,3 @@
-<?php echo $_SERVER['SERVER_NAME']; ?>
 <div>            
     <!--Header-->
     <ul id="cbp-tm-menu" class="cbp-tm-menu">
