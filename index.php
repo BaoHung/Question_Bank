@@ -36,8 +36,5 @@
                 </figure>
             </li>			
         </ul>
-        <?php
-        include 'layout/footer.php';
-        ?>
     </body>
 </html>
