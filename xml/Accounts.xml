@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- 
     Roll 0 = Administrator
     Roll 1 = Lecturer
 -->
-
 <Accounts xmlns:xsi="Accounts.xsd">
     <Account id="0" role="0">
         <Email>admin</Email>
         <Password>21232f297a57a5a743894a0e4a801fc3</Password>
         <FullName>Admin</FullName>
     </Account>
-    
     <Account id="1" role="0">
         <Email>phuonglvse02839@fpt.edu.vn</Email>
         <Password>25d55ad283aa400af464c76d713c07ad</Password>
         <FullName>Lê Việt Phương</FullName>
     </Account>
-        
     <Account id="2" role="0">
         <Email>tranghmse02860@fpt.edu.vn</Email>
         <Password>25d55ad283aa400af464c76d713c07ad</Password>
         <FullName>Hà Minh Trang</FullName>
     </Account>
-        
     <Account id="3" role="1">
         <Email>hungnvbse02820@fpt.edu.vn</Email>
         <Password>25d55ad283aa400af464c76d713c07ad</Password>
         <FullName>Nguyễn Vũ Bảo Hưng</FullName>
     </Account>
-        
     <Account id="4" role="1">
         <Email>ducha01108@fpt.edu.vn</Email>
         <Password>25d55ad283aa400af464c76d713c07ad</Password>
         <FullName>Hoàng Anh Đức</FullName>
     </Account>
-    
     <Account id="5" role="1">
         <Email>anhbn@fpt.edu.vn</Email>
         <Password>25d55ad283aa400af464c76d713c07ad</Password>
         <FullName>Bùi Ngọc Anh</FullName>
     </Account>
-</Accounts>
+<Account id="6" role="0"><Email>test@fpt.edu.vn</Email><Password>25d55ad283aa400af464c76d713c07ad</Password><FullName>test</FullName></Account></Accounts>
