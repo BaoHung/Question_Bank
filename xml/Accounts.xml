@@ -6,6 +6,12 @@
 -->
 
 <Accounts xmlns:xsi="Accounts.xsd">
+    <Account id="0" role="0">
+        <Email>admin</Email>
+        <Password>21232f297a57a5a743894a0e4a801fc3</Password>
+        <FullName>Admin</FullName>
+    </Account>
+    
     <Account id="1" role="0">
         <Email>phuonglvse02839@fpt.edu.vn</Email>
         <Password>25d55ad283aa400af464c76d713c07ad</Password>

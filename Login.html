@@ -5,6 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/login.css" />
         <link rel="stylesheet" type="text/css" href="css/login_form.css" />
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.md5.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#login form').submit(function () {
+                    $.ajax({
+                        url: 'account/authenticate.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            username: $('#username').val(),
+                            password: $.md5($('#password').val())
+                        },
+                        success: function (authenticated) {
+                            if (authenticated) {
+                                window.location.href = "/index.php";
+                            } else {
+                                alert("Wrong email and password");
+                            }
+                        }}
+                    );
+                });
+            });
+        </script>
     </head>
     <body id="page">
         <ul class="cb-slideshow">
@@ -24,7 +48,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="index.php" autocomplete="on" method="POST"> 
+                            <form onsubmit="return false;" action="index.php" autocomplete="on" method="POST"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="e" > Your email</label>
