@@ -13,6 +13,9 @@ foreach ($Accounts->children() as $Account) {
         $isCorrectInfo = TRUE;
         session_start();
         $_SESSION["accountID"] = $Account['id']->__toString();
+
+        $_SESSION['discard_after'] = time() + 300;
+
         break;
     }
 }

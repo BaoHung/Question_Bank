@@ -11,6 +11,21 @@
         <link rel="stylesheet" type="text/css" href="../css/filter.css" />
         <link rel="stylesheet" type="text/css" href="../css/q_view.css" />
         <link rel="stylesheet" type="text/css" href="../css/menu_icon.css" />
+        <style rel="stylesheet" type="text/css">
+            #paging{
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            #paging a, #paging span{
+                margin: 0 25px;
+            }
+            #paging a{
+                font-weight: bold;
+            }
+            #paging a:hover{
+                color:red;
+            }
+        </style>
         <script src="../js/modernizr.custom.js"></script>
         <script src="../js/jquery-1.11.2.min.js"></script>
         <script>
@@ -196,39 +211,90 @@
         <!--Question-->
         <div id="Questions">
             <?php
-            $Questions = simplexml_load_file("../xml/Questions.xml");
-            foreach ($Questions->children() as $Question) {
-                ?>
-                <div class="question">
-                    <div class="q_content">            
-                        <div class="content"><?= $Question->Content ?></div>
-                        <div class="q_tool_group">
-                            <div class="q_tool"><a href="../question/add.php?id=<?= $Question['id'] ?>"><span class="icon-pen"></span></a></div>
-                            <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
-                        </div>
-                    </div>
+            $index = 1;
 
-                    <div class="a_panel">
-                        <?php
-                        foreach ($Question->Answer as $Answer) {
-                            if ($Answer['correct'] == 'true') {
-                                ?>
-                                <div><u><?= $Answer ?></u></div>
-                                <?php
-                            } else {
-                                ?>
-                                <div><?= $Answer ?></div>
-                                <?php
-                            }
-                        }
+// Pagination
+            try {
+                $Questions = simplexml_load_file("../xml/Questions.xml");
+
+                // Find out how many items are in the table
+                $total = $Questions->count();
+
+                // How many items to list per page
+                $limit = 20;
+
+                // How many pages will there be
+                $pages = ceil($total / $limit);
+
+                // What page are we currently on?
+                $page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array(
+                    'options' => array(
+                        'default' => 1,
+                        'min_range' => 1,
+                    ),
+                )));
+
+                // Calculate the offset for the query
+                $offset = ($page - 1) * $limit;
+
+                // Some information to display to the user
+                $start = $offset + 1;
+                $end = min(($offset + $limit), $total);
+
+                // Result
+
+                foreach ($Questions->children() as $Question) {
+                    if ($index >= $start && $index <= $end && !isset($Question['removed'])) {
                         ?>
-                    </div>
-                </div>
-                <?php
+                        <div class="question">
+                            <div class="q_content">            
+                                <div class="content"><?= $Question->Content ?></div>
+                                <div class="q_tool_group">
+                                    <div class="q_tool"><a href="../question/add.php?id=<?= $Question['id'] ?>"><span class="icon-pen"></span></a></div>
+                                    <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
+                                </div>
+                            </div>
+
+                            <div class="a_panel">
+                                <?php
+                                foreach ($Question->Answer as $Answer) {
+                                    if ($Answer['correct'] == 'true') {
+                                        ?>
+                                        <div><u><?= $Answer ?></u></div>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <div><?= $Answer ?></div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    $index++;
+                }
+
+                // The "back" link
+                $prevlink = ($page > 1) ?
+                        '<a href="?page=1" title="First page">First</a> '
+                        . '<a href="?page=' . ($page - 1) . '" title="Previous page">Previous</a>' :
+                        '<span class="disabled">First</span> <span class="disabled">Previous</span>';
+
+                // The "forward" link
+                $nextlink = ($page < $pages) ?
+                        '<a href="?page=' . ($page + 1) . '" title="Next page">Next</a> '
+                        . '<a href="?page=' . $pages . '" title="Last page">Last</a>' :
+                        '<span class="disabled">Next</span> <span class="disabled">Last</span>';
+
+                // Display the paging information
+                echo '<div id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div>';
+            } catch (Exception $e) {
+                echo '<p>', $e->getMessage(), '</p>';
             }
             ?>
         </div>
-        <?php include '../layout/footer.php'; ?>
     </body>
 </html>
 

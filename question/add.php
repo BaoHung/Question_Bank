@@ -26,15 +26,61 @@ if ($questionID != "") {
         <script src="../js/modernizr.custom.js"></script>
         <script src="../js/jquery-1.11.2.min.js"></script>
         <script>
+            $.urlParam = function (name) {
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                if (results == null) {
+                    return null;
+                }
+                else {
+                    return results[1] || 0;
+                }
+            }
+
+            function validated() {
+                if ($('form textarea[name="content"]').val().trim().length == 0) {
+                    alert("Please enter question.");
+                    return false;
+                }
+
+                $('form .answers input[type="checkbox"]').each(function () {
+
+                });
+
+                return true;
+            }
+
             $(document).ready(function () {
-                $.ajax({
+                chapterOfQuestion = 0;
+
+                $.ajax({// Get chapter of editing question
+                    url: 'getQuestion.php',
+                    type: 'POST',
+                    data: {
+                        id: $.urlParam('id')
+                    },
+                    success: function (data) {
+                        $.each(data, function (index, question) {
+                            chapterOfQuestion = question['@attributes'].chapter;
+                        });
+                    }
+                });
+
+                $.ajax({// Get chapter of subject
                     url: 'getChapter.php',
                     type: 'GET',
                     data: {subject_id: $('#SubjectList').val()},
                     success: function (data) {
-                        $('#ChapterList').html('<option value="0" selected>All</option>');
+                        if (chapterOfQuestion == 0) {
+                            $('#ChapterList').html('<option value="" selected>None</option>');
+                        } else {
+                            $('#ChapterList').html('<option value="">None</option>');
+                        }
                         for (i = 0; i < parseInt(data); i++) {
-                            $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                            if (chapterOfQuestion == i + 1) {
+                                $('#ChapterList').append('<option selected value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                            } else {
+                                $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                            }
                         }
                     }
                 });
@@ -62,16 +108,23 @@ if ($questionID != "") {
                             type: 'GET',
                             data: {subject_id: $('#SubjectList').val()},
                             success: function (data) {
-                                $('#ChapterList').html('<option value="0" selected>All</option>');
+                                $('#ChapterList').html('<option value="" selected>None</option>');
                                 for (i = 0; i < parseInt(data); i++) {
                                     $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
                                 }
                             }
                         });
                     } else {
-                        $('#ChapterList').html('<option value="0" selected>All</option>');
+                        $('#ChapterList').html('<option value="" selected>None</option>');
                     }
                 });
+
+                $('form').submit(function () {
+                    if (validated()) {
+                        alert('validated');
+                    }
+                });
+
             });
         </script>
     </head>
@@ -81,9 +134,9 @@ if ($questionID != "") {
         <h1 style="text-align: center;font-weight: 300;">
             <?= !is_null($Question) ? 'Edit question' : 'Add new question' ?>
         </h1>
-        <form class="add-form">
+        <form class="add-form" onsubmit="return false;">
             <span>Question</span>
-            <textarea class="q-textarea" placeholder="Enter question here..." required><?php
+            <textarea name="content" class="q-textarea" placeholder="Enter question here..." required><?php
                 if (!is_null($Question)) {
                     echo $Question->Content;
                 }
@@ -91,8 +144,8 @@ if ($questionID != "") {
             <div class="filter_style">            
                 Subject
                 <span class="custom-dropdown">
-                    <select id="SubjectList" name="subject" class="option">
-                        <option value="0">All</option>
+                    <select id="SubjectList" name="subject" class="option" required>
+                        <option value="">None</option>
                         <?php
                         $Subjects = simplexml_load_file("../xml/Subjects.xml");
                         foreach ($Subjects->children() as $Subject) {
@@ -111,11 +164,12 @@ if ($questionID != "") {
                 </span>
                 Chapter
                 <span class="custom-dropdown">
-                    <select id="ChapterList" name="chapter" class="option">
+                    <select id="ChapterList" name="chapter" class="option" required>
+                        <option value="">None</option>
                         <?php
                         for ($i = 1; $i < $Question['chapter']; $i++) {
                             ?>
-                            <option value="0" selected><?= $i ?></option>
+                            <option value="" selected><?= $i ?></option>
                             <?php
                         }
                         ?>
@@ -123,8 +177,7 @@ if ($questionID != "") {
                 </span>
                 Level
                 <span class="custom-dropdown">
-                    <select id="LevelList" name="level" class="option">
-                        <option value="0">All</option>
+                    <select id="LevelList" name="level" class="option" required>
                         <?php
                         $Levels = simplexml_load_file("../xml/Levels.xml");
                         foreach ($Levels->children() as $Level) {
@@ -143,7 +196,7 @@ if ($questionID != "") {
                 </span>
                 Scrambled
                 <span class="custom-dropdown">
-                    <select>
+                    <select required>
                         <?php
                         if (!is_null($Question)) {
                             if ($Q['scrambled'] == 'true') {
@@ -169,13 +222,15 @@ if ($questionID != "") {
                 </span>
                 Type
                 <span class="custom-dropdown">
-                    <select id="TypeList" name="type" class="option">
-                        <option value="0" selected>All</option>
+                    <select id="TypeList" name="type" class="option" required>
+                        <option value="" selected>None</option>
                         <?php
                         $Types = simplexml_load_file("../xml/Types.xml");
                         foreach ($Types->children() as $Type) {
                             ?>
-                            <option value="<?= $Type['id'] ?>"><?= $Type->Type_Name ?></option>
+                            <option value="<?= $Type['id'] ?>">
+                                <?= $Type->Type_Name ?>
+                            </option>
                             <?php
                         }
                         ?>
@@ -192,9 +247,9 @@ if ($questionID != "") {
                     foreach ($Question->Answer as $Answer) {
                         ?>
                         <div class="answer">
-                            <textarea class="a-textarea" placeholder="Enter answer here..." ><?= $Answer ?></textarea>
+                            <textarea name="answer" class="a-textarea" placeholder="Enter answer here..." ><?= $Answer ?></textarea>
                             <div class="answer-tool" >
-                                <label><input type="checkbox" >Correct</label>
+                                <label><input type="checkbox" <?= $Answer['correct'] == 'true' ? 'checked' : '' ?> >Correct</label>
                                 <input class="a-remove" type="button" value="Remove this answer"/>
                             </div>                                
                         </div>
@@ -203,14 +258,14 @@ if ($questionID != "") {
                 } else {
                     ?>
                     <div class="answer">
-                        <textarea class="a-textarea" placeholder="Enter answer here..."  required></textarea>
+                        <textarea name="answer" class="a-textarea" placeholder="Enter answer here..."  required></textarea>
                         <div class="answer-tool" >
                             <label><input type="checkbox" >Correct</label>
                             <input class="a-remove" type="button" value="Remove this answer"/>
                         </div>                                
                     </div>
                     <div class="answer">
-                        <textarea class="a-textarea" placeholder="Enter answer here..." required></textarea>
+                        <textarea name="answer" class="a-textarea" placeholder="Enter answer here..." required></textarea>
                         <div class="answer-tool" >
                             <label><input type="checkbox" >Correct</label>
                             <input class="a-remove" type="button" value="Remove this answer"/>
