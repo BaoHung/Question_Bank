@@ -417,7 +417,7 @@
     <Answer correct="false">function:myFunction()</Answer>
     <Answer correct="false">function = myFunction()</Answer>
   </Question>
-  <Question id="63" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="3" removed="1">
+  <Question id="63" level_id="2" type_id="1" subject_id="4" scrambled="true" chapter="3">
     <Content>How do you call a function named "myFunction"?</Content>
     <Answer correct="true">myFunction()</Answer>
     <Answer correct="false">call myFunction()</Answer>
@@ -778,7 +778,7 @@
     <Answer correct="false">#pragma</Answer>
     <Answer correct="false">def</Answer>
   </Question>
-  <Question id="121" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="4" removed="1">
+  <Question id="121" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="4">
     <Content>q</Content>
     <Answer correct="false">a1 edited</Answer>
     <Answer correct="false"> edited a2</Answer>

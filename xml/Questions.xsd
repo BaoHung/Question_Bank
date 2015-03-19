@@ -1,36 +1,30 @@
-<?xml version="1.0"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Questions">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Question" maxOccurs="unbounded" minOccurs="0">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:string" name="Content"/>
-                            <xs:element name="Answer" maxOccurs="unbounded" minOccurs="2">
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension base="xs:string">
-                                            <xs:attribute type="xs:boolean" name="correct" use="required"/>
-                                        </xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute type="xs:int" name="id" use="optional"/>
-                        <xs:attribute type="xs:int" name="level_id" use="optional"/>
-                        <xs:attribute type="xs:int" name="type_id" use="optional"/>
-                        <xs:attribute type="xs:int" name="subject_id" use="optional"/>
-                        <xs:attribute type="xs:boolean" name="scrambled" use="optional"/>
-                        <xs:attribute type="xs:int" name="chapter" use="optional"/>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Questions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Question"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Question">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Content"/>
+        <xs:element maxOccurs="unbounded" ref="Answer"/>
+      </xs:sequence>
+      <xs:attribute name="chapter" use="required" type="xs:integer"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="level_id" use="required" type="xs:integer"/>
+      <xs:attribute name="scrambled" use="required" type="xs:boolean"/>
+      <xs:attribute name="subject_id" use="required" type="xs:integer"/>
+      <xs:attribute name="type_id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Content" type="xs:string"/>
+  <xs:element name="Answer">
+    <xs:complexType mixed="true">
+      <xs:attribute name="correct" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

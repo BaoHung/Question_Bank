@@ -1,20 +1,25 @@
-<?xml version="1.0"?>
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Accounts">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Account" maxOccurs="unbounded" minOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:string" name="Email"/>
-                            <xs:element type="xs:string" name="Password"/>
-                            <xs:element type="xs:string" name="FullName"/>
-                        </xs:sequence>
-                        <xs:attribute type="xs:int" name="id" use="required"/>
-                        <xs:attribute type="xs:int" name="role" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Accounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Account"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Email"/>
+        <xs:element ref="Password"/>
+        <xs:element ref="FullName"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="removed" type="xs:integer"/>
+      <xs:attribute name="role" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Email" type="xs:string"/>
+  <xs:element name="Password" type="xs:string"/>
+  <xs:element name="FullName" type="xs:string"/>
 </xs:schema>

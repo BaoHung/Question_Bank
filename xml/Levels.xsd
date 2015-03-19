@@ -1,17 +1,19 @@
-<?xml version="1.0"?>
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Levels">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Level" maxOccurs="unbounded" minOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:string" name="Level_Name"/>
-                        </xs:sequence>
-                        <xs:attribute type="xs:int" name="id" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Levels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Level"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Level">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Level_Name"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Level_Name" type="xs:NCName"/>
 </xs:schema>

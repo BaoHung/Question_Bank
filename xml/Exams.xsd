@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Exams">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Exam" maxOccurs="unbounded" minOccurs="0">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:string" name="Exam_Name"/>
-                        </xs:sequence>
-                        <xs:attribute type="xs:int" name="id" use="required"/>
-                        <xs:attribute type="xs:int" name="number_of_question" use="required"/>
-                        <xs:attribute type="xs:int" name="duration" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Exams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Exam"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Exam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Exam_Name"/>
+      </xs:sequence>
+      <xs:attribute name="duration" use="required" type="xs:integer"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="number_of_question" use="required" type="xs:integer"/>
+      <xs:attribute name="removed" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Exam_Name" type="xs:NCName"/>
 </xs:schema>
