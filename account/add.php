@@ -49,6 +49,8 @@ if ($id != "") {
                         alert("Please enter your email.");
                     } else if ($('form input[name="email"]').val().split('@').slice(1) != 'fpt.edu.vn') {
                         alert("Please enter your FPT Education email.");
+                    } else if ($('form input[name="fullname"]').val().trim().length == 0) {
+                        alert("Please enter your name.");
                     } else if ($('form input[name="password"]').val().length < 8) {
                         alert("Password must contain at least 8 characters.");
                     } else if ($('form input[name="password"]').val() != $('form input[name="confirm_password"]').val()) {

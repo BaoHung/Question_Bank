@@ -20,7 +20,7 @@ foreach ($Accounts->children() as $A) {
     $id = $A['id'];
     if ($A->Email == $email) {
         $result['completed'] = FALSE;
-        $result['message'] = 'Account not created.\r\n Email already exists.';
+        $result['message'] = 'Account not created. Eror: Email already exists.';
         echo json_encode($result);
         return;
     }
@@ -33,9 +33,7 @@ $Account->addChild('Email', $email);
 $Account->addChild('Password', $password);
 $Account->addChild('FullName', $fullname);
 
-$Accounts->asXML("../xml/Accounts.xml");
-
-$result['completed'] = TRUE;
+$result['completed'] = $Accounts->asXML("../xml/Accounts.xml");
 $result['message'] = 'Account created successfully.';
 
 echo json_encode($result);

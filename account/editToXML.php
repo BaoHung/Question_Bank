@@ -26,9 +26,7 @@ foreach ($Accounts->children() as $A) {
     }
 }
 
-$Accounts->asXML("../xml/Accounts.xml");
-
-$result['completed'] = TRUE;
+$result['completed'] = $Accounts->asXML("../xml/Accounts.xml");
 $result['message'] = 'Account edited successfully';
 
 echo json_encode($result);

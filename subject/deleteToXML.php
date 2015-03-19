@@ -10,16 +10,16 @@ $result = array(
 
 header('Content-Type: application/json; charset=utf-8');
 
-$Accounts = simplexml_load_file("../xml/Accounts.xml");
+$Subjects = simplexml_load_file("../xml/Subjects.xml");
 
-foreach ($Accounts->children() as $A) {
-    if ($id == $A['id']) {
-        $A['removed'] = '1';
+foreach ($Subjects->children() as $S) {
+    if ($id == $S['id']) {
+        $S['removed'] = '1';
         break;
     }
 }
 
-$result['completed'] = $Accounts->asXML("../xml/Accounts.xml");
+$result['completed'] = $Subjects->asXML("../xml/Subjects.xml");;
 $result['message'] = 'Account removed successfully';
 
 echo json_encode($result);

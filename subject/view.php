@@ -34,7 +34,21 @@
                 });
                 $('body').on('click', '.icon-trash', function () {
                     if (confirm("Do you want to delete this subject?")) {
-                        // TODO
+                        id = $(this).attr('id');
+                        $.ajax({
+                            url: 'deleteToXML.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                id: id
+                            },
+                            success: function (data) {
+                                alert(data.message);
+                                if (data.completed) {
+                                    window.location.href = "view.php";
+                                }
+                            }}
+                        );
                     }
                 });
 
@@ -92,22 +106,24 @@
             <?php
             $Subjects = simplexml_load_file("../xml/Subjects.xml");
             foreach ($Subjects->children() as $Subject) {
-                ?>
-                <div class="question">
-                    <div class="q_content">            
-                        <div class="content"><?= $Subject->Subject_Name ?></div>
-                        <div class="q_tool_group">
-                            <div class="q_tool"><a href="add.php?id=<?= $Subject['id'] ?>"><span class="icon-pen"></span></a></div>
-                            <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
+                if (!isset($Subject['removed'])) {
+                    ?>
+                    <div class="question">
+                        <div class="q_content">            
+                            <div class="content"><?= $Subject->Subject_Name ?></div>
+                            <div class="q_tool_group">
+                                <div class="q_tool"><a href="add.php?id=<?= $Subject['id'] ?>"><span class="icon-pen"></span></a></div>
+                                <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash" id="<?= $Subject['id'] ?>"></span></a></div>
+                            </div>
+                        </div>
+
+                        <div class="a_panel">
+                            <div>Subject code: <?= $Subject->Subject_Code ?></div>
+                            <div>Number of chapters: <?= $Subject['number_of_chapter'] ?></div>
                         </div>
                     </div>
-
-                    <div class="a_panel">
-                        <div>Subject code: <?= $Subject->Subject_Code ?></div>
-                        <div>Number of chapters: <?= $Subject['number_of_chapter'] ?></div>
-                    </div>
-                </div>
-                <?php
+                    <?php
+                }
             }
             ?>
         </div>
