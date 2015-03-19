@@ -20,7 +20,7 @@ foreach ($Accounts->children() as $A) {
     $id = $A['id'];
     if ($A->Email == $email) {
         $result['completed'] = FALSE;
-        $result['message'] = 'Account not created. Eror: Email already exists.';
+        $result['message'] = 'Account not created. Error: Email already exists.';
         echo json_encode($result);
         return;
     }
@@ -33,7 +33,15 @@ $Account->addChild('Email', $email);
 $Account->addChild('Password', $password);
 $Account->addChild('FullName', $fullname);
 
-$result['completed'] = $Accounts->asXML("../xml/Accounts.xml");
-$result['message'] = 'Account created successfully.';
-
+$dom = new DOMDocument('1.0');
+$dom->preserveWhiteSpace = false;
+$dom->formatOutput = true;
+$dom->loadXML($Accounts->asXML());
+if ($dom->save('../xml/Accounts.xml') == FALSE) {
+    $result['completed'] = FALSE;
+    $result['message'] = 'Account not created. Error: Cannot save to flie.';
+} else {
+    $result['completed'] = TRUE;
+    $result['message'] = 'Account created successfully.';
+}
 echo json_encode($result);

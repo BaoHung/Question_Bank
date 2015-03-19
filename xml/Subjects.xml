@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Subjects>
-    <Subject id="1" number_of_chapter="12">
-        <Subject_Name>HTML</Subject_Name>
-        <Subject_Code>HTML101</Subject_Code>
-    </Subject>
-    
-    <Subject id="2" number_of_chapter="8">
-        <Subject_Name>CSS</Subject_Name>
-        <Subject_Code>CSS101</Subject_Code>
-    </Subject>
-    
-    <Subject id="3" number_of_chapter="14">
-        <Subject_Name>HTML5</Subject_Name>
-        <Subject_Code>HTML501</Subject_Code>
-    </Subject>
-    
-    <Subject id="4" number_of_chapter="4">
-        <Subject_Name>JavaScript</Subject_Name>
-        <Subject_Code>JVS101</Subject_Code>
-    </Subject>
-        
-    <Subject id="5" number_of_chapter="8">
-        <Subject_Name>XML</Subject_Name>
-        <Subject_Code>XML101</Subject_Code>
-    </Subject>
-        
-    <Subject id="6" number_of_chapter="8">
-        <Subject_Name>PHP</Subject_Name>
-        <Subject_Code>PHP101</Subject_Code>
-    </Subject>
+  <Subject id="1" number_of_chapter="12">
+    <Subject_Name>HTML</Subject_Name>
+    <Subject_Code>HTML101</Subject_Code>
+  </Subject>
+  <Subject id="2" number_of_chapter="8">
+    <Subject_Name>CSS</Subject_Name>
+    <Subject_Code>CSS101</Subject_Code>
+  </Subject>
+  <Subject id="3" number_of_chapter="14">
+    <Subject_Name>HTML5</Subject_Name>
+    <Subject_Code>HTML501</Subject_Code>
+  </Subject>
+  <Subject id="4" number_of_chapter="4">
+    <Subject_Name>JavaScript</Subject_Name>
+    <Subject_Code>JVS101</Subject_Code>
+  </Subject>
+  <Subject id="5" number_of_chapter="8">
+    <Subject_Name>XML</Subject_Name>
+    <Subject_Code>XML101</Subject_Code>
+  </Subject>
+  <Subject id="6" number_of_chapter="8">
+    <Subject_Name>PHP</Subject_Name>
+    <Subject_Code>PHP101</Subject_Code>
+  </Subject>
 </Subjects>

@@ -18,24 +18,34 @@ foreach ($Subjects->children() as $S) {
     $id = $S['id'];
     if ($S->Subject_Code == $code) {
         $result['completed'] = FALSE;
-        $result['message'] = 'Subject not created. Eror: Subject code already exists.';
+        $result['message'] = 'Subject not created. Error: Subject code already exists.';
         echo json_encode($result);
         return;
     } else if ($S->Subject_Name == $name) {
         $result['completed'] = FALSE;
-        $result['message'] = 'Subject not created. Eror: Subject name already exists.';
+        $result['message'] = 'Subject not created. Error: Subject name already exists.';
         echo json_encode($result);
         return;
     }
 }
 
-$Account = $Subjects->addChild('Subject');
-$Account->addAttribute('id', $id + 1);
-$Account->addAttribute('number_of_chapter', $chapter);
-$Account->addChild('Subject_Name', $name);
-$Account->addChild('Subject_Code', $code);
+$Subject = $Subjects->addChild('Subject');
+$Subject->addAttribute('id', $id + 1);
+$Subject->addAttribute('number_of_chapter', $chapter);
+$Subject->addChild('Subject_Name', $name);
+$Subject->addChild('Subject_Code', $code);
 
-$result['completed'] = $Subjects->asXML("../xml/Subjects.xml");;
-$result['message'] = 'Subject created successfully.';
+
+$dom = new DOMDocument('1.0');
+$dom->preserveWhiteSpace = false;
+$dom->formatOutput = true;
+$dom->loadXML($Subjects->asXML());
+if ($dom->save('../xml/Subjects.xml') == FALSE) {
+    $result['completed'] = FALSE;
+    $result['message'] = 'Subject not created. Error: Cannot save to flie.';
+} else {
+    $result['completed'] = TRUE;
+    $result['message'] = 'Subject created successfully.';
+}
 
 echo json_encode($result);
