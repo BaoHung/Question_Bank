@@ -26,6 +26,8 @@ if ($questionID != "") {
         <script src="../js/modernizr.custom.js"></script>
         <script src="../js/jquery-1.11.2.min.js"></script>
         <script>
+            countCorrectAnswer = 0;
+
             $.urlParam = function (name) {
                 var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
                 if (results == null) {
@@ -42,52 +44,75 @@ if ($questionID != "") {
                     return false;
                 }
 
-                $('form .answers input[type="checkbox"]').each(function () {
-
+                $('form .answers textarea[name="answer"]').each(function () {
+                    if ($(this).val().trim().length == 0) {
+                        alert('Answer cannot be empty.');
+                        return false;
+                    }
                 });
+
+                countCorrectAnswer = 0;
+                $('form .answers input[type="checkbox"]').each(function () {
+                    if ($(this).hasClass('checked')) {
+                        countCorrectAnswer++;
+                    }
+                });
+
+                if (countCorrectAnswer < 1) {
+                    alert('There must be at least one correct answer.');
+                    return false;
+                }
 
                 return true;
             }
 
             $(document).ready(function () {
-                chapterOfQuestion = 0;
-
-                $.ajax({// Get chapter of editing question
-                    url: 'getQuestion.php',
-                    type: 'POST',
-                    data: {
-                        id: $.urlParam('id')
-                    },
-                    success: function (data) {
-                        $.each(data, function (index, question) {
-                            chapterOfQuestion = question['@attributes'].chapter;
-                        });
-                    }
-                });
-
-                $.ajax({// Get chapter of subject
-                    url: 'getChapter.php',
-                    type: 'GET',
-                    data: {subject_id: $('#SubjectList').val()},
-                    success: function (data) {
-                        if (chapterOfQuestion == 0) {
-                            $('#ChapterList').html('<option value="" selected>None</option>');
-                        } else {
-                            $('#ChapterList').html('<option value="">None</option>');
-                        }
-                        for (i = 0; i < parseInt(data); i++) {
-                            if (chapterOfQuestion == i + 1) {
-                                $('#ChapterList').append('<option selected value="' + (i + 1) + '" >' + (i + 1) + '</option>');
-                            } else {
-                                $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
-                            }
-                        }
+                /*
+                 chapterOfQuestion = 0;
+                 
+                 $.ajax({// Get chapter of editing question
+                 url: 'getQuestion.php',
+                 type: 'POST',
+                 data: {
+                 id: $.urlParam('id')
+                 },
+                 success: function (data) {
+                 $.each(data, function (index, question) {
+                 chapterOfQuestion = question['@attributes'].chapter;
+                 });
+                 }
+                 });
+                 
+                 $.ajax({// Get chapter of subject
+                 url: 'getChapter.php',
+                 type: 'GET',
+                 data: {subject_id: $('#SubjectList').val()},
+                 success: function (data) {
+                 if (chapterOfQuestion == 0) {
+                 $('#ChapterList').html('<option value="" selected>None</option>');
+                 } else {
+                 $('#ChapterList').html('<option value="">None</option>');
+                 }
+                 for (i = 0; i < parseInt(data); i++) {
+                 if (chapterOfQuestion == i + 1) {
+                 $('#ChapterList').append('<option selected value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                 } else {
+                 $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                 }
+                 }
+                 }
+                 });
+                 */
+                $('form .answers input[type="checkbox"]').each(function () {
+                    if ($(this).attr('checked') !== undefined) {
+                        $(this).addClass('checked');
+                        countCorrectAnswer++;
                     }
                 });
 
                 $('#a_add').click(function () {
                     $('.answers').append('<div class="answer">' +
-                            '               <textarea class="a-textarea" placeholder="Enter answer here..." required></textarea>' +
+                            '               <textarea required class="a-textarea" placeholder="Enter answer here..." required></textarea>' +
                             '               <div class="answer-tool" >' +
                             '                   <label><input type="checkbox" >Correct</label>' +
                             '                   <input class="a-remove" type="button" value="Remove this answer"/>' +
@@ -119,10 +144,12 @@ if ($questionID != "") {
                     }
                 });
 
+                $('body').on('click', 'form .answers input[type="checkbox"]', function () {
+                    $(this).toggleClass('checked');
+                });
+
                 $('form').submit(function () {
-                    if (validated()) {
-                        alert('validated');
-                    }
+                    alert($('#TypeList').val());
                 });
 
             });
@@ -148,8 +175,10 @@ if ($questionID != "") {
                         <option value="">None</option>
                         <?php
                         $Subjects = simplexml_load_file("../xml/Subjects.xml");
+                        $numberOfChapter = 0;
                         foreach ($Subjects->children() as $Subject) {
                             if (!is_null($Question) && strcoll($Question['subject_id'], $Subject['id']) == 0) {
+                                $numberOfChapter = $Subject['number_of_chapter'];
                                 ?>
                                 <option selected value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
                                 <?php
@@ -167,9 +196,9 @@ if ($questionID != "") {
                     <select id="ChapterList" name="chapter" class="option" required>
                         <option value="">None</option>
                         <?php
-                        for ($i = 1; $i < $Question['chapter']; $i++) {
+                        for ($i = 1; $i <= $numberOfChapter; $i++) {
                             ?>
-                            <option value="" selected><?= $i ?></option>
+                            <option value="<?= $i ?>" <?= $i == $Question['chapter'] ? 'selected' : '' ?> ><?= $i ?></option>
                             <?php
                         }
                         ?>
@@ -228,8 +257,9 @@ if ($questionID != "") {
                         $Types = simplexml_load_file("../xml/Types.xml");
                         foreach ($Types->children() as $Type) {
                             ?>
-                            <option value="<?= $Type['id'] ?>">
-                                <?= $Type->Type_Name ?>
+                            <option value="<?= $Type['id'] ?>" 
+                                    <?= $Type['id']->__toString() == $Question['type_id'] ? 'selected' : '' ?> >
+                                        <?= $Type->Type_Name ?>
                             </option>
                             <?php
                         }
@@ -247,9 +277,12 @@ if ($questionID != "") {
                     foreach ($Question->Answer as $Answer) {
                         ?>
                         <div class="answer">
-                            <textarea name="answer" class="a-textarea" placeholder="Enter answer here..." ><?= $Answer ?></textarea>
+                            <textarea required name="answer" class="a-textarea" placeholder="Enter answer here..." ><?= $Answer ?></textarea>
                             <div class="answer-tool" >
-                                <label><input type="checkbox" <?= $Answer['correct'] == 'true' ? 'checked' : '' ?> >Correct</label>
+                                <label>
+                                    <input type="checkbox"
+                                           <?= $Answer['correct'] == 'true' ? 'checked' : '' ?> >Correct
+                                </label>
                                 <input class="a-remove" type="button" value="Remove this answer"/>
                             </div>                                
                         </div>
@@ -258,14 +291,14 @@ if ($questionID != "") {
                 } else {
                     ?>
                     <div class="answer">
-                        <textarea name="answer" class="a-textarea" placeholder="Enter answer here..."  required></textarea>
+                        <textarea required name="answer" class="a-textarea" placeholder="Enter answer here..."  required></textarea>
                         <div class="answer-tool" >
                             <label><input type="checkbox" >Correct</label>
                             <input class="a-remove" type="button" value="Remove this answer"/>
                         </div>                                
                     </div>
                     <div class="answer">
-                        <textarea name="answer" class="a-textarea" placeholder="Enter answer here..." required></textarea>
+                        <textarea required name="answer" class="a-textarea" placeholder="Enter answer here..." required></textarea>
                         <div class="answer-tool" >
                             <label><input type="checkbox" >Correct</label>
                             <input class="a-remove" type="button" value="Remove this answer"/>
