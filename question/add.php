@@ -51,14 +51,14 @@ if ($questionID != "") {
                     }
                 });
 
-                countCorrectAnswer = 0;
-                $('form .answers input[type="checkbox"]').each(function () {
-                    if ($(this).hasClass('checked')) {
-                        countCorrectAnswer++;
-                    }
-                });
+//                countCorrectAnswer = 0;
+//                $('form .answers input[type="checkbox"]').each(function () {
+//                    if ($(this).hasClass('checked')) {
+//                        countCorrectAnswer++;
+//                    }
+//                });
 
-                if (countCorrectAnswer < 1) {
+                if ($('form .answers :checkbox:checked').length < 1) {
                     alert('There must be at least one correct answer.');
                     return false;
                 }
@@ -146,10 +146,15 @@ if ($questionID != "") {
 
                 $('body').on('click', 'form .answers input[type="checkbox"]', function () {
                     $(this).toggleClass('checked');
+                    if ($('form .answers :checkbox:checked').length > 1) {
+                        $('#TypeList').val(2);
+                    } else {
+                        $('#TypeList').val(1);
+                    }
                 });
 
                 $('form').submit(function () {
-                    alert($('#TypeList').val());
+                    alert(validated());
                 });
 
             });
@@ -251,7 +256,7 @@ if ($questionID != "") {
                 </span>
                 Type
                 <span class="custom-dropdown">
-                    <select id="TypeList" name="type" class="option" required>
+                    <select id="TypeList" name="type" class="option" required disabled style="color: #FFF">
                         <option value="" selected>None</option>
                         <?php
                         $Types = simplexml_load_file("../xml/Types.xml");

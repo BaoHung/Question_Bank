@@ -1,7 +1,7 @@
 .filter_style{
     display: block;
     position: relative;
-/*    margin-left: 40px;*/
+    /*    margin-left: 40px;*/
     margin-bottom: 20px;
     text-align: center;
 }
@@ -38,7 +38,7 @@
     margin: 10px;
 }
 
-.custom-dropdown select {
+.custom-dropdown select{
     background-color: #67A1DA;
     color: #fff;
     font-size: inherit;

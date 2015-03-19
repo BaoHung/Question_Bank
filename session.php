@@ -11,7 +11,7 @@ if (isset($_SESSION['discard_after']) && $now > $_SESSION['discard_after']) {
 }
 
 // either new or old, it should live at most for another hour
-$_SESSION['discard_after'] = $now + 300;
+$_SESSION['discard_after'] = $now + 60 * 10;
 
 if (isset($_SESSION["accountID"]) && (!empty($_SESSION["accountID"]) || $_SESSION["accountID"] == 0 )) {
     $root = realpath($_SERVER["DOCUMENT_ROOT"]);
