@@ -12,14 +12,15 @@
     margin: 1em 0.5em 0.5em 0.5em;
     padding: 0.5em 0 1em 0;
 }
-.right>div>input[type="text"]{
+.right input[type="text"],
+.right input[type="number"]{
     font-size: 0.8em;
     border: none;
     border-radius: 3px;
     padding: 0.5em 1em;
     margin: 0 0.5em 0.5em 0.5em;
 }
-.right>div>div>input[type="text"]{
+.right input[type="text"]{
     font-size: 0.8em;
     border: none;
     border-radius: 3px;

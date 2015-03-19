@@ -18,7 +18,9 @@ if ($exam_id != "") {
     foreach ($Q_E as $pair) {
         if ($pair['exam_id'] == $exam_id) {
             foreach ($pair->Question_ID as $qid) {
-                array_push($QuestionIDs, intval($qid));
+                if (!isset($id['removed'])) {
+                    array_push($QuestionIDs, intval($qid));
+                }
             }
         }
     }
@@ -46,7 +48,7 @@ if ($exam_id != "") {
         <script src="../js/modernizr.custom.js"></script>
         <script>
             $(document).ready(function () {
-                $(".content").click(function () {
+                $('body').on('click', '.content', function () {
                     $(this).parent().parent().find('.a_panel').toggleClass("a_toggle");
                 });
 
@@ -65,17 +67,100 @@ if ($exam_id != "") {
                 });
 
                 $('body').on('click', '.add', function () {
+                    idExisted = false;
+                    idToAdd = $(this).parents('.question').attr('id');
+                    $('#ChosenQuestions .question').each(function () {
+                        if (idToAdd == $(this).attr('id')) {
+                            idExisted = true;
+                        }
+                    });
 
-//                    $('#numberOfQuestion').html(($('#numberOfQuestion').html().trim() + 1));
+                    if (!idExisted) {
+                        $('#ChosenQuestions').append(
+                                '<div class="question" id=' + idToAdd + '>' +
+                                $(this).parents('.question').html()
+                                .replace('<button class="qe_btn add">Add</button>',
+                                        '<button class="qe_btn remove">Remove</button>') +
+                                '</div>');
+                    } else {
+                        alert('Question alrady exist in exam.');
+                    }
+
+                    $('#numberOfQuestion').html($('#ChosenQuestions .question').length);
                 });
 
                 $('body').on('click', '.remove', function () {
                     $(this).parents('.question').remove();
-                    $('#numberOfQuestion').html(($('#numberOfQuestion').html().trim() - 1));
+                    $('#numberOfQuestion').html($('#ChosenQuestions .question').length);
                 });
 
-                $('#search_content').keyup(function () {
-//                    sendRequest($('#ChapterList').val());
+                $('#SubjectList').change(function () {
+                    $(this).attr('disabled', '');
+                    if ($('#SubjectList').val() != 0) {
+                        $.ajax({
+                            url: '../question/getChapter.php',
+                            type: 'GET',
+                            data: {subject_id: $('#SubjectList').val()},
+                            success: function (data) {
+                                $('#ChapterList').html('<option value="0" selected>All</option>');
+                                for (i = 0; i < parseInt(data); i++) {
+                                    $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
+                                }
+                            }
+                        });
+                    }
+                });
+
+                $('#Search').keyup(function () {
+                    sendRequest($('#ChapterList').val());
+                });
+
+                $.urlParam = function (name) {
+                    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                    if (results == null) {
+                        return null;
+                    }
+                    else {
+                        return results[1] || 0;
+                    }
+                }
+
+                $('body').on('submit', 'form', function () {
+                    if ($('#ChosenQuestions .question').length < 1) {
+                        alert('There must be at least one question in an exam.');
+                    } else {
+                        url = "";
+                        if ($.urlParam('id') == null) {
+                            url = 'addToXML.php';
+                        } else {
+                            url = 'editToXML.php';
+                        }
+
+                        question_ids = [];
+
+                        $('#ChosenQuestions .question').each(function () {
+                            question_ids.push($(this).attr('id'));
+                        });
+
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                id: $.urlParam('id'),
+                                number_of_question: $('#ChosenQuestions .question').length,
+                                duration: $('#duration').val(),
+                                exam_name: $('#exam_name').val(),
+                                question_ids: JSON.stringify(question_ids)
+                            },
+                            success: function (data) {
+                                alert(data.message);
+                                if (data.completed) {
+                                    window.location.href = "view.php";
+                                }
+                            }
+                        });
+                    }
                 });
 
                 $('body').on('change', '.option', function () {
@@ -111,12 +196,11 @@ if ($exam_id != "") {
                                         answerStr += '<div>' + answer + '</div>';
                                     }
                                 });
-                                htmlStr += '<div class="question">' +
+                                htmlStr += '<div class="question" id="' + attr.id + '">' +
                                         '       <div class="q_content">' +
                                         '           <div class="content">' + question.Content + '</div>' +
                                         '           <div class="q_tool_group">' +
-                                        '               <div class="q_tool"><a href="../question/add.php?id=' + attr.id + '"><span class="icon-pen"></span></a></div>' +
-                                        '               <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>' +
+                                        '              <button class="qe_btn add">Add</button>' +
                                         '           </div>' +
                                         '       </div>' +
                                         '       <div class="a_panel">' + answerStr +
@@ -137,7 +221,7 @@ if ($exam_id != "") {
         <div class="left">            
             <!--Search Box-->
             <div class="field" id="searchform">
-                <input type="text" id="search_content" autocomplete="off" placeholder="Search question here . . ." />
+                <input type="text" id="Search" autocomplete="off" placeholder="Search question here . . ." />
                 <input type="submit" id="search_btn" value="Search" />
             </div>
             <!--Filter-->
@@ -145,39 +229,46 @@ if ($exam_id != "") {
                 <div style="display: block">
                     Chapter
                     <span class="custom-dropdown">
-                        <select>
-                            <option selected>All</option>
-                            <option>1</option>
-                            <option>2</option>  
-                            <option>3</option>
-                            <option>4</option>
+                        <select id="ChapterList" class="option">
+                            <option value="" selected>All</option>
                         </select>
                     </span>
                     Level
                     <span class="custom-dropdown">
-                        <select>
-                            <option selected>All</option>
-                            <option>Easy</option>
-                            <option>Medium</option>  
-                            <option>Hard</option>
+                        <select id="LevelList" name="level" class="option">
+                            <option value="0" selected>All</option>
+                            <?php
+                            $Levels = simplexml_load_file("../xml/Levels.xml");
+                            foreach ($Levels->children() as $Level) {
+                                ?>
+                                <option value="<?= $Level['id'] ?>"><?= $Level->Level_Name ?></option>
+                                <?php
+                            }
+                            ?>
                         </select>
-                    </span>                    
+                    </span>
                 </div>
                 <div style="display: block">
                     Scrambled
                     <span class="custom-dropdown">
-                        <select>
-                            <option selected>All</option>
-                            <option>Yes</option>
-                            <option>No</option>
+                        <select id="Scrambled" name="scrambled" class="option">
+                            <option value="0" selected>All</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
                         </select>
                     </span>                    
                     Type
                     <span class="custom-dropdown">
-                        <select>
-                            <option selected>All</option>
-                            <option>Single choice</option>
-                            <option>Multiple choice</option>
+                        <select id="TypeList" name="type" class="option">
+                            <option value="0" selected>All</option>
+                            <?php
+                            $Types = simplexml_load_file("../xml/Types.xml");
+                            foreach ($Types->children() as $Type) {
+                                ?>
+                                <option value="<?= $Type['id'] ?>"><?= $Type->Type_Name ?></option>
+                                <?php
+                            }
+                            ?>
                         </select>
                     </span>
                 </div>
@@ -191,89 +282,17 @@ if ($exam_id != "") {
             <div id="Questions">
                 <?php
                 $Questions = simplexml_load_file("../xml/Questions.xml");
-                foreach ($Questions->children() as $Question) {
-                    if ($subject_id == 0 || ($subject_id != 0 && intval($Question['subject_id']) == $subject_id)) {
-                        ?>
-                        <div class="question">
-                            <div class="q_content">            
-                                <div class="content"><?= $Question->Content ?></div>
-                                <div class="q_tool_group">
-                                    <button class="qe_btn add">Add</button>
-                                </div>
-                            </div>
-                            <div class="a_panel">
-                                <?php
-                                foreach ($Question->Answer as $Answer) {
-                                    if ($Answer['correct'] == 'true') {
-                                        ?>
-                                        <div><u><?= $Answer ?></u></div>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <div><?= $Answer ?></div>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
-            </div>
-        </div>
-
-
-        <!--Right-->
-        <div class="right">
-            <!--Exam info-->
-            <div class="e-info">
-                <div style="display: flex">
-                    Exam Name <input type="text" autocomplete="off" 
-                                     value="<?= !is_null($Exam) ? $Exam->Exam_Name : '' ?>" />
-                </div>
-
-                Subject
-                <span class="custom-dropdown">
-                    <select>
-                        <?php
-                        $Subjects = simplexml_load_file("../xml/Subjects.xml");
-                        foreach ($Subjects->children() as $Subject) {
+                if ($subject_id != 0) {
+                    foreach ($Questions->children() as $Question) {
+                        if ($subject_id == 0 || ($subject_id != 0 && intval($Question['subject_id']) == $subject_id)) {
                             ?>
-                            <option <?= $subject_id != 0 && intval($Subject['id']) == $subject_id ? 'selected' : '' ?>
-                                value="<?= $Subject['id'] ?>">
-                                    <?= $Subject->Subject_Name ?>
-                            </option>
-                            <?php
-                        }
-                        ?>
-                    </select>
-                </span>
-                Time <input style="width: 6em" type="text" 
-                            value="<?= !is_null($Exam) ? $Exam['duration'] : '' ?>" /> minutes                  
-
-                <div style="display: flex;">
-                    Number of questions: 
-                    <label style="color: #ffffff;margin-left: 1em" id="numberOfQuestion">
-                        <?= !is_null($Exam) ? $Exam['number_of_question'] : '0' ?>
-                    </label>                                
-                </div>
-            </div>
-            <div id="ChosenQuestions">
-                <?php
-                if (!is_null($Exam)) {
-                    foreach ($Questions as $Question) {
-                        if (in_array($Question['id'], $QuestionIDs)) {
-                            ?>
-                            <div class="question">
+                            <div class="question" id="<?= $Question['id'] ?>">
                                 <div class="q_content">            
                                     <div class="content"><?= $Question->Content ?></div>
                                     <div class="q_tool_group">
-                                        <button class="qe_btn remove">Remove</button>
+                                        <button class="qe_btn add">Add</button>
                                     </div>
                                 </div>
-
                                 <div class="a_panel">
                                     <?php
                                     foreach ($Question->Answer as $Answer) {
@@ -296,9 +315,84 @@ if ($exam_id != "") {
                 }
                 ?>
             </div>
-            <a href="view.php">
-                <button style="margin-left: 50%" class="qe_btn">Save</button>
-            </a>
+        </div>
+
+
+        <!--Right-->
+        <div class="right">
+            <!--Exam info-->
+            <form onsubmit="return false;">
+                <div class="e-info">
+                    <div style="display: flex">
+                        Exam Name <input id="exam_name" type="text" autocomplete="off" required
+                                         value="<?= !is_null($Exam) ? $Exam->Exam_Name : '' ?>" />
+                    </div>
+
+                    Subject
+                    <span class="custom-dropdown">
+                        <select id="SubjectList" required class="option" <?= $subject_id == 0 ? '' : 'disabled' ?>>
+                            <option value="" disabled selected>Choose a subject</option>
+                            <?php
+                            $Subjects = simplexml_load_file("../xml/Subjects.xml");
+                            foreach ($Subjects->children() as $Subject) {
+                                ?>
+                                <option <?= $subject_id != 0 && intval($Subject['id']) == $subject_id ? 'selected' : '' ?>
+                                    value="<?= $Subject['id'] ?>">
+                                        <?= $Subject->Subject_Name ?>
+                                </option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </span>
+                    Time <input style="width: 6em" id="duration" type="number" min="10" max="90" required
+                                value="<?= !is_null($Exam) ? $Exam['duration'] : '' ?>" /> minutes                  
+
+                    <div style="display: flex;">
+                        Number of questions: 
+                        <label style="color: #ffffff;margin-left: 1em" id="numberOfQuestion">
+                            <?= !is_null($Exam) ? $Exam['number_of_question'] : '0' ?>
+                        </label>                                
+                    </div>
+                </div>
+                <div id="ChosenQuestions">
+                    <?php
+                    if (!is_null($Exam)) {
+                        foreach ($Questions as $Question) {
+                            if (in_array($Question['id'], $QuestionIDs) && !isset($Question['removed'])) {
+                                ?>
+                                <div class="question" id="<?= $Question['id'] ?>">
+                                    <div class="q_content">            
+                                        <div class="content"><?= $Question->Content ?></div>
+                                        <div class="q_tool_group">
+                                            <button class="qe_btn remove">Remove</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="a_panel">
+                                        <?php
+                                        foreach ($Question->Answer as $Answer) {
+                                            if ($Answer['correct'] == 'true') {
+                                                ?>
+                                                <div><u><?= $Answer ?></u></div>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <div><?= $Answer ?></div>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+                </div>
+                <input type="submit" style="margin-left: 50%" class="qe_btn" value="Save" />
+            </form>
         </div>
     </body>
 </html>

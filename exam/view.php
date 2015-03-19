@@ -15,8 +15,22 @@
         <script language="JavaScript">
             $(document).ready(function () {
                 $('body').on('click', '.icon-trash', function () {
-                    if (confirm("Do you want to delete this question?")) {
-                        // TODO
+                    if (confirm("Do you want to delete this exam?")) {
+                        id = $(this).attr('id');
+                        $.ajax({
+                            url: 'deleteToXML.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                id: id
+                            },
+                            success: function (data) {
+                                alert(data.message);
+                                if (data.completed) {
+                                    window.location.href = "view.php";
+                                }
+                            }}
+                        );
                     }
                 });
 
@@ -39,7 +53,7 @@
                                         '           </a>' +
                                         '           <div class="e_tool_group">' +
                                         '               <a href="add.php?id=' + attr.id + '"><div class="e_tool"><span class="icon-pen"></span></div></a>' +
-                                        '               <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>' +
+                                        '               <a href="javascript: void(0)"><div class="e_tool"><span id="' + attr.id + '" class="icon-trash"></span></div></a>' +
                                         '           </div>' +
                                         '       </div>' +
                                         '   </div>';
@@ -92,21 +106,23 @@
             <?php
             $Exams = simplexml_load_file("../xml/Exams.xml");
             foreach ($Exams->children() as $Exam) {
-                ?>
-                <div class="exam">
-                    <div class="e_content">            
-                        <a href="view-detail.php?id=<?= $Exam['id'] ?>">
-                            <div class="content">
-                                <?= $Exam->Exam_Name ?>
+                if (!isset($Exam['removed'])) {
+                    ?>
+                    <div class="exam">
+                        <div class="e_content">            
+                            <a href="view-detail.php?id=<?= $Exam['id'] ?>">
+                                <div class="content">
+                                    <?= $Exam->Exam_Name ?>
+                                </div>
+                            </a>
+                            <div class="e_tool_group">
+                                <a href="add.php?id=<?= $Exam['id'] ?>"><div class="e_tool"><span class="icon-pen"></span></div></a>
+                                <a href="javascript: void(0)"><div class="e_tool"><span id="<?= $Exam['id'] ?>" class="icon-trash"></span></div></a>
                             </div>
-                        </a>
-                        <div class="e_tool_group">
-                            <a href="add.php?id=<?= $Exam['id'] ?>"><div class="e_tool"><span class="icon-pen"></span></div></a>
-                            <a href="javascript: void(0)"><div class="e_tool"><span class="icon-trash"></span></div></a>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
+                }
             }
             ?>
         </div>

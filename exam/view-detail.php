@@ -35,7 +35,7 @@ $examID = filter_input(INPUT_GET, 'id');
                     }
                 });
                 $('body').on('click', '.icon-trash', function () {
-                    if (confirm("Do you want to delete this question?")) {
+                    if (confirm("Do you want to delete this exam?")) {
                         // TODO
                     }
                 });
@@ -50,10 +50,10 @@ $examID = filter_input(INPUT_GET, 'id');
 
         <!--Exam Name-->
         <?php
-        $Exmas = simplexml_load_file("../xml/Exams.xml");
-        foreach ($Exmas->children() as $Exma) {
-            if ($Exma['id'] == $examID) {
-                echo '<h1>' . $Exma->Exam_Name . '</h1>';
+        $Exams = simplexml_load_file("../xml/Exams.xml");
+        foreach ($Exams->children() as $Exam) {
+            if ($Exam['id'] == $examID) {
+                echo '<h1>' . $Exam->Exam_Name . '</h1>';
                 break;
             }
         }
@@ -74,11 +74,11 @@ $examID = filter_input(INPUT_GET, 'id');
                         </div>-->
             <div>
                 <label style="color: #ffffff" >Duration:</label>
-                <label><?= $Exma['duration'] ?> mins</label>
+                <label><?= $Exam['duration'] ?> mins</label>
             </div>
             <div>
                 <label style="color: #ffffff" >Number of questions:</label>
-                <label><?= $Exma['number_of_question'] ?></label>
+                <label><?= $Exam['number_of_question'] ?></label>
             </div>
 
             <input type="button" value="Show all answers" id="show_all"/>
@@ -87,9 +87,24 @@ $examID = filter_input(INPUT_GET, 'id');
 
         <!--Question-->
         <?php
+        $Q_Es = simplexml_load_file("../xml/Question_Exams.xml");
+        $matched_Q_E;
+        $question_ids = array();
+        foreach ($Q_Es->children() as $Q_E) {
+            if ($Q_E['exam_id'] == $examID) {
+                $matched_Q_E = $Q_E;
+                foreach ($Q_E->Question_ID as $id) {
+                    if (!isset($id['removed'])) {
+                        array_push($question_ids, intval($id));
+                    }
+                }
+                break;
+            }
+        }
+
         $Questions = simplexml_load_file("../xml/Questions.xml");
         foreach ($Questions->children() as $Question) {
-            if (strcoll($Question['subject_id'], $Exma['id']) == 0) {
+            if (in_array($Question['id'], $question_ids) && !isset($Question['removed'])) {
                 ?>
                 <div class="question">
                     <div class="q_content">            

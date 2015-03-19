@@ -28,7 +28,6 @@ foreach ($Questions->children() as $Q) {
         $Q['scrambled'] = $scrambled;
         $Q['chapter'] = $chapter;
 
-        $t = "";
         $Q->Content = $content;
         while (isset($Q->Answer)) {
             foreach ($Q->Answer as $A) {

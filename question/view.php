@@ -133,7 +133,7 @@
                                         '           <div class="content">' + question.Content + '</div>' +
                                         '           <div class="q_tool_group">' +
                                         '               <div class="q_tool"><a href="../question/add.php?id=' + attr.id + '"><span class="icon-pen"></span></a></div>' +
-                                        '               <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>' +
+                                        '               <div class="q_tool"><a href="javascript: void(0)"><span id=' + attr.id + ' class="icon-trash"></span></a></div>' +
                                         '           </div>' +
                                         '       </div>' +
                                         '       <div class="a_panel">' + answerStr +
