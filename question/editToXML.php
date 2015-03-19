@@ -8,10 +8,10 @@ $scrambled = filter_input(INPUT_POST, 'scrambled');
 $answers = json_decode(filter_input(INPUT_POST, 'answers'));
 $content = filter_input(INPUT_POST, 'content');
 
-$id = 0;
+$id = filter_input(INPUT_POST, 'id');
 
 $result = array(
-    'mode' => 'create',
+    'mode' => 'edit',
     'completed' => FALSE,
     'message' => ''
 );
@@ -21,22 +21,29 @@ header('Content-Type: application/json; charset=utf-8');
 $Questions = simplexml_load_file("../xml/Questions.xml");
 
 foreach ($Questions->children() as $Q) {
-    $id = $Q['id'];
-}
+    if ($id == $Q['id']) {
+        $Q['level_id'] = $level_id;
+        $Q['type_id'] = $type_id;
+        $Q['subject_id'] = $subject_id;
+        $Q['scrambled'] = $scrambled;
+        $Q['chapter'] = $chapter;
 
-$Question = $Questions->addChild('Question');
-$Question->addAttribute('id', $id + 1);
-$Question->addAttribute('level_id', $level_id);
-$Question->addAttribute('type_id', $type_id);
-$Question->addAttribute('subject_id', $subject_id);
-$Question->addAttribute('scrambled', $scrambled);
-$Question->addAttribute('chapter', $chapter);
+        $t = "";
+        $Q->Content = $content;
+        while (isset($Q->Answer)) {
+            foreach ($Q->Answer as $A) {
+                $nodeToDelete = dom_import_simplexml($A);
+                $nodeToDelete->parentNode->removeChild($nodeToDelete);
+            }
+        }
 
-$Question->addChild('Content', $content);
+        foreach ($answers as $answer => $correct) {
+            $Answer = $Q->addChild('Answer', $answer);
+            $Answer->addAttribute('correct', $correct);
+        }
 
-foreach ($answers as $answer => $correct) {
-    $Answer = $Question->addChild('Answer', $answer);
-    $Answer->addAttribute('correct', $correct);
+        break;
+    }
 }
 
 $dom = new DOMDocument('1.0');
@@ -45,10 +52,11 @@ $dom->formatOutput = true;
 $dom->loadXML($Questions->asXML());
 if ($dom->save('../xml/Questions.xml') == FALSE) {
     $result['completed'] = FALSE;
-    $result['message'] = 'Question not created. Error: Cannot save to flie.';
+    $result['message'] = 'Question not edited. Error: Cannot save to flie.';
 } else {
     $result['completed'] = TRUE;
-    $result['message'] = 'Question created successfully.';
+    $result['message'] = 'Question edited successfully.';
 }
+
 
 echo json_encode($result);

@@ -112,11 +112,11 @@ if ($questionID != "") {
 
                 $('#a_add').click(function () {
                     $('.answers').append('<div class="answer">' +
-                            '               <textarea required class="a-textarea" placeholder="Enter answer here..." required></textarea>' +
-                            '               <div class="answer-tool" >' +
-                            '                   <label><input type="checkbox" >Correct</label>' +
+                            '               <textarea required name="answer" class="a-textarea" placeholder="Enter answer here..."  required></textarea>' +
+                            '                   <div class="answer-tool" >' +
+                            '                       <label><input type="checkbox" >Correct</label>' +
                             '                   <input class="a-remove" type="button" value="Remove this answer"/>' +
-                            '               </div>' +
+                            '                   </div>' +
                             '           </div>');
                 });
                 $('body').on('click', '.a-remove', function () {
@@ -148,13 +148,54 @@ if ($questionID != "") {
                     $(this).toggleClass('checked');
                     if ($('form .answers :checkbox:checked').length > 1) {
                         $('#TypeList').val(2);
-                    } else {
+                    } else if ($('form .answers :checkbox:checked').length == 1) {
                         $('#TypeList').val(1);
+                    } else {
+                        $('#TypeList').val('');
                     }
                 });
 
-                $('form').submit(function () {
-                    alert(validated());
+
+                $('body').on('submit', 'form', function () {
+                    if (validated()) {
+                        url = "";
+                        if ($.urlParam('id') == null) {
+                            url = 'addToXML.php';
+                        } else {
+                            url = 'editToXML.php';
+                        }
+
+                        var answers = {};
+                        $('form .answers textarea[name="answer"]').each(function () {
+                            if ($(this).siblings('.answer-tool').children('label').children(':checkbox:checked').val() == 'on') {
+                                answers[$(this).val()] = 'true';
+                            } else {
+                                answers[$(this).val()] = 'false';
+                            }
+                        });
+
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                id: $.urlParam('id'),
+                                content: $('form textarea[name="content"]').val(),
+                                subject_id: $('#SubjectList').val(),
+                                level_id: $('#LevelList').val(),
+                                type_id: $('#TypeList').val(),
+                                chapter: $('#ChapterList').val(),
+                                scrambled: $('#Scrambled').val(),
+                                answers: JSON.stringify(answers)
+                            },
+                            success: function (data) {
+                                alert(data.message)
+                                if (data.completed) {
+                                    window.location.href = "view.php";
+                                }
+                            }}
+                        );
+                    }
                 });
 
             });
@@ -230,24 +271,24 @@ if ($questionID != "") {
                 </span>
                 Scrambled
                 <span class="custom-dropdown">
-                    <select required>
+                    <select id="Scrambled" required>
                         <?php
                         if (!is_null($Question)) {
                             if ($Q['scrambled'] == 'true') {
                                 ?>
-                                <option selected>Yes</option>
-                                <option>No</option>
+                                <option value="true" selected>Yes</option>
+                                <option value="false" >No</option>
                                 <?php
                             } else {
                                 ?>
-                                <option>Yes</option>
-                                <option selected>No</option>
+                                <option value="true">Yes</option>
+                                <option value="false" selected>No</option>
                                 <?php
                             }
                         } else {
                             ?>
-                            <option>Yes</option>
-                            <option>No</option>
+                            <option value="true" >Yes</option>
+                            <option value="false" >No</option>
                             <?php
                         }
                         ?>
@@ -256,7 +297,7 @@ if ($questionID != "") {
                 </span>
                 Type
                 <span class="custom-dropdown">
-                    <select id="TypeList" name="type" class="option" required disabled style="color: #FFF">
+                    <select id="TypeList" name="type" class="option" disabled style="color: #FFF">
                         <option value="" selected>None</option>
                         <?php
                         $Types = simplexml_load_file("../xml/Types.xml");

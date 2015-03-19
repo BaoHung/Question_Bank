@@ -85,7 +85,21 @@
 
                 $('body').on('click', '.icon-trash', function () {
                     if (confirm("Do you want to delete this question?")) {
-                        // TODO
+                        id = $(this).attr('id');
+                        $.ajax({
+                            url: 'deleteToXML.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                id: id
+                            },
+                            success: function (data) {
+                                alert(data.message);
+                                if (data.completed) {
+                                    window.location.href = "view.php";
+                                }
+                            }}
+                        );
                     }
                 });
 
@@ -211,14 +225,22 @@
         <!--Question-->
         <div id="Questions">
             <?php
+            $Questions = simplexml_load_file("../xml/Questions.xml");
             $index = 1;
+            $countQuestion = 0;
+
+            // Count questions
+            foreach ($Questions->children() as $Question) {
+                if (!isset($Question['removed'])) {
+                    $countQuestion++;
+                }
+            }
 
 // Pagination
             try {
-                $Questions = simplexml_load_file("../xml/Questions.xml");
 
                 // Find out how many items are in the table
-                $total = $Questions->count();
+                $total = $countQuestion;
 
                 // How many items to list per page
                 $limit = 20;
@@ -251,7 +273,7 @@
                                 <div class="content"><?= $Question->Content ?></div>
                                 <div class="q_tool_group">
                                     <div class="q_tool"><a href="../question/add.php?id=<?= $Question['id'] ?>"><span class="icon-pen"></span></a></div>
-                                    <div class="q_tool"><a href="javascript: void(0)"><span class="icon-trash"></span></a></div>
+                                    <div class="q_tool"><a href="javascript: void(0)"><span id="<?= $Question['id'] ?>" class="icon-trash"></span></a></div>
                                 </div>
                             </div>
 
