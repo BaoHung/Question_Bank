@@ -1,10 +1,4 @@
 <?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -13,7 +7,42 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/home_component.css" />
         <link rel="stylesheet" type="text/css" href="css/home.css" />
         <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+        <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/modernizr.custom.js"></script>
+        <script src="js/jquery.canvasjs.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'subject/getSubject.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        $.each(data, function (index, subject) {
+                            attr = subject['@attributes'];
+                        });
+                    }}
+                );
+
+                var options = {
+                    title: {
+                        text: "Number of questions in each subjects"
+                    },
+                    animationEnabled: true,
+                    data: [
+                        {
+                            type: "column", //change it to line, area, bar, pie, etc
+
+                            dataPoints: [
+                                {label: 'PHP', y: 20},
+                                {label: 'HTML', y: 20},
+                            ]
+                        }
+                    ]
+                };
+
+                $("#chartContainer").CanvasJSChart(options);
+            });
+        </script>
     </head>
     <body>
         <?php
@@ -22,5 +51,6 @@ and open the template in the editor.
         <div style="display: block;text-align: center;margin: 1% 5% 1% 5%">
             <img src="images/graph_chart.jpg" alt="">           
         </div>
+        <div id="chartContainer" style="height: 300px; width: 60%; margin: auto"></div>
     </body>
 </html>
