@@ -778,10 +778,4 @@
     <Answer correct="false">#pragma</Answer>
     <Answer correct="false">def</Answer>
   </Question>
-  <Question id="121" level_id="3" type_id="1" subject_id="1" scrambled="true" chapter="4">
-    <Content>q</Content>
-    <Answer correct="false">a1 edited</Answer>
-    <Answer correct="false"> edited a2</Answer>
-    <Answer correct="true">aaa</Answer>
-  </Question>
 </Questions>

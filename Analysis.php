@@ -10,37 +10,74 @@
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/modernizr.custom.js"></script>
         <script src="js/jquery.canvasjs.min.js"></script>
+        <style>
+            .chart{
+                height: 300px; 
+                width: 60%; 
+                margin: 20px auto;
+            }
+        </style>
         <script>
             $(document).ready(function () {
                 $.ajax({
-                    url: 'subject/getSubject.php',
+                    url: 'subject/getCountQuestion.php',
                     type: 'POST',
                     dataType: 'json',
+                    data: {
+                        q: 'count'
+                    },
                     success: function (data) {
-                        $.each(data, function (index, subject) {
-                            attr = subject['@attributes'];
-                        });
+                        // column chart
+                        var options = {
+                            title: {
+                                text: "Number of questions in each subject"
+                            },
+                            animationEnabled: true,
+                            data: [
+                                {
+                                    type: "column", //change it to line, area, bar, pie, etc
+                                    dataPoints: data
+                                }
+                            ]
+                        };
+
+                        $("#columnChart").CanvasJSChart(options);
                     }}
                 );
 
-                var options = {
-                    title: {
-                        text: "Number of questions in each subjects"
+
+                $.ajax({
+                    url: 'subject/getCountQuestion.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        q: 'percentage'
                     },
-                    animationEnabled: true,
-                    data: [
-                        {
-                            type: "column", //change it to line, area, bar, pie, etc
-
-                            dataPoints: [
-                                {label: 'PHP', y: 20},
-                                {label: 'HTML', y: 20},
-                            ]
-                        }
-                    ]
-                };
-
-                $("#chartContainer").CanvasJSChart(options);
+                    success: function (data) {
+                        var chart = new CanvasJS.Chart("pieChart",
+                                {
+                                    title: {
+                                        text: "Percentage of questions in each subject"
+                                    },
+                                    animationEnabled: true,
+                                    legend: {
+                                        verticalAlign: "bottom",
+                                        horizontalAlign: "center"
+                                    },
+                                    data: [
+                                        {
+                                            type: "pie",
+                                            showInLegend: true,
+                                            toolTipContent: "{legendText}: <strong>{y}%</strong>",
+                                            indexLabel: "{label} {y}%",
+                                            startAngle: -20,
+                                            dataPoints: data
+                                        }
+                                    ]
+                                });
+                        chart.render();
+                    }}
+                );
             });
         </script>
     </head>
@@ -48,9 +85,10 @@
         <?php
         include 'layout/header.php';
         ?>
-        <div style="display: block;text-align: center;margin: 1% 5% 1% 5%">
-            <img src="images/graph_chart.jpg" alt="">           
-        </div>
-        <div id="chartContainer" style="height: 300px; width: 60%; margin: auto"></div>
+        <!--        <div style="display: block;text-align: center;margin: 1% 5% 1% 5%">
+                    <img src="images/graph_chart.jpg" alt="">           
+                </div>-->
+        <div id="columnChart" class="chart"></div>
+        <div id="pieChart" class="chart"></div>
     </body>
 </html>

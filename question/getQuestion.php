@@ -22,7 +22,8 @@ foreach ($Questions->children() as $Question) {
             (is_null($type_id) || $type_id == 0 || $Question['type_id'] == $type_id) &&
             (is_null($chapter) || $chapter == 0 || $Question['chapter'] == $chapter) &&
             (is_null($scrambled) || $scrambled == '0' || $Question['scrambled'] == $scrambled) &&
-            (is_null($id) || strlen($id) == 0 || $Question['id'] == $id)
+            (is_null($id) || strlen($id) == 0 || $Question['id'] == $id) &&
+            (!isset($Question['removed']))
     ) {
         $correctIndex = 0;
         foreach ($Question->Answer as $answer) {

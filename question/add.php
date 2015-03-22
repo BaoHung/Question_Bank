@@ -44,65 +44,41 @@ if ($questionID != "") {
                     return false;
                 }
 
-                $('form .answers textarea[name="answer"]').each(function () {
-                    if ($(this).val().trim().length == 0) {
-                        alert('Answer cannot be empty.');
-                        return false;
-                    }
-                });
-
-//                countCorrectAnswer = 0;
-//                $('form .answers input[type="checkbox"]').each(function () {
-//                    if ($(this).hasClass('checked')) {
-//                        countCorrectAnswer++;
-//                    }
-//                });
 
                 if ($('form .answers :checkbox:checked').length < 1) {
                     alert('There must be at least one correct answer.');
                     return false;
                 }
+                
+                if($('form .answers :checkbox:not(:checked)').length == 0){
+                    alert('There must be at least one incorrect answer.');
+                    return false;
+                }
 
-                return true;
+
+                // Validate answers
+                var answerSet = new Set();
+                var resultToReturn = true;
+                $('form .answers textarea[name="answer"]').each(function () {
+                    if ($(this).val().trim().length == 0) {
+                        alert('Answer cannot be empty.');
+                        resultToReturn = false;
+                        return false; // break each
+                    }
+
+                    if (answerSet.has($(this).val())) {
+                        alert('Two answer cannot be the same.');
+                        resultToReturn = false;
+                        return false; // break each
+                    } else {
+                        answerSet.add($(this).val());
+                    }
+                });
+
+                return resultToReturn;
             }
 
             $(document).ready(function () {
-                /*
-                 chapterOfQuestion = 0;
-                 
-                 $.ajax({// Get chapter of editing question
-                 url: 'getQuestion.php',
-                 type: 'POST',
-                 data: {
-                 id: $.urlParam('id')
-                 },
-                 success: function (data) {
-                 $.each(data, function (index, question) {
-                 chapterOfQuestion = question['@attributes'].chapter;
-                 });
-                 }
-                 });
-                 
-                 $.ajax({// Get chapter of subject
-                 url: 'getChapter.php',
-                 type: 'GET',
-                 data: {subject_id: $('#SubjectList').val()},
-                 success: function (data) {
-                 if (chapterOfQuestion == 0) {
-                 $('#ChapterList').html('<option value="" selected>None</option>');
-                 } else {
-                 $('#ChapterList').html('<option value="">None</option>');
-                 }
-                 for (i = 0; i < parseInt(data); i++) {
-                 if (chapterOfQuestion == i + 1) {
-                 $('#ChapterList').append('<option selected value="' + (i + 1) + '" >' + (i + 1) + '</option>');
-                 } else {
-                 $('#ChapterList').append('<option value="' + (i + 1) + '" >' + (i + 1) + '</option>');
-                 }
-                 }
-                 }
-                 });
-                 */
                 $('form .answers input[type="checkbox"]').each(function () {
                     if ($(this).attr('checked') !== undefined) {
                         $(this).addClass('checked');
