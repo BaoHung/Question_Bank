@@ -32,6 +32,7 @@
                             title: {
                                 text: "Number of questions in each subject"
                             },
+                            backgroundColor: "#F5DEB3",
                             animationEnabled: true,
                             data: [
                                 {
@@ -59,6 +60,7 @@
                                     title: {
                                         text: "Percentage of questions in each subject"
                                     },
+                                    backgroundColor: "#F5DEB3",
                                     animationEnabled: true,
                                     legend: {
                                         verticalAlign: "bottom",
