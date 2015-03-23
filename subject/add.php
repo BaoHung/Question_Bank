@@ -1,4 +1,6 @@
-<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
+<?php 
+$required_role = 0;
+include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 $id = filter_input(INPUT_GET, 'id');
 $Subjects = simplexml_load_file("../xml/Subjects.xml");

@@ -20,7 +20,15 @@ if (isset($_SESSION["accountID"]) && (!empty($_SESSION["accountID"]) || $_SESSIO
     $id = $_SESSION["accountID"];
     foreach ($Accounts->children() as $A) {
         if ($A['id'] == $id) {
-            $UserAccount = $A;
+            if (isset($required_role)) {
+                if ($required_role == $A['role']) {
+                    $UserAccount = $A;
+                } else {
+                    header('Location: /');
+                }
+            } else {
+                $UserAccount = $A;
+            }
             break;
         }
     }
