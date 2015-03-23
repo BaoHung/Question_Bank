@@ -778,4 +778,9 @@
     <Answer correct="false">#pragma</Answer>
     <Answer correct="false">def</Answer>
   </Question>
+  <Question id="121" level_id="1" type_id="1" subject_id="7" scrambled="true" chapter="1">
+    <Content>xml là gì?</Content>
+    <Answer correct="false">ích mờ là</Answer>
+    <Answer correct="true">extended markup language</Answer>
+  </Question>
 </Questions>

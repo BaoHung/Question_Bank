@@ -168,9 +168,11 @@
                         <?php
                         $Subjects = simplexml_load_file("../xml/Subjects.xml");
                         foreach ($Subjects->children() as $Subject) {
-                            ?>
-                            <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
-                            <?php
+                            if (!isset($Subject['removed'])) {
+                                ?>
+                                <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+                                <?php
+                            }
                         }
                         ?>
                     </select>
