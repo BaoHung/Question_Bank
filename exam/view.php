@@ -40,7 +40,7 @@
                         type: 'GET',
                         dataType: 'json',
                         data: {
-                            id: $('#SubjectList').val()
+                            subject_id: $('#SubjectList').val()
                         },
                         success: function (data) {
                             htmlStr = '';
@@ -82,22 +82,15 @@
                     <?php
                     $Subjects = simplexml_load_file("../xml/Subjects.xml");
                     foreach ($Subjects->children() as $Subject) {
-                        ?>
-                        <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
-                        <?php
+                        if (!isset($Subject['removed'])) {
+                            ?>
+                            <option value="<?= $Subject['id'] ?>"><?= $Subject->Subject_Name ?></option>
+                            <?php
+                        }
                     }
                     ?>
                 </select>
             </span>
-            <!--            Examination
-                        <span class="custom-dropdown">
-                            <select>
-                                <option selected>All</option>
-                                <option>Progress</option>
-                                <option>MidTerm</option>  
-                                <option>Final</option>                    
-                            </select>
-                        </span>            -->
         </div>
 
 

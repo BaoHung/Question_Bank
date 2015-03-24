@@ -39,7 +39,7 @@ $savedExam = $dom->save('../xml/Exams.xml');
 // Save Q_E
 $Q_Es = simplexml_load_file("../xml/Question_Exams.xml");
 $Q_E = $Q_Es->addChild('Question_Exam');
-$Q_E->addAttribute('exam_id', $id);
+$Q_E->addAttribute('exam_id', $id + 1);
 
 foreach ($question_ids as $qid) {
     $Q_E->addChild('Question_ID', $qid);

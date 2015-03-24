@@ -284,32 +284,34 @@ if ($exam_id != "") {
                 $Questions = simplexml_load_file("../xml/Questions.xml");
                 if ($subject_id != 0) {
                     foreach ($Questions->children() as $Question) {
-                        if ($subject_id == 0 || ($subject_id != 0 && intval($Question['subject_id']) == $subject_id)) {
-                            ?>
-                            <div class="question" id="<?= $Question['id'] ?>">
-                                <div class="q_content">            
-                                    <div class="content"><?= $Question->Content ?></div>
-                                    <div class="q_tool_group">
-                                        <button class="qe_btn add">Add</button>
+                        if (!isset($Question['removed'])) {
+                            if ($subject_id == 0 || ($subject_id != 0 && intval($Question['subject_id']) == $subject_id)) {
+                                ?>
+                                <div class="question" id="<?= $Question['id'] ?>">
+                                    <div class="q_content">            
+                                        <div class="content"><?= $Question->Content ?></div>
+                                        <div class="q_tool_group">
+                                            <button class="qe_btn add">Add</button>
+                                        </div>
+                                    </div>
+                                    <div class="a_panel">
+                                        <?php
+                                        foreach ($Question->Answer as $Answer) {
+                                            if ($Answer['correct'] == 'true') {
+                                                ?>
+                                                <div><u><?= $Answer ?></u></div>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <div><?= $Answer ?></div>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
                                     </div>
                                 </div>
-                                <div class="a_panel">
-                                    <?php
-                                    foreach ($Question->Answer as $Answer) {
-                                        if ($Answer['correct'] == 'true') {
-                                            ?>
-                                            <div><u><?= $Answer ?></u></div>
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <div><?= $Answer ?></div>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <?php
+                                <?php
+                            }
                         }
                     }
                 }
@@ -335,12 +337,14 @@ if ($exam_id != "") {
                             <?php
                             $Subjects = simplexml_load_file("../xml/Subjects.xml");
                             foreach ($Subjects->children() as $Subject) {
-                                ?>
-                                <option <?= $subject_id != 0 && intval($Subject['id']) == $subject_id ? 'selected' : '' ?>
-                                    value="<?= $Subject['id'] ?>">
-                                        <?= $Subject->Subject_Name ?>
-                                </option>
-                                <?php
+                                if (!isset($Subject['removed'])) {
+                                    ?>
+                                    <option <?= $subject_id != 0 && intval($Subject['id']) == $subject_id ? 'selected' : '' ?>
+                                        value="<?= $Subject['id'] ?>">
+                                            <?= $Subject->Subject_Name ?>
+                                    </option>
+                                    <?php
+                                }
                             }
                             ?>
                         </select>
@@ -351,7 +355,7 @@ if ($exam_id != "") {
                     <div style="display: flex;">
                         Number of questions: 
                         <label style="color: #ffffff;margin-left: 1em" id="numberOfQuestion">
-                            <?= !is_null($Exam) ? $Exam['number_of_question'] : '0' ?>
+<?= !is_null($Exam) ? $Exam['number_of_question'] : '0' ?>
                         </label>                                
                     </div>
                 </div>
