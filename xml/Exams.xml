@@ -18,7 +18,4 @@
   <Exam id="6" number_of_question="20" duration="30">
     <Exam_Name>PHP_PT3_Su2014_456789021</Exam_Name>
   </Exam>
-  <Exam id="7" number_of_question="2" duration="11">
-    <Exam_Name>xml_test</Exam_Name>
-  </Exam>
 </Exams>

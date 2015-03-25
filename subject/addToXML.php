@@ -1,3 +1,4 @@
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 
 $name = filter_input(INPUT_POST, 'subject_name');
@@ -21,7 +22,7 @@ foreach ($Subjects->children() as $S) {
         $result['message'] = 'Subject not created. Error: Subject code already exists.';
         echo json_encode($result);
         return;
-    } else if ($S->Subject_Name == $name) {
+    } else if (RemoveSign($S->Subject_Name) == RemoveSign($name)) {
         $result['completed'] = FALSE;
         $result['message'] = 'Subject not created. Error: Subject name already exists.';
         echo json_encode($result);

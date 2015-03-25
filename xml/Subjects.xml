@@ -24,8 +24,8 @@
     <Subject_Name>PHP</Subject_Name>
     <Subject_Code>PHP101</Subject_Code>
   </Subject>
-  <Subject id="7" number_of_chapter="8" removed="1">
-    <Subject_Name>xml</Subject_Name>
-    <Subject_Code>prx301</Subject_Code>
+  <Subject id="7" number_of_chapter="3">
+    <Subject_Name>php new</Subject_Name>
+    <Subject_Code>php101</Subject_Code>
   </Subject>
 </Subjects>
