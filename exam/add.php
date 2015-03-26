@@ -151,7 +151,8 @@ if ($exam_id != "") {
                                 number_of_question: $('#ChosenQuestions .question').length,
                                 duration: $('#duration').val(),
                                 exam_name: $('#exam_name').val(),
-                                question_ids: JSON.stringify(question_ids)
+                                question_ids: JSON.stringify(question_ids),
+                                subject_id: $('#SubjectList').val()
                             },
                             success: function (data) {
                                 alert(data.message);
@@ -355,7 +356,7 @@ if ($exam_id != "") {
                     <div style="display: flex;">
                         Number of questions: 
                         <label style="color: #ffffff;margin-left: 1em" id="numberOfQuestion">
-<?= !is_null($Exam) ? $Exam['number_of_question'] : '0' ?>
+                            <?= !is_null($Exam) ? $Exam['number_of_question'] : '0' ?>
                         </label>                                
                     </div>
                 </div>

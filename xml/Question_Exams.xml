@@ -132,12 +132,4 @@
     <Question_ID>119</Question_ID>
     <Question_ID>120</Question_ID>
   </Question_Exam>
-  <Question_Exam exam_id="7">
-    <Question_ID>81</Question_ID>
-    <Question_ID>83</Question_ID>
-  </Question_Exam>
-  <Question_Exam exam_id="7">
-    <Question_ID>82</Question_ID>
-    <Question_ID>85</Question_ID>
-  </Question_Exam>
 </Question_Exams>

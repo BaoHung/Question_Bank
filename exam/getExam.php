@@ -10,9 +10,11 @@ $exmasToReturn = array();
 
 foreach ($Exams->children() as $Exam) {
     if (
-            (is_null($subject_id) || strlen($subject_id) == 0 || $subject_id == 0 || $Exam['id'] == $subject_id)
+            (is_null($subject_id) || strlen($subject_id) == 0 || $subject_id == 0 || $Exam['subject_id'] == $subject_id)
     ) {
-        array_push($exmasToReturn, $Exam);
+        if (!isset($Exam['removed'])) {
+            array_push($exmasToReturn, $Exam);
+        }
     }
 }
 echo json_encode($exmasToReturn);

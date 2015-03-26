@@ -1,8 +1,10 @@
+<?php include $_SERVER["DOCUMENT_ROOT"] . '/session.php'; ?>
 <?php
 
 $number_of_question = filter_input(INPUT_POST, 'number_of_question');
 $duration = filter_input(INPUT_POST, 'duration');
 $exam_name = filter_input(INPUT_POST, 'exam_name');
+$subject_id = filter_input(INPUT_POST, 'subject_id');
 
 $question_ids = json_decode(filter_input(INPUT_POST, 'question_ids'));
 
@@ -20,12 +22,19 @@ $Exams = simplexml_load_file("../xml/Exams.xml");
 
 foreach ($Exams->children() as $E) {
     $id = $E['id'];
+    if (RemoveSign($E->Exam_Name) == RemoveSign($exam_name)) {
+        $result['completed'] = FALSE;
+        $result['message'] = 'Exam not created. Error: Exam name already exists.';
+        echo json_encode($result);
+        return;
+    }
 }
 
 $Exam = $Exams->addChild('Exam');
 $Exam->addAttribute('id', $id + 1);
 $Exam->addAttribute('number_of_question', $number_of_question);
 $Exam->addAttribute('duration', $duration);
+$Exam->addAttribute('subject_id', $subject_id);
 
 $Exam->addChild('Exam_Name', $exam_name);
 

@@ -20,6 +20,6 @@ foreach ($Subjects->children() as $S) {
 }
 
 $result['completed'] = $Subjects->asXML("../xml/Subjects.xml");;
-$result['message'] = 'Account removed successfully';
+$result['message'] = 'Subject removed successfully';
 
 echo json_encode($result);

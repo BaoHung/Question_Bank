@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Exams xmlns:xsi="Exams.xsd">
-  <Exam id="1" number_of_question="20" duration="30">
+  <Exam id="1" number_of_question="20" duration="30" subject_id="1">
     <Exam_Name>HTML_FUHL_QUIZ1_2_152436</Exam_Name>
   </Exam>
-  <Exam id="2" number_of_question="20" duration="30">
+  <Exam id="2" number_of_question="20" duration="30" subject_id="2">
     <Exam_Name>CSS_FUHL_SP2015_FE_143765</Exam_Name>
   </Exam>
-  <Exam id="3" number_of_question="20" duration="30">
+  <Exam id="3" number_of_question="20" duration="30" subject_id="3">
     <Exam_Name>HTML5PT1_Renew15_7345623251</Exam_Name>
   </Exam>
-  <Exam id="4" number_of_question="20" duration="30">
+  <Exam id="4" number_of_question="20" duration="30" subject_id="4">
     <Exam_Name>JavaScript_PT1_Su2014_3672915621</Exam_Name>
   </Exam>
-  <Exam id="5" number_of_question="20" duration="30">
+  <Exam id="5" number_of_question="20" duration="30" subject_id="5">
     <Exam_Name>XML_MT_Fall2014_755915436</Exam_Name>
   </Exam>
-  <Exam id="6" number_of_question="20" duration="30">
+  <Exam id="6" number_of_question="20" duration="30" subject_id="6">
     <Exam_Name>PHP_PT3_Su2014_456789021</Exam_Name>
   </Exam>
 </Exams>
